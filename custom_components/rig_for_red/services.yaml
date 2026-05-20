@@ -1,0 +1,9 @@
+trigger_rig:
+  name: Trigger Rig
+  description: "Activate the submarine night mode (red lights + dimming)."
+  fields: {}
+
+restore_lights:
+  name: Restore Lights
+  description: "Restore lights to white/normal mode."
+  fields: {}

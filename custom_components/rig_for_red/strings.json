@@ -1,0 +1,25 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Rig for Red",
+        "description": "Konfiguriere das Submarine Night Mode für deine Lampen.",
+        "data": {
+          "lights": "Lampen (mindestens eine erforderlich)",
+          "schedule_days": "Wochentage",
+          "schedule_time": "Aktivierungszeit",
+          "dim_duration_minutes": "Dimmdauer (Minuten)",
+          "restore_at_sunrise": "Bei Sonnenaufgang zurücksetzen",
+          "restore_time": "Fester Rücksetzzeitpunkt",
+          "adaptive_lighting_switches": "Adaptive Lighting Schalter (optional)",
+          "min_brightness_pct": "Minimale Helligkeit (%)"
+        }
+      }
+    },
+    "error": {
+      "lights_required": "Wähle mindestens eine Lampe aus.",
+      "restore_time_required": "Gib einen Rücksetzzeitpunkt an, wenn die Rücksetzung nicht bei Sonnenaufgang erfolgen soll.",
+      "entity_not_found": "Eine oder mehrere Lampen wurden nicht gefunden."
+    }
+  }
+}
