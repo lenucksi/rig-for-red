@@ -1,0 +1,54 @@
+"backlog/tasks/task-24 - GitHub-Repo-erstellen-und-initial-pushen.md"
+  s_4bfe7877ad808f::t_1db4faebc48bed 2,6,12
+  s_4bfe7877ad808f::t_702d57206fd6ab 7
+docs/reference-links.md
+  s_4bfe7877ad808f::t_8fd82e7ebe87bd 3,25-26,42,44,46-52
+"backlog/archive/tasks/task-high.1 - GitHub-Repo-erstellen-und-initial-pushen.md"
+  ai_agent 1-28
+"backlog/archive/tasks/task-medium.3 - Pre-commit-und-Linting-Konfiguration.md"
+  ai_agent 5-6,24-26,28
+"backlog/archive/tasks/task-medium.4 - i18n-All-project-text-to-English.md"
+  ai_agent 1-31
+"backlog/tasks/task-26 - Maximale-Renovate-Bot-Konfiguration.md"
+  s_4bfe7877ad808f::t_eb27dd506b6f10 1-34
+"backlog/archive/tasks/task-medium.1 - Maximale-Renovate-Bot-Konfiguration.md"
+  ai_agent 5-6,24-33
+README.md
+  s_4bfe7877ad808f::t_f2791df59eacd5 1,3-5,7-9,13-17,19,22-23,25-26,30,32-37,39,41-42,44,46-47,49,51-60,62,64,66,69,72,80,82-94,102-104,106,108,110
+docs/ADR-002-testing-strategy.md
+  s_4bfe7877ad808f::t_ddde69660f737a 3,5,7,9,11-16,18,22-23,25-27,30,32-36,38,46-47,54,63,68,70-71,76,78,87,89,91-96,98,102,104,106,109-111
+"backlog/tasks/task-28 - Pre-commit-und-Linting-Konfiguration.md"
+  s_4bfe7877ad808f::t_3ba16a45e4ef1f 1-27
+"backlog/archive/tasks/task-high.2 - Devcontainer-für-HA-Custom-Component-Entwicklung.md"
+  ai_agent 5-6,24-31
+"backlog/archive/tasks/task-medium.2 - Erweiterte-GitHub-Actions-Workflows.md"
+  ai_agent 5-6,24-30
+"backlog/tasks/task-27 - Erweiterte-GitHub-Actions-Workflows.md"
+  s_4bfe7877ad808f::t_b6bb892ab4cbad 1-31
+custom_components/rig_for_red/strings.json
+  s_4bfe7877ad808f::t_0374955ab045e4 6,8-15,20-22
+docs/ADR-001-architecture.md
+  s_4bfe7877ad808f::t_d12bbe48d6d7c3 3,7,13,17,21-24,28,34,38,54-57,61,67,71,73-74,76,80-84,88,94,98-102,106-109,113,119,123-127,131-134
+"backlog/tasks/task-29 - i18n-All-project-text-to-English.md"
+  s_4bfe7877ad808f::t_ddcd656e1344ad 1-3,7,9-25,27,32
+  s_4bfe7877ad808f::t_00fa95be01d7ee 4,8,26,28-31,33-44
+  s_4bfe7877ad808f::t_f93b13202f0484 5-6
+"backlog/tasks/task-25 - Devcontainer-für-HA-Custom-Component-Entwicklung.md"
+  s_4bfe7877ad808f::t_1fdc0d84faccb6 1-32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "fa4d6dd54ee4e4f48569f06037b299e92ba6daee",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
