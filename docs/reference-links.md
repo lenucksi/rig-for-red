@@ -1,6 +1,6 @@
 # Reference Links — Rig for Red
 
-> Alle Referenz-Quellen für die Implementierung der `rig_for_red` Integration.
+> All reference sources for the `rig_for_red` integration implementation.
 
 ## Home Assistant Development
 
@@ -22,8 +22,8 @@
 13. **set_manual_control service** — https://adaptive-lighting.nijho.lt/services/#set_manual_control
 14. **Manual Control / Override** — https://adaptive-lighting.nijho.lt/advanced/manual-control/
 
-> **Wichtig:** `adaptive_lighting` ist eine optionale Abhängigkeit. Die Integration funktioniert ohne AL.
-> Wenn AL-Switches konfiguriert sind, werden alle AL-Calls in `try/except` gewrapped.
+> **Important:** `adaptive_lighting` is an optional dependency. The integration works without AL.
+> If AL switches are configured, all AL calls are wrapped in `try/except`.
 
 ## HACS
 
@@ -39,14 +39,14 @@
 
 19. **pytest-homeassistant-custom-component** — https://github.com/MatthewFlamm/pytest-homeassistant-custom-component
 20. **freezegun** (time mocking) — https://github.com/spulec/freezegun
-21. **integration_blueprint** (Referenz-Repo) — https://github.com/ludeeus/integration_blueprint
+21. **integration_blueprint** (reference repo) — https://github.com/ludeeus/integration_blueprint
 
-## Technische Hinweise
+## Technical Notes
 
-| Thema | Hinweis |
-|-------|---------|
-| `color_temp` | Deprecated seit HA 2026.3 → ausschließlich `color_temp_kelvin` verwenden |
-| `async_track_time_change` | Immer `second=0` übergeben, sonst feuert es jede Sekunde |
-| AL `set_manual_control` | Service-Domain ist `adaptive_lighting`, nicht `switch` |
-| RGBCCT Lichter | Unterstützen sowohl `rgb_color` als auch `color_temp_kelvin` Modi |
-| `asyncio.CancelledError` | In `_dim_lights` fangen, sonst wird Exception propagiert |
+| Topic | Note |
+|-------|------|
+| `color_temp` | Deprecated since HA 2026.3 → use `color_temp_kelvin` exclusively |
+| `async_track_time_change` | Always pass `second=0`, otherwise it fires every second |
+| AL `set_manual_control` | Service domain is `adaptive_lighting`, not `switch` |
+| RGBCCT lights | Support both `rgb_color` and `color_temp_kelvin` modes |
+| `asyncio.CancelledError` | Must be caught in `_dim_lights`, otherwise exception propagates |

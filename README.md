@@ -1,78 +1,75 @@
-# Rig for Red — Submarine Night Mode für Home Assistant
+# Rig for Red — Submarine Night Mode for Home Assistant
 
-> ⚠️ **Early Development** — Dieses Projekt befindet sich in einem frühen Entwicklungsstadium.
-> APIs, Konfiguration und Verhalten können sich jederzeit ändern. Feedback und Contributions
-> sind willkommen!
+> ⚠️ **Early Development** — This project is in early development stage.
+> APIs, configuration and behavior may change at any time. Feedback and contributions
+> are welcome!
 
-> Automatische Rotlicht-Dimmung für den Nachtmodus — inspiriert vom Beleuchtungssystem
-> eines U-Boots. Rig for Red dimmt konfigurierte Leuchten zur Schlafenszeit auf rotes
-> Licht herunter und stellt sie bei Sonnenaufgang (oder zu einer festen Zeit) wieder
-> auf Weißlicht zurück.
+> Automated red-light dimming for night mode — inspired by the lighting system
+> of a submarine. Rig for Red dims configured lights to red at bedtime and
+> restores them to white light at sunrise (or at a fixed time).
 
 ## Features
 
-- **Automatischer Schedule** — tägliche Aktivierung zu konfigurierbarer Zeit an wählbaren Wochentagen
-- **Gestufte Dimmung** — 10-stufiger sanfter Übergang von Weiß- zu Rotlicht (jederzeit abbrechbar)
-- **Sunrise-Restore** — automatische Rückkehr zu Weißlicht bei Sonnenaufgang oder zu fester Zeit
-- **Adaptive Lighting Integration** — optionale Pause/Resume von `adaptive_lighting`-Switches
-- **Konfiguration via UI** — einfacher Setup über Home Assistant Config Flow
+- **Scheduled activation** — daily activation at a configurable time on selected weekdays
+- **Staged dimming** — 10-step smooth transition from white to red light (interruptible at any step)
+- **Sunrise restore** — automatic return to white light at sunrise or at a fixed time
+- **Adaptive Lighting integration** — optional pause/resume of `adaptive_lighting` switches
+- **UI configuration** — simple setup via Home Assistant Config Flow
 
-## Voraussetzungen
+## Requirements
 
 - **Home Assistant** ≥ 2025.3.0
-- **HACS** (empfohlen) oder manuelle Installation
-- **Adaptive Lighting** (optional) — nur wenn `adaptive_lighting`-Switches verwendet werden
+- **HACS** (recommended) or manual installation
+- **Adaptive Lighting** (optional) — only if using `adaptive_lighting` switches
 
-> **Hinweis:** `adaptive_lighting` ist vollständig optional. Die Integration funktioniert
-> ohne installiertes Adaptive Lighting. Alle AL-bezogenen Aufrufe sind in `try/except`
-> gewrapped.
+> **Note:** `adaptive_lighting` is completely optional. The integration works
+> without Adaptive Lighting installed. All AL-related calls are wrapped in `try/except`.
 
 ## Installation
 
-### Via HACS (empfohlen)
+### Via HACS (recommended)
 
-1. Öffne HACS in Home Assistant
-2. Gehe zu "Integrationen"
-3. Klicke auf das Menü (drei Punkte) → "Custom repositories"
-4. Füge `https://github.com/<dein-repo>/rig-for-red` hinzu (Kategorie: Integration)
-5. Suche nach "Rig for Red" und installiere
-6. Starte Home Assistant neu
+1. Open HACS in Home Assistant
+2. Go to "Integrations"
+3. Click the menu (three dots) → "Custom repositories"
+4. Add `https://github.com/lenucksi/rig-for-red` (Category: Integration)
+5. Search for "Rig for Red" and install
+6. Restart Home Assistant
 
-### Manuelle Installation
+### Manual Installation
 
-1. Kopiere das Verzeichnis `custom_components/rig_for_red/` in dein HA `custom_components/` Verzeichnis
-2. Starte Home Assistant neu
+1. Copy the `custom_components/rig_for_red/` directory into your HA `custom_components/` directory
+2. Restart Home Assistant
 
-## Konfiguration
+## Configuration
 
-Nach der Installation über Home Assistant → Einstellungen → Geräte & Dienste → "Integration hinzufügen"
-→ "Rig for Red" suchen.
+After installation: Home Assistant → Settings → Devices & Services → "Add integration"
+→ Search for "Rig for Red".
 
-### Konfigurationsfelder
+### Configuration Fields
 
-| Feld | Typ | Required | Default | Beschreibung |
-|------|-----|----------|---------|--------------|
-| `lights` | `entity_id[]` | Ja | — | Licht-Entities, die gedimmt werden sollen |
-| `schedule_days` | `string[]` | Ja | — | Wochentage für Aktivierung (`mon, tue, wed, thu, fri, sat, sun`) |
-| `schedule_time` | `time` | Ja | — | Uhrzeit der Aktivierung |
-| `dim_duration_minutes` | `number` | Ja | `60` | Dauer des Dimm-Vorgangs in Minuten (1–240) |
-| `restore_at_sunrise` | `boolean` | Ja | `true` | Bei Sonnenaufgang zurück zum Weißlicht |
-| `restore_time` | `time` | Nein | — | Feste Uhrzeit für Restore (nur wenn `restore_at_sunrise: false`) |
-| `adaptive_lighting_switches` | `entity_id[]` | Nein | — | Adaptive Lighting Switch-Entities zum Pausieren |
-| `min_brightness_pct` | `number` | Ja | `5` | Minimale Helligkeit in Prozent (1–10 %) |
+| Field | Type | Required | Default | Description |
+|-------|------|----------|---------|-------------|
+| `lights` | `entity_id[]` | Yes | — | Light entities to dim |
+| `schedule_days` | `string[]` | Yes | — | Weekdays for activation (`mon, tue, wed, thu, fri, sat, sun`) |
+| `schedule_time` | `time` | Yes | — | Activation time |
+| `dim_duration_minutes` | `number` | Yes | `60` | Dimming duration in minutes (1–240) |
+| `restore_at_sunrise` | `boolean` | Yes | `true` | Restore to white light at sunrise |
+| `restore_time` | `time` | No | — | Fixed restore time (only if `restore_at_sunrise: false`) |
+| `adaptive_lighting_switches` | `entity_id[]` | No | — | Adaptive Lighting switch entities to pause |
+| `min_brightness_pct` | `number` | Yes | `5` | Minimum brightness in percent (1–10 %) |
 
-> **Hinweis zu `restore_time`:** Wenn `restore_at_sunrise` auf `false` gesetzt ist, muss
-> `restore_time` angegeben werden.
+> **Note on `restore_time`:** If `restore_at_sunrise` is set to `false`, `restore_time` must be provided.
 
-## Beispiel: Zigbee-Button für manuelle Steuerung
+## Example: Zigbee Button for Manual Control
 
-Über HA Automatisierungen kann die Integration mit einem Zigbee-Button verknüpft werden:
+Via HA automations, the integration can be linked to a Zigbee button:
 
 ```yaml
-alias: "Rig for Red — Toggle Nachtmodus"
+alias: "Rig for Red — Toggle Night Mode"
 trigger:
   - platform: state
-    entity_id: sensor.dein_knopf_action
+    entity_id: sensor.your_button_action
     to: "single"
 action:
   - service: switch.toggle
@@ -80,9 +77,21 @@ action:
       entity_id: switch.rig_for_red_night_mode
 ```
 
-## Entwicklung
+Alternatively, use the custom services directly:
 
-### Tests ausführen
+```yaml
+# Activate red lights
+action:
+  service: rig_for_red.trigger_rig
+
+# Restore white lights
+action:
+  service: rig_for_red.restore_lights
+```
+
+## Development
+
+### Running Tests
 
 ```bash
 pytest tests/ --cov=custom_components/rig_for_red --cov-report=term-missing
@@ -90,15 +99,14 @@ pytest tests/ --cov=custom_components/rig_for_red --cov-report=term-missing
 
 ### CI
 
-- `hassfest` — manifest.json Validierung
-- `HACS validation` — HACS-Formatprüfung
-- `pytest` — Test Suite mit Coverage ≥80%
+- `hassfest` — manifest.json validation
+- `HACS validation` — HACS format check
+- `pytest` — test suite with ≥80% coverage
 
-### Architektur
+### Architecture
 
-Siehe `docs/ADR-001-architecture.md` für die vollständige Dokumentation der
-Architekturentscheidungen.
+See `docs/ADR-001-architecture.md` for the complete architecture decision records.
 
-## Lizenz
+## License
 
 MIT

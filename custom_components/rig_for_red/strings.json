@@ -3,23 +3,23 @@
     "step": {
       "user": {
         "title": "Rig for Red",
-        "description": "Konfiguriere das Submarine Night Mode für deine Lampen.",
+        "description": "Configure the Submarine Night Mode for your lights.",
         "data": {
-          "lights": "Lampen (mindestens eine erforderlich)",
-          "schedule_days": "Wochentage",
-          "schedule_time": "Aktivierungszeit",
-          "dim_duration_minutes": "Dimmdauer (Minuten)",
-          "restore_at_sunrise": "Bei Sonnenaufgang zurücksetzen",
-          "restore_time": "Fester Rücksetzzeitpunkt",
-          "adaptive_lighting_switches": "Adaptive Lighting Schalter (optional)",
-          "min_brightness_pct": "Minimale Helligkeit (%)"
+          "lights": "Lights (at least one required)",
+          "schedule_days": "Weekdays",
+          "schedule_time": "Activation time",
+          "dim_duration_minutes": "Dim duration (minutes)",
+          "restore_at_sunrise": "Restore at sunrise",
+          "restore_time": "Fixed restore time",
+          "adaptive_lighting_switches": "Adaptive Lighting switches (optional)",
+          "min_brightness_pct": "Minimum brightness (%)"
         }
       }
     },
     "error": {
-      "lights_required": "Wähle mindestens eine Lampe aus.",
-      "restore_time_required": "Gib einen Rücksetzzeitpunkt an, wenn die Rücksetzung nicht bei Sonnenaufgang erfolgen soll.",
-      "entity_not_found": "Eine oder mehrere Lampen wurden nicht gefunden."
+      "lights_required": "Please select at least one light.",
+      "restore_time_required": "Please provide a restore time when not restoring at sunrise.",
+      "entity_not_found": "One or more lights were not found."
     }
   }
 }
