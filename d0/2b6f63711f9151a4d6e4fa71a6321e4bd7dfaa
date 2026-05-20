@@ -1,0 +1,19 @@
+README.md
+  s_4bfe7877ad808f::t_5befde413776e2 3-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "d02b6f63711f9151a4d6e4fa71a6321e4bd7dfaa",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
