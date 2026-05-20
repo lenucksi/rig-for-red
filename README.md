@@ -1,5 +1,9 @@
 # Rig for Red — Submarine Night Mode für Home Assistant
 
+> ⚠️ **Early Development** — Dieses Projekt befindet sich in einem frühen Entwicklungsstadium.
+> APIs, Konfiguration und Verhalten können sich jederzeit ändern. Feedback und Contributions
+> sind willkommen!
+
 > Automatische Rotlicht-Dimmung für den Nachtmodus — inspiriert vom Beleuchtungssystem
 > eines U-Boots. Rig for Red dimmt konfigurierte Leuchten zur Schlafenszeit auf rotes
 > Licht herunter und stellt sie bei Sonnenaufgang (oder zu einer festen Zeit) wieder
