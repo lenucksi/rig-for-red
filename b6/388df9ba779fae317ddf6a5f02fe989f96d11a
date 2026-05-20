@@ -1,0 +1,108 @@
+"backlog/tasks/task-medium.3 - Pre-commit-und-Linting-Konfiguration.md"
+  s_4bfe7877ad808f::t_3e58c0ae8d2a37 5-6
+  s_4bfe7877ad808f::t_1aad3ae6758ef9 4,8,30-32,34-35,37-48
+.github/ISSUE_TEMPLATE/config.yml
+  s_ffdc59f6e60086::t_5d514c0c945d94 1-5
+"backlog/tasks/task-high.1 - GitHub-Repo-erstellen-und-initial-pushen.md"
+  s_4bfe7877ad808f::t_f68d0e670c900c 4,7,28-32,34-45
+.github/renovate.json
+  s_15bd12962f02dd::t_81b12c77c9bded 1-78
+.github/workflows/renovate.yml
+  s_15bd12962f02dd::t_ffc05324be3376 1-24
+pyproject.toml
+  s_a1068fd05257a3::t_616d6bb99945d2 1-72
+scripts/develop
+  s_fe6d8e66d4c545::t_d514b4c07c5ec5 1-10
+.devcontainer/devcontainer.json
+  s_fe6d8e66d4c545::t_41ac54a8fc163f 1-43
+scripts/setup-dependencies
+  s_fe6d8e66d4c545::t_2f1097133719aa 1-8
+.github/workflows/pre-commit.yml
+  s_ffdc59f6e60086::t_925c2d8f08e5b9 1-14
+.github/workflows/release-drafter.yml
+  s_ffdc59f6e60086::t_1be204e37daee9 1-21
+.github/workflows/labeler.yml
+  s_ffdc59f6e60086::t_4260ef211f11a7 1-15
+.devcontainer/Dockerfile
+  s_fe6d8e66d4c545::t_6e1cad2078b449 1
+.github/CODEOWNERS
+  s_ffdc59f6e60086::t_af941f7a52a3f8 1
+"backlog/tasks/task-medium.2 - Erweiterte-GitHub-Actions-Workflows.md"
+  s_ffdc59f6e60086::t_457f1b35d458af 33-39,41-44,46-50,52
+  s_4bfe7877ad808f::t_3e58c0ae8d2a37 5-6
+  ai_agent 4,8,45,51
+"backlog/tasks/task-high.2 - Devcontainer-für-HA-Custom-Component-Entwicklung.md"
+  s_4bfe7877ad808f::t_3e58c0ae8d2a37 5-6
+  s_4bfe7877ad808f::t_5758e49761983d 4,8,32-39,41-52
+.github/labeler.yml
+  s_ffdc59f6e60086::t_9e8d91cc388feb 1-14
+.github/ISSUE_TEMPLATE/bug_report.yml
+  s_ffdc59f6e60086::t_7427319a5872e4 1-27
+.github/ISSUE_TEMPLATE/feature_request.yml
+  s_ffdc59f6e60086::t_5722ff272cff12 1-24
+.pre-commit-config.yaml
+  s_a1068fd05257a3::t_47eccd7b164238 1-29
+scripts/lint
+  s_a1068fd05257a3::t_98f44156aa468b 1-14
+"backlog/tasks/task-medium.1 - Maximale-Renovate-Bot-Konfiguration.md"
+  s_4bfe7877ad808f::t_b00b3aa8c1a9e1 4,8,29-38,40-51
+  s_4bfe7877ad808f::t_3e58c0ae8d2a37 5-6
+.github/workflows/stale.yml
+  s_ffdc59f6e60086::t_f9ce7796b46f04 1-25
+.github/release-drafter.yml
+  s_ffdc59f6e60086::t_829e42550fffe8 1-26
+scripts/setup-symlinks
+  s_fe6d8e66d4c545::t_25815453c5df35 1-5
+.github/FUNDING.yml
+  s_ffdc59f6e60086::t_563269d4c10731 1
+scripts/setup-devcontainer
+  s_fe6d8e66d4c545::t_37d081f7ec10df 1-12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "b6388df9ba779fae317ddf6a5f02fe989f96d11a",
+  "prompts": {},
+  "sessions": {
+    "s_15bd12962f02dd": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8cc674affe66S1zOFqhwilYf",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    },
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    },
+    "s_a1068fd05257a3": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8cc164cffefODeqgCTDIaJKp",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    },
+    "s_fe6d8e66d4c545": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8cc8721ffehM7E5tcOIqaZeQ",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    },
+    "s_ffdc59f6e60086": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8cc3b9bffeMX9zaty9NOsgZ9",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
