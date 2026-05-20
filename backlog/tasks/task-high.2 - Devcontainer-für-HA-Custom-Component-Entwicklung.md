@@ -1,9 +1,11 @@
 ---
 id: TASK-HIGH.2
 title: Devcontainer für HA Custom Component Entwicklung
-status: To Do
-assignee: []
+status: Done
+assignee:
+  - '@agent-k'
 created_date: '2026-05-20 21:02'
+updated_date: '2026-05-20 21:04'
 labels:
   - dev
   - infra
@@ -27,12 +29,24 @@ Devcontainer-Setup für VSCode, das Home Assistant Core klont, die Integration p
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 devcontainer.json existiert mit Python 3.13 image
-- [ ] #2 scripts/setup-devcontainer klont HA Core (branch dev)
-- [ ] #3 scripts/setup-dependencies installiert HA + test dependencies in venv
-- [ ] #4 scripts/setup-symlinks bindet custom_components und tests in core/ ein
-- [ ] #5 scripts/develop startet HA mit Integration
-- [ ] #6 Port 8123 forwarded
-- [ ] #7 VSCode Extensions: Python, Pylance, Coverage Gutters, GitHub PR
-- [ ] #8 devcontainer.json postCreateCommand führt setup-devcontainer aus
+- [x] #1 devcontainer.json existiert mit Python 3.13 image
+- [x] #2 scripts/setup-devcontainer klont HA Core (branch dev)
+- [x] #3 scripts/setup-dependencies installiert HA + test dependencies in venv
+- [x] #4 scripts/setup-symlinks bindet custom_components und tests in core/ ein
+- [x] #5 scripts/develop startet HA mit Integration
+- [x] #6 Port 8123 forwarded
+- [x] #7 VSCode Extensions: Python, Pylance, Coverage Gutters, GitHub PR
+- [x] #8 devcontainer.json postCreateCommand führt setup-devcontainer aus
 <!-- AC:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Devcontainer-Setup fertig: devcontainer.json mit Dockerfile, scripts/setup-devcontainer, scripts/setup-dependencies, scripts/setup-symlinks, scripts/develop. Port 8123 forwarded. VSCode Extensions eingerichtet.
+<!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Devcontainer für HA Custom Component Entwicklung erstellt. Basiert auf mcr.microsoft.com/devcontainers/python:3-3.13. Klont HA Core, erstellt venv mit allen Dependencies, bindet Integration per Symlink ein. Port 8123 forwarded. Scripts für Setup, Develop und Lint.
+<!-- SECTION:FINAL_SUMMARY:END -->

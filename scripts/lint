@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+cd "$(dirname "$0")/.."
+
+echo "=== Pre-commit Hooks ==="
+pre-commit run --all-files
+
+echo ""
+echo "=== Ruff ==="
+ruff check custom_components/rig_for_red/ tests/
+
+echo ""
+echo "=== MyPy ==="
+mypy custom_components/rig_for_red/

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+cd "$(dirname "$0")/.."
+
+uv pip install -r core/requirements.txt
+uv pip install -r core/requirements_test.txt
+uv pip install -e core/
+pip install -r requirements_test.txt

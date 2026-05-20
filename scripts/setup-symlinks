@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+cd "$(dirname "$0")/.."
+
+ln -sf "$(pwd)/custom_components/rig_for_red" core/homeassistant/components/rig_for_red

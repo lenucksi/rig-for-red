@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=75.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "rig-for-red"
+version = "0.1.0"
+description = "Rig for Red — Submarine Night Mode for Home Assistant"
+requires-python = ">=3.13"
+
+[tool.ruff]
+target-version = "py313"
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    "N",   # pep8-naming
+    "W",   # pycodestyle warnings
+    "UP",  # pyupgrade
+    "YTT", # flake8-2020
+    "ASYNC", # flake8-async
+    "S",   # flake8-bandit (security)
+    "BLE", # flake8-blind-except
+    "B",   # flake8-bugbear
+    "A",   # flake8-builtins
+    "COM", # flake8-commas
+    "C4",  # flake8-comprehensions
+    "DTZ", # flake8-datetimez
+    "T10", # flake8-debugger
+    "EM",  # flake8-errmsg
+    "EXE", # flake8-executable
+    "ISC", # flake8-implicit-str-concat
+    "ICN", # flake8-import-conventions
+    "G",   # flake8-logging-format
+    "LOG", # flake8-logging
+    "NPY", # NumPy-specific
+    "PD",  # pandas-vet
+    "PIE", # flake8-pie
+    "T20", # flake8-print
+    "PYI", # flake8-pyi
+    "PT",  # flake8-pytest-style
+    "Q",   # flake8-quotes
+    "RSE", # flake8-raise
+    "RET", # flake8-return
+    "SLF", # flake8-self
+    "SIM", # flake8-simplify
+    "TID", # flake8-tidy-imports
+    "INT", # flake8-gettext
+    "ARG", # flake8-unused-arguments
+    "PTH", # flake8-use-pathlib
+    "TD",  # flake8-todos
+    "FBT", # flake8-boolean-trap
+    "CPY", # flake8-copyright
+    "RUF", # ruff-specific rules
+    "PERF", # perflint
+    "FURB", # refurb
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "SLF001", "PLR", "ARG"]
+"scripts/**" = ["S", "INP001"]
+
+[tool.mypy]
+python_version = "3.13"
+ignore_missing_imports = true
+strict = false
+warn_unreachable = true
+disallow_untyped_defs = false
+exclude = ["tests/", "scripts/", ".devcontainer/"]

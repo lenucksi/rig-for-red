@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+cd "$(dirname "$0")/.."
+
+if [[ ! -d "core" ]]; then
+    git clone --depth 1 --branch dev https://github.com/home-assistant/core.git
+fi
+
+pip install --quiet uv
+uv venv --clear --python 3.13
+./scripts/setup-dependencies
+./scripts/setup-symlinks

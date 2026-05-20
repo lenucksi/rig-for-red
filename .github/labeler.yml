@@ -1,0 +1,14 @@
+python:
+  - "**/*.py"
+yaml:
+  - "**/*.yml"
+  - "**/*.yaml"
+json:
+  - "**/*.json"
+documentation:
+  - "docs/**/*"
+  - "README.md"
+ci:
+  - ".github/**/*"
+tests:
+  - "tests/**/*"
