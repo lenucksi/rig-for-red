@@ -1,0 +1,22 @@
+custom_components/rig_for_red/translations/en.json
+  s_4bfe7877ad808f::t_b9abdf2d4d7d77 1-35
+tests/components/rig_for_red/test_translations.py
+  s_4bfe7877ad808f::t_f472c3f0db603e 86-101
+  s_4bfe7877ad808f::t_c18786b3fc95ad 45-75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "c46dcd689a50c4f6ef85b61038057c318752243e",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
