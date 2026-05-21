@@ -1,0 +1,21 @@
+custom_components/rig_for_red/manifest.json
+  s_4bfe7877ad808f::t_0f5c0b57c4d641 8
+"backlog/tasks/task-42 - HACS-Validation-Fixes-codeowners-brands-topics.md"
+  s_4bfe7877ad808f::t_237ade8a2b69ae 1-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "6d448eff89d458f77ad76f976f98265928407451",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
