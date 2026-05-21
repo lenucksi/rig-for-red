@@ -1,0 +1,60 @@
+custom_components/rig_for_red/translations/it.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+.github/workflows/conventional-commits.yml
+  s_4bfe7877ad808f::t_2ba8fde7570492 17-19
+  s_4bfe7877ad808f::t_8176314cd5ac3d 20-22
+custom_components/rig_for_red/translations/es.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/translations/ta.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/translations/nl.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/translations/pt.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/strings.json
+  s_4bfe7877ad808f::t_0582e2a82cf88b 30-39
+custom_components/rig_for_red/translations/fi.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/translations/en.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/translations/sv.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/translations/da.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/translations/de.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/translations/zh-TW.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/translations/nb.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/translations/fr.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/translations/pl.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+custom_components/rig_for_red/translations/hi.json
+  s_bb0e879e6fa330::t_3819e9e5b7650d 30-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "c133edce0e94efddecdbfd72174f567ab5baa535",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    },
+    "s_bb0e879e6fa330": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b372ace6ffetypm3n8qWYiAyX",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
