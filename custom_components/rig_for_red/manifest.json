@@ -5,6 +5,7 @@
   "config_flow": true,
   "requirements": [],
   "dependencies": [],
+  "issue_tracker": "https://github.com/lenucksi/rig-for-red/issues",
   "codeowners": ["@lenucksi"],
   "iot_class": "local_push"
 }
