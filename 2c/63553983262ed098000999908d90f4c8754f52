@@ -1,0 +1,32 @@
+.github/workflows/pre-commit.yml
+  s_4bfe7877ad808f::t_b102b07e790953 6
+CHANGELOG.md
+  s_4bfe7877ad808f::t_88855b3d89f0c1 1-24
+.release-please-manifest.json
+  s_4bfe7877ad808f::t_aaeba39e54c384 1-3
+custom_components/rig_for_red/manifest.json
+  s_4bfe7877ad808f::t_5f96bb4ee3afe3 4
+"backlog/tasks/task-35 - CI-CD-Migration-von-Release-Drafter-zu-Release-Please.md"
+  s_4bfe7877ad808f::t_b300350a879bdf 1-3,7,9-46
+  s_4bfe7877ad808f::t_1bfc08cd1db278 4-6,8,47-52
+release-please-config.json
+  s_4bfe7877ad808f::t_6f03e3d91d1eeb 1-11
+.github/workflows/release-please.yml
+  s_4bfe7877ad808f::t_56440ddd5ba654 1,9-10,13,16-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "2c63553983262ed098000999908d90f4c8754f52",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
