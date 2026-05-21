@@ -1,0 +1,27 @@
+prek.toml
+  s_4bfe7877ad808f::t_0227e5e6ae31cd 21
+  s_4bfe7877ad808f::t_507e55d4df1c4b 6-7
+  s_4bfe7877ad808f::t_aa5e387e36aebd 22-23
+pyproject.toml
+  s_4bfe7877ad808f::t_18988f7cd4523f 56
+  s_4bfe7877ad808f::t_813533905633a9 62-63
+"backlog/tasks/task-39 - prek.toml-pyproject.toml-aufräumen-trailing-whitespace-ruff-format-CPY-COM812.md"
+  s_4bfe7877ad808f::t_faeaa25d2139cd 6-8,10
+  s_4bfe7877ad808f::t_0459a08a90d823 1-5,9,11-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "e06c4d05a0e243775a20eedc58b64105069bf9e0",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
