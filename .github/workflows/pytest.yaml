@@ -63,9 +63,8 @@ jobs:
         shell: bash
         run: |
           uv venv --python 3.14
-          uv pip install -r core/requirements.txt
+          uv pip install -r core/requirements_all.txt
           uv pip install -r core/requirements_test.txt
-          uv pip install aiohasupervisor pytest-cov freezegun
           uv pip install -e core/
       - name: Create symlinks
         shell: bash
