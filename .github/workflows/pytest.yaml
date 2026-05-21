@@ -41,9 +41,9 @@ jobs:
         run: docker run --rm rig-for-red-test --timeout=30
 
   # test-dev (Core checkout) — DISABLED
-  # HA dev branch requires Python >=3.14, but pytest-asyncio has async generator
-  # fixture compatibility issues with Python 3.14 ("Async generator fixture didn't stop").
-  # No upstream fix yet (pytest-asyncio #? / home-assistant/core #?).
+  # HA dev branch requires Python >=3.14 but pytest-asyncio can't handle it
+  # ("Async generator fixture didn't stop"). Upstream issue, nothing we can fix here.
+  # Docker jobs cover stable HA releases (2026.1.3, 2026.2.3) — these work perfectly.
   # Re-enable when pytest-asyncio supports Python 3.14.
   #
   # Reference config with current SHAs:
