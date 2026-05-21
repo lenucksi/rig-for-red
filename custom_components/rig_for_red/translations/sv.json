@@ -24,6 +24,19 @@
           "adaptive_lighting_switches": "Valfritt: Adaptive Lighting-omkopplarenheter som överlappar med dina valda lampor. Rig for Red stänger av dessa medan rött läge är aktivt så att Adaptive Lighting inte åsidosätter dimningen. Lämna tomt om du inte använder Adaptive Lighting.",
           "min_brightness_pct": "Den lägsta ljusstyrkan vid slutet av dimningsövergången."
         }
+      },
+      "reconfigure": {
+        "title": "Omkonfigurera Rig for Red",
+        "data_description": {
+          "lights": "Välj de lampor som ska växla till rött under ubåtsnattläget.",
+          "schedule_days": "Välj de vardagar då nattlägesschemat ska aktiveras.",
+          "schedule_time": "Tiden då lamporna ska börja dimmas till rött.",
+          "dim_duration_minutes": "Hur lång tid dimningsövergången från vitt till rött ska ta.",
+          "restore_at_sunrise": "Om aktiverat återställs lampor till vitt vid soluppgång istället för en fast tid.",
+          "restore_time": "Om du inte återställer vid soluppgång, ange en fast tid för att återställa vit belysning.",
+          "adaptive_lighting_switches": "Valfritt: Adaptive Lighting-omkopplarenheter som överlappar med dina valda lampor. Rig for Red stänger av dessa medan rött läge är aktivt så att Adaptive Lighting inte åsidosätter dimningen. Lämna tomt om du inte använder Adaptive Lighting.",
+          "min_brightness_pct": "Den lägsta ljusstyrkan vid slutet av dimningsövergången."
+        }
       }
     },
     "error": {

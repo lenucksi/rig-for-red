@@ -43,13 +43,16 @@ EXPECTED_ENTITY_KEYS = [
 ]
 
 NON_EN_LANGUAGES = ["de", "fr", "es", "it", "pt", "nl", "da", "sv", "nb", "fi", "pl", "zh-TW", "hi", "ta"]
-CONFIG_LANGUAGES = NON_EN_LANGUAGES + ["en"]
+CONFIG_LANGUAGES = [*NON_EN_LANGUAGES, "en"]
 
 
 @pytest.mark.parametrize("language", CONFIG_LANGUAGES)
 async def test_config_translations_exist(hass: HomeAssistant, language: str) -> None:
     translations = await async_get_translations(
-        hass, language, "config", integrations=[DOMAIN]
+        hass,
+        language,
+        "config",
+        integrations=[DOMAIN],
     )
     prefix = f"component.{DOMAIN}."
     our_keys = {k.removeprefix(prefix): v for k, v in translations.items() if k.startswith(prefix)}
@@ -62,7 +65,10 @@ async def test_config_translations_exist(hass: HomeAssistant, language: str) -> 
 @pytest.mark.parametrize("language", NON_EN_LANGUAGES)
 async def test_selector_translations_exist(hass: HomeAssistant, language: str) -> None:
     translations = await async_get_translations(
-        hass, language, "selector", integrations=[DOMAIN]
+        hass,
+        language,
+        "selector",
+        integrations=[DOMAIN],
     )
     prefix = f"component.{DOMAIN}."
     our_keys = {k.removeprefix(prefix): v for k, v in translations.items() if k.startswith(prefix)}
@@ -75,7 +81,10 @@ async def test_selector_translations_exist(hass: HomeAssistant, language: str) -
 @pytest.mark.parametrize("language", NON_EN_LANGUAGES)
 async def test_entity_translations_exist(hass: HomeAssistant, language: str) -> None:
     translations = await async_get_translations(
-        hass, language, "entity", integrations=[DOMAIN]
+        hass,
+        language,
+        "entity",
+        integrations=[DOMAIN],
     )
     prefix = f"component.{DOMAIN}."
     our_keys = {k.removeprefix(prefix): v for k, v in translations.items() if k.startswith(prefix)}

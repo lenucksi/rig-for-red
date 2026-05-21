@@ -24,6 +24,19 @@
           "adaptive_lighting_switches": "Optionnel : entités d'interrupteur Adaptive Lighting qui chevauchent vos lumières sélectionnées. Rig for Red les désactivera pendant que le mode rouge est actif afin qu'Adaptive Lighting n'annule pas la gradation. Laissez vide si vous n'utilisez pas Adaptive Lighting.",
           "min_brightness_pct": "Le niveau de luminosité minimum à la fin de la transition de gradation."
         }
+      },
+      "reconfigure": {
+        "title": "Reconfigurer Rig for Red",
+        "data_description": {
+          "lights": "Choisissez les lumières qui doivent passer au rouge pendant le mode nuit sous-marin.",
+          "schedule_days": "Sélectionnez les jours de la semaine où le mode nuit doit s'activer.",
+          "schedule_time": "L'heure à laquelle les lumières doivent commencer à diminuer vers le rouge.",
+          "dim_duration_minutes": "Durée de la transition de gradation du blanc au rouge.",
+          "restore_at_sunrise": "Si activé, les lumières reviendront au blanc au lever du soleil au lieu d'une heure fixe.",
+          "restore_time": "Si vous ne restaurez pas au lever du soleil, définissez une heure fixe pour restaurer l'éclairage blanc.",
+          "adaptive_lighting_switches": "Optionnel : entités d'interrupteur Adaptive Lighting qui chevauchent vos lumières sélectionnées. Rig for Red les désactivera pendant que le mode rouge est actif afin qu'Adaptive Lighting n'annule pas la gradation. Laissez vide si vous n'utilisez pas Adaptive Lighting.",
+          "min_brightness_pct": "Le niveau de luminosité minimum à la fin de la transition de gradation."
+        }
       }
     },
     "error": {

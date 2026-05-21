@@ -4,12 +4,11 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from .const import DOMAIN
 from .coordinator import RigForRedCoordinator
 
 
 async def async_setup_entry(
-    hass: HomeAssistant,
+    _hass: HomeAssistant,
     entry: ConfigEntry,
     async_add_entities: AddEntitiesCallback,
 ) -> None:
@@ -18,7 +17,6 @@ async def async_setup_entry(
 
 
 class RigForRedSwitch(CoordinatorEntity, SwitchEntity):
-
     _attr_has_entity_name = True
     _attr_translation_key = "rig_for_red"
 
@@ -38,8 +36,8 @@ class RigForRedSwitch(CoordinatorEntity, SwitchEntity):
     def is_on(self) -> bool:
         return self.coordinator.is_active
 
-    async def async_turn_on(self, **kwargs) -> None:
+    async def async_turn_on(self, **_kwargs) -> None:
         await self.coordinator.async_activate()
 
-    async def async_turn_off(self, **kwargs) -> None:
+    async def async_turn_off(self, **_kwargs) -> None:
         await self.coordinator.async_restore()

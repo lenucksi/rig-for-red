@@ -1,5 +1,6 @@
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
+
 from .const import DOMAIN
 from .coordinator import RigForRedCoordinator
 
@@ -7,14 +8,16 @@ PLATFORMS: list[str] = ["switch"]
 
 
 async def async_trigger_rig(coordinator):
-    async def handler(call):
+    async def handler(_call):
         await coordinator.async_activate()
+
     return handler
 
 
 async def async_restore_lights(coordinator):
-    async def handler(call):
+    async def handler(_call):
         await coordinator.async_restore()
+
     return handler
 
 

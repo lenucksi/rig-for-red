@@ -24,6 +24,19 @@
           "adaptive_lighting_switches": "Opzionale: entità interruttore Adaptive Lighting che si sovrappongono alle tue luci selezionate. Rig for Red le spegnerà mentre la modalità rossa è attiva in modo che Adaptive Lighting non sovrascriva la dimmerazione. Lascia vuoto se non usi Adaptive Lighting.",
           "min_brightness_pct": "Il livello di luminosità minimo alla fine della transizione di dimmerazione."
         }
+      },
+      "reconfigure": {
+        "title": "Riconfigura Rig for Red",
+        "data_description": {
+          "lights": "Scegli le luci che devono passare al rosso durante la modalità notturna sottomarina.",
+          "schedule_days": "Seleziona i giorni della settimana in cui attivare la modalità notturna.",
+          "schedule_time": "L'ora in cui le luci devono iniziare a dimmerare verso il rosso.",
+          "dim_duration_minutes": "Quanto deve durare la transizione di dimmerazione dal bianco al rosso.",
+          "restore_at_sunrise": "Se abilitato, le luci torneranno al bianco all'alba invece che a un'ora fissa.",
+          "restore_time": "Se non si ripristina all'alba, imposta un'ora fissa per ripristinare l'illuminazione bianca.",
+          "adaptive_lighting_switches": "Opzionale: entità interruttore Adaptive Lighting che si sovrappongono alle tue luci selezionate. Rig for Red le spegnerà mentre la modalità rossa è attiva in modo che Adaptive Lighting non sovrascriva la dimmerazione. Lascia vuoto se non usi Adaptive Lighting.",
+          "min_brightness_pct": "Il livello di luminosità minimo alla fine della transizione di dimmerazione."
+        }
       }
     },
     "error": {

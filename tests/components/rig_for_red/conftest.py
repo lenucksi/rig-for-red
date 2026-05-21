@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 
 import pytest
 from homeassistant.const import STATE_ON
@@ -25,7 +25,7 @@ from . import MockConfigEntry
 
 @pytest.fixture(autouse=True)
 def auto_enable_custom_integrations(enable_custom_integrations):
-    yield
+    return
 
 
 @pytest.fixture
@@ -73,23 +73,35 @@ def mock_light_services(hass):
 
 @pytest.fixture
 def mock_light_states(hass):
-    hass.states.async_set("light.bedroom", STATE_ON, {
-        "brightness": 200,
-        "rgb_color": (255, 200, 100),
-    })
-    hass.states.async_set("light.living_room", STATE_ON, {
-        "brightness": 180,
-        "rgb_color": (100, 200, 255),
-    })
+    hass.states.async_set(
+        "light.bedroom",
+        STATE_ON,
+        {
+            "brightness": 200,
+            "rgb_color": (255, 200, 100),
+        },
+    )
+    hass.states.async_set(
+        "light.living_room",
+        STATE_ON,
+        {
+            "brightness": 180,
+            "rgb_color": (100, 200, 255),
+        },
+    )
 
 
 @pytest.fixture
 def mock_sun_state(hass):
-    next_rising = (datetime.utcnow() + timedelta(hours=2)).isoformat()
-    hass.states.async_set("sun.sun", "above_horizon", {
-        "next_rising": next_rising,
-        "next_setting": datetime.utcnow().isoformat(),
-    })
+    next_rising = (datetime.now(UTC) + timedelta(hours=2)).isoformat()
+    hass.states.async_set(
+        "sun.sun",
+        "above_horizon",
+        {
+            "next_rising": next_rising,
+            "next_setting": datetime.now(UTC).isoformat(),
+        },
+    )
 
 
 @pytest.fixture

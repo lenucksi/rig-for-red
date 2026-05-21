@@ -24,6 +24,19 @@
           "adaptive_lighting_switches": "Valgfrit: Adaptive Lighting-kontaktenheder, der overlapper med dine valgte lys. Rig for Red slår disse fra, mens rød tilstand er aktiv, så Adaptive Lighting ikke tilsidesætter dæmpningen. Lad være tom, hvis du ikke bruger Adaptive Lighting.",
           "min_brightness_pct": "Det minimale lysstyrkeniveau ved slutningen af dæmpningsovergangen."
         }
+      },
+      "reconfigure": {
+        "title": "Genkonfigurer Rig for Red",
+        "data_description": {
+          "lights": "Vælg de lys, der skal skifte til rød under undervands-nattilstanden.",
+          "schedule_days": "Vælg de ugedage, hvor nattilstandsplanen skal aktiveres.",
+          "schedule_time": "Tidspunktet, hvor lysene skal begynde at dæmpe til rød.",
+          "dim_duration_minutes": "Hvor lang tid dæmpningsovergangen fra hvid til rød skal tage.",
+          "restore_at_sunrise": "Hvis aktiveret, vil lys blive gendannet til hvid ved solopgang i stedet for et fast tidspunkt.",
+          "restore_time": "Hvis der ikke gendannes ved solopgang, indstil et fast tidspunkt til at gendanne hvid belysning.",
+          "adaptive_lighting_switches": "Valgfrit: Adaptive Lighting-kontaktenheder, der overlapper med dine valgte lys. Rig for Red slår disse fra, mens rød tilstand er aktiv, så Adaptive Lighting ikke tilsidesætter dæmpningen. Lad være tom, hvis du ikke bruger Adaptive Lighting.",
+          "min_brightness_pct": "Det minimale lysstyrkeniveau ved slutningen af dæmpningsovergangen."
+        }
       }
     },
     "error": {

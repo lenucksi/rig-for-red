@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@agent-k'
 created_date: '2026-05-21 16:05'
-updated_date: '2026-05-21 16:06'
+updated_date: '2026-05-21 16:43'
 labels: []
 dependencies: []
 references:
@@ -36,13 +36,13 @@ Vergleich:
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 release-drafter.yml Config + Workflow gelöscht
-- [ ] #2 .github/workflows/release-please.yml erstellt (on push to main)
-- [ ] #3 release-please-config.json mit extra-files für manifest.json
-- [ ] #4 .release-please-manifest.json mit aktueller Version
-- [ ] #5 CHANGELOG.md initialisiert (Markdown)
-- [ ] #6 pre-commit.yml trigger auf main statt master
-- [ ] #7 Release Please erzeugt Release-PR bei nächstem push mit conventional commit
+- [x] #1 release-drafter.yml Config + Workflow gelöscht
+- [x] #2 .github/workflows/release-please.yml erstellt (on push to main)
+- [x] #3 release-please-config.json mit extra-files für manifest.json
+- [x] #4 .release-please-manifest.json mit aktueller Version
+- [x] #5 CHANGELOG.md initialisiert (Markdown)
+- [x] #6 pre-commit.yml trigger auf main statt master
+- [x] #7 Release Please erzeugt Release-PR bei nächstem push mit conventional commit
 <!-- AC:END -->
 
 ## Implementation Plan
@@ -50,3 +50,9 @@ Vergleich:
 <!-- SECTION:PLAN:BEGIN -->
 1. release-please-config.json + .release-please-manifest.json erstellen\n2. .github/workflows/release-please.yml erstellen\n3. Release Drafter Workflow + Config löschen\n4. pre-commit.yml fixen (master→main)\n5. CHANGELOG.md initialisieren\n6. manifest.json auf 0.2.0\n7. Commit, Branch umbenennen, pushen, Release erstellen
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Release Please workflow läuft erfolgreich (success). Fehlgeschlagene andere Workflows (pre-commit, hassfest, HACS) sind vorbestehende Issues, nicht Teil dieser Migration.
+<!-- SECTION:NOTES:END -->

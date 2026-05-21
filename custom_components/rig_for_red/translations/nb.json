@@ -24,6 +24,19 @@
           "adaptive_lighting_switches": "Valgfritt: Adaptive Lighting-bryterenheter som overlapper med dine valgte lys. Rig for Red slår disse av mens rød modus er aktiv, slik at Adaptive Lighting ikke overstyrer dempingen. La stå tomt hvis du ikke bruker Adaptive Lighting.",
           "min_brightness_pct": "Det minimale lysstyrkenivået ved slutten av dempingsovergangen."
         }
+      },
+      "reconfigure": {
+        "title": "Rekonfigurer Rig for Red",
+        "data_description": {
+          "lights": "Velg lysene som skal bytte til rødt under undervanns-nattmodusen.",
+          "schedule_days": "Velg ukedagene som nattmodusplanen skal aktiveres på.",
+          "schedule_time": "Tidspunktet da lysene skal begynne å dempe til rødt.",
+          "dim_duration_minutes": "Hvor lang tid dempingsovergangen fra hvitt til rødt skal ta.",
+          "restore_at_sunrise": "Hvis aktivert, vil lys bli gjenopprettet til hvitt ved soloppgang i stedet for et fast tidspunkt.",
+          "restore_time": "Hvis du ikke gjenoppretter ved soloppgang, sett et fast tidspunkt for å gjenopprette hvit belysning.",
+          "adaptive_lighting_switches": "Valgfritt: Adaptive Lighting-bryterenheter som overlapper med dine valgte lys. Rig for Red slår disse av mens rød modus er aktiv, slik at Adaptive Lighting ikke overstyrer dempingen. La stå tomt hvis du ikke bruker Adaptive Lighting.",
+          "min_brightness_pct": "Det minimale lysstyrkenivået ved slutten av dempingsovergangen."
+        }
       }
     },
     "error": {

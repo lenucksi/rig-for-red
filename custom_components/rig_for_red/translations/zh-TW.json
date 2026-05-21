@@ -24,6 +24,19 @@
           "adaptive_lighting_switches": "可選：與您所選燈光重疊的 Adaptive Lighting 開關實體。紅光模式啟用時會關閉這些開關，以免 Adaptive Lighting 覆蓋調光效果。如果您不使用 Adaptive Lighting，請留空。",
           "min_brightness_pct": "調光過渡結束時的最低亮度級別。"
         }
+      },
+      "reconfigure": {
+        "title": "重新設定 Rig for Red",
+        "data_description": {
+          "lights": "選擇在潛艇夜間模式期間應切換為紅光的燈光。",
+          "schedule_days": "選擇夜間模式排程應啟用的工作日。",
+          "schedule_time": "燈光開始調暗為紅色的時間。",
+          "dim_duration_minutes": "從白色過渡到紅色的調光過程應持續多長時間。",
+          "restore_at_sunrise": "如果啟用，燈光將在日出時還原為白色，而非固定時間。",
+          "restore_time": "如果不在日出時還原，請設定還原白色燈光的固定時間。",
+          "adaptive_lighting_switches": "可選：與您所選燈光重疊的 Adaptive Lighting 開關實體。紅光模式啟用時會關閉這些開關，以免 Adaptive Lighting 覆蓋調光效果。如果您不使用 Adaptive Lighting，請留空。",
+          "min_brightness_pct": "調光過渡結束時的最低亮度級別。"
+        }
       }
     },
     "error": {

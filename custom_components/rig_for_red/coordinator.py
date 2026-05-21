@@ -2,11 +2,16 @@ from __future__ import annotations
 
 import asyncio
 import logging
+from collections.abc import Callable
 from datetime import datetime, time, timedelta
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers.event import async_track_point_in_time, async_track_time_change
+from homeassistant.helpers.event import (
+    async_track_point_in_time,
+    async_track_state_change_event,
+    async_track_time_change,
+)
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 from homeassistant.util import dt as dt_util
 
@@ -44,7 +49,6 @@ def _parse_time(value: str | time | None) -> time | None:
 
 
 class RigForRedCoordinator(DataUpdateCoordinator[None]):
-
     def __init__(self, hass: HomeAssistant, entry: ConfigEntry) -> None:
         super().__init__(hass, _LOGGER, name=DOMAIN)
 
@@ -62,11 +66,15 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
         min_brightness_default = DEFAULT_MIN_BRIGHTNESS_PCT
         self._min_brightness_pct: int = data.get(CONF_MIN_BRIGHTNESS_PCT, min_brightness_default)
 
-        self._unsub_schedule = None
-        self._unsub_restore = None
-        self._unsub_sunrise = None
+        self._unsub_schedule: Callable[[], None] | None = None
+        self._unsub_restore: Callable[[], None] | None = None
+        self._unsub_sunrise: Callable[[], None] | None = None
         self._is_active = False
-        self._dim_task = None
+        self._dim_task: asyncio.Task | None = None
+
+        self._lights_to_restore: list[str] = []
+        self._lights_waiting_for_red: list[str] = []
+        self._light_state_unsubs: list[Callable] = []
 
     @property
     def is_active(self) -> bool:
@@ -104,6 +112,10 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
             self._unsub_sunrise()
             self._unsub_sunrise = None
 
+        for unsub in self._light_state_unsubs:
+            unsub()
+        self._light_state_unsubs = []
+
         if self._dim_task is not None and not self._dim_task.done():
             self._dim_task.cancel()
             self._dim_task = None
@@ -116,7 +128,7 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
             return
         self.hass.async_create_task(self.async_activate())
 
-    async def _restore_trigger(self, now) -> None:
+    async def _restore_trigger(self, _now) -> None:
         self.hass.async_create_task(self.async_restore())
 
     async def _get_next_sunrise(self) -> datetime:
@@ -151,8 +163,21 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
             except Exception:
                 _LOGGER.exception("Failed to set manual control for AL switch %s", switch)
 
+        on_lights = []
+        off_lights = []
+        for entity_id in self._lights:
+            state = self.hass.states.get(entity_id)
+            if state is not None and state.state == "on":
+                on_lights.append(entity_id)
+            elif state is not None and state.state == "off":
+                off_lights.append(entity_id)
+
+        if not on_lights:
+            _LOGGER.debug("No lights are on, skipping red-mode activation")
+            return
+
         start_brightness = 255
-        for light in self._lights:
+        for light in on_lights:
             state = self.hass.states.get(light)
             if state is not None:
                 brightness = state.attributes.get("brightness", 255)
@@ -162,22 +187,39 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
         await self.hass.services.async_call(
             "light",
             "turn_on",
-            {"entity_id": self._lights, "rgb_color": RED_RGB, "brightness": start_brightness},
+            {"entity_id": on_lights, "rgb_color": RED_RGB, "brightness": start_brightness},
             blocking=True,
         )
 
+        self._lights_to_restore = list(on_lights)
+        self._lights_waiting_for_red = list(off_lights)
         self._dim_task = asyncio.create_task(self._dim_lights(start_brightness))
+
+        for entity_id in on_lights + off_lights:
+            unsub = async_track_state_change_event(
+                self.hass,
+                [entity_id],
+                self._on_tracked_light_change,
+            )
+            self._light_state_unsubs.append(unsub)
 
         if self._restore_at_sunrise:
             next_sunrise = await self._get_next_sunrise()
             self._unsub_sunrise = async_track_point_in_time(
-                self.hass, self._restore_trigger, next_sunrise
+                self.hass,
+                self._restore_trigger,
+                next_sunrise,
             )
 
         self._is_active = True
         self.async_set_updated_data({"is_active": True})
 
     async def async_restore(self) -> None:
+        for unsub in self._light_state_unsubs:
+            unsub()
+        self._light_state_unsubs = []
+        self._lights_waiting_for_red = []
+
         if self._dim_task is not None and not self._dim_task.done():
             self._dim_task.cancel()
             await asyncio.gather(self._dim_task, return_exceptions=True)
@@ -185,22 +227,27 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
 
         self._is_active = False
 
-        await self.hass.services.async_call(
-            "light",
-            "turn_on",
-            {
-                "entity_id": self._lights,
-                "color_temp_kelvin": WHITE_COLOR_TEMP_KELVIN,
-                "brightness": 255,
-                "transition": 2,
-            },
-            blocking=True,
-        )
+        if self._lights_to_restore:
+            await self.hass.services.async_call(
+                "light",
+                "turn_on",
+                {
+                    "entity_id": self._lights_to_restore,
+                    "color_temp_kelvin": WHITE_COLOR_TEMP_KELVIN,
+                    "brightness": 255,
+                    "transition": 2,
+                },
+                blocking=True,
+            )
+        self._lights_to_restore = []
 
         for switch in self._al_switches:
             try:
                 await self.hass.services.async_call(
-                    "switch", "turn_on", {"entity_id": switch}, blocking=True
+                    "switch",
+                    "turn_on",
+                    {"entity_id": switch},
+                    blocking=True,
                 )
             except Exception:
                 _LOGGER.exception("Failed to turn on AL switch %s", switch)
@@ -213,7 +260,8 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
                 )
             except Exception:
                 _LOGGER.exception(
-                    "Failed to set manual control for AL switch %s", switch
+                    "Failed to set manual control for AL switch %s",
+                    switch,
                 )
 
         if self._restore_at_sunrise:
@@ -222,7 +270,9 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
                 self._unsub_sunrise = None
             next_sunrise = await self._get_next_sunrise()
             self._unsub_sunrise = async_track_point_in_time(
-                self.hass, self._restore_trigger, next_sunrise
+                self.hass,
+                self._restore_trigger,
+                next_sunrise,
             )
 
         self.async_set_updated_data({"is_active": False})
@@ -234,13 +284,48 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
             if not self._is_active:
                 return
             brightness = int(start_brightness - (start_brightness - target) * i / DIM_STEPS)
-            await self.hass.services.async_call("light", "turn_on", {
-                "entity_id": self._lights,
-                "rgb_color": RED_RGB,
-                "brightness": max(1, brightness),
-                "transition": interval,
-            }, blocking=True)
+            currently_on = [e for e in self._lights_to_restore if self._light_is_on(e)]
+            if not currently_on:
+                await asyncio.sleep(interval)
+                continue
+            await self.hass.services.async_call(
+                "light",
+                "turn_on",
+                {
+                    "entity_id": currently_on,
+                    "rgb_color": RED_RGB,
+                    "brightness": max(1, brightness),
+                    "transition": interval,
+                },
+                blocking=True,
+            )
             try:
                 await asyncio.sleep(interval)
             except asyncio.CancelledError:
                 return
+
+    def _light_is_on(self, entity_id: str) -> bool:
+        state = self.hass.states.get(entity_id)
+        return state is not None and state.state == "on"
+
+    async def _on_tracked_light_change(self, event) -> None:
+        entity_id = event.data["entity_id"]
+        new_state = event.data.get("new_state")
+        old_state = event.data.get("old_state")
+
+        if new_state is None or old_state is None:
+            return
+
+        if old_state.state == "off" and new_state.state == "on" and entity_id in self._lights_waiting_for_red:
+            self._lights_waiting_for_red.remove(entity_id)
+            if entity_id not in self._lights_to_restore:
+                self._lights_to_restore.append(entity_id)
+            await self.hass.services.async_call(
+                "light",
+                "turn_on",
+                {"entity_id": entity_id, "rgb_color": RED_RGB},
+                blocking=False,
+            )
+
+        if old_state.state == "on" and new_state.state == "off" and entity_id in self._lights_to_restore:
+            self._lights_to_restore.remove(entity_id)

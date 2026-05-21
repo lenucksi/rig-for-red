@@ -24,6 +24,19 @@
           "adaptive_lighting_switches": "Opcional: entidades de interruptor Adaptive Lighting que se superponen con sus luces seleccionadas. Rig for Red las apagará mientras el modo rojo esté activo para que Adaptive Lighting no anule la atenuación. Deje vacío si no usa Adaptive Lighting.",
           "min_brightness_pct": "El nivel mínimo de brillo al final de la transición de atenuación."
         }
+      },
+      "reconfigure": {
+        "title": "Reconfigurar Rig for Red",
+        "data_description": {
+          "lights": "Elija las luces que deben cambiar a rojo durante el modo nocturno submarino.",
+          "schedule_days": "Seleccione los días de la semana en los que se debe activar el modo nocturno.",
+          "schedule_time": "La hora a la que las luces deben comenzar a atenuarse hacia el rojo.",
+          "dim_duration_minutes": "Cuánto debe durar la transición de atenuación de blanco a rojo.",
+          "restore_at_sunrise": "Si está habilitado, las luces volverán al blanco al amanecer en lugar de una hora fija.",
+          "restore_time": "Si no se restaura al amanecer, establezca una hora fija para restaurar la iluminación blanca.",
+          "adaptive_lighting_switches": "Opcional: entidades de interruptor Adaptive Lighting que se superponen con sus luces seleccionadas. Rig for Red las apagará mientras el modo rojo esté activo para que Adaptive Lighting no anule la atenuación. Deje vacío si no usa Adaptive Lighting.",
+          "min_brightness_pct": "El nivel mínimo de brillo al final de la transición de atenuación."
+        }
       }
     },
     "error": {

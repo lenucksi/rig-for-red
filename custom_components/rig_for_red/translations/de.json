@@ -24,6 +24,19 @@
           "adaptive_lighting_switches": "Optional: Adaptive Lighting-Schalter-Entitäten, die mit Ihren ausgewählten Lampen überlappen. Rig for Red schaltet diese aus, während der Rotmodus aktiv ist, damit Adaptive Lighting die Dimmung nicht überschreibt. Leer lassen, wenn Sie Adaptive Lighting nicht verwenden.",
           "min_brightness_pct": "Die minimale Helligkeitsstufe am Ende des Dimmvorgangs."
         }
+      },
+      "reconfigure": {
+        "title": "Reconfigure Rig for Red",
+        "data_description": {
+          "lights": "Wählen Sie die Lampen aus, die während des U-Boot-Nachtmodus rot leuchten sollen.",
+          "schedule_days": "Wählen Sie die Wochentage aus, an denen der Nachtmodus aktiviert werden soll.",
+          "schedule_time": "Die Uhrzeit, zu der die Lampen zu rot dimmen sollen.",
+          "dim_duration_minutes": "Wie lange der Übergang von weiß zu rot dauern soll.",
+          "restore_at_sunrise": "Wenn aktiviert, werden die Lampen bei Sonnenaufgang wieder auf weiß geschaltet.",
+          "restore_time": "Wenn nicht bei Sonnenaufgang wiederhergestellt wird, legen Sie eine feste Zeit fest.",
+          "adaptive_lighting_switches": "Optional: Adaptive Lighting-Schalter-Entitäten, die mit Ihren ausgewählten Lampen überlappen. Rig for Red schaltet diese aus, während der Rotmodus aktiv ist, damit Adaptive Lighting die Dimmung nicht überschreibt. Leer lassen, wenn Sie Adaptive Lighting nicht verwenden.",
+          "min_brightness_pct": "Die minimale Helligkeitsstufe am Ende des Dimmvorgangs."
+        }
       }
     },
     "error": {

@@ -24,6 +24,19 @@
           "adaptive_lighting_switches": "Optional: Adaptive Lighting switch entities that overlap with your selected lights. Rig for Red will turn these off while red mode is active so Adaptive Lighting doesn't override the dimming. Leave empty if you don't use Adaptive Lighting.",
           "min_brightness_pct": "The minimum brightness level at the end of the dimming transition."
         }
+      },
+      "reconfigure": {
+        "title": "Reconfigure Rig for Red",
+        "data_description": {
+          "lights": "Choose the lights that should switch to red during submarine night mode.",
+          "schedule_days": "Select the weekdays on which the night mode schedule should activate.",
+          "schedule_time": "The time at which the lights should start dimming to red.",
+          "dim_duration_minutes": "How long the dimming transition from white to red should take.",
+          "restore_at_sunrise": "If enabled, lights will restore to white at sunrise instead of a fixed time.",
+          "restore_time": "If not restoring at sunrise, set a fixed time to restore white lighting.",
+          "adaptive_lighting_switches": "Optional: Adaptive Lighting switch entities that overlap with your selected lights. Rig for Red will turn these off while red mode is active so Adaptive Lighting doesn't override the dimming. Leave empty if you don't use Adaptive Lighting.",
+          "min_brightness_pct": "The minimum brightness level at the end of the dimming transition."
+        }
       }
     },
     "error": {

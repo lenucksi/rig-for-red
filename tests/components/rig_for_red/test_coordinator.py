@@ -1,20 +1,19 @@
 import asyncio
-from datetime import datetime, timedelta
+import contextlib
+from datetime import datetime
 
-import pytest
 from homeassistant.const import STATE_OFF, STATE_ON
 from homeassistant.core import HomeAssistant
 from homeassistant.util import dt as dt_util
 
-from . import MockConfigEntry
-
 from custom_components.rig_for_red.const import (
-    CONF_ADAPTIVE_LIGHTING_SWITCHES,
     CONF_RESTORE_AT_SUNRISE,
     CONF_RESTORE_TIME,
     CONF_SCHEDULE_DAYS,
     DOMAIN,
 )
+
+from . import MockConfigEntry
 
 
 async def test_schedule_trigger_correct_day(
@@ -302,6 +301,7 @@ async def test_activate_max_brightness(
     await coordinator.async_restore()
     await hass.async_block_till_done()
 
+
 async def test_sunrise_without_next_rising(
     hass: HomeAssistant,
     mock_config_entry: MockConfigEntry,
@@ -359,10 +359,111 @@ async def test_dim_is_active_abort(
 
     coordinator._is_active = False
     coordinator._dim_task.cancel()
-    try:
+    with contextlib.suppress(asyncio.CancelledError, Exception):
         await coordinator._dim_task
-    except (asyncio.CancelledError, Exception):
-        pass
+    await hass.async_block_till_done()
+
+    assert not coordinator.is_active
+
+
+async def test_activate_off_lights_stay_off(
+    hass: HomeAssistant,
+    mock_config_entry: MockConfigEntry,
+    mock_light_states,
+) -> None:
+    hass.states.async_set("light.living_room", STATE_OFF)
+    mock_config_entry.add_to_hass(hass)
+    await hass.config_entries.async_setup(mock_config_entry.entry_id)
+    await hass.async_block_till_done()
+    coordinator = hass.data[DOMAIN][mock_config_entry.entry_id]
+
+    await coordinator.async_activate()
+    await hass.async_block_till_done()
+
+    assert coordinator.is_active
+    assert "light.bedroom" in coordinator._lights_to_restore
+    assert "light.living_room" not in coordinator._lights_to_restore
+    assert "light.living_room" in coordinator._lights_waiting_for_red
+
+    await coordinator.async_restore()
+    await hass.async_block_till_done()
+
+    assert not coordinator.is_active
+    assert coordinator._lights_to_restore == []
+    assert coordinator._lights_waiting_for_red == []
+
+
+async def test_activate_no_on_lights_skips(
+    hass: HomeAssistant,
+    mock_config_entry: MockConfigEntry,
+    mock_light_states,
+) -> None:
+    hass.states.async_set("light.bedroom", STATE_OFF)
+    hass.states.async_set("light.living_room", STATE_OFF)
+    mock_config_entry.add_to_hass(hass)
+    await hass.config_entries.async_setup(mock_config_entry.entry_id)
+    await hass.async_block_till_done()
+    coordinator = hass.data[DOMAIN][mock_config_entry.entry_id]
+
+    await coordinator.async_activate()
+    await hass.async_block_till_done()
+
+    assert not coordinator.is_active
+    assert coordinator._lights_to_restore == []
+
+
+async def test_off_light_turned_on_during_activation_goes_red(
+    hass: HomeAssistant,
+    mock_config_entry: MockConfigEntry,
+    mock_light_states,
+) -> None:
+    hass.states.async_set("light.living_room", STATE_OFF)
+    mock_config_entry.add_to_hass(hass)
+    await hass.config_entries.async_setup(mock_config_entry.entry_id)
+    await hass.async_block_till_done()
+    coordinator = hass.data[DOMAIN][mock_config_entry.entry_id]
+
+    await coordinator.async_activate()
+    await hass.async_block_till_done()
+
+    assert coordinator.is_active
+    assert "light.living_room" in coordinator._lights_waiting_for_red
+
+    hass.states.async_set("light.living_room", STATE_ON, {"brightness": 200})
+    await hass.async_block_till_done()
+
+    assert "light.living_room" not in coordinator._lights_waiting_for_red
+    assert "light.living_room" in coordinator._lights_to_restore
+
+    await coordinator.async_restore()
+    await hass.async_block_till_done()
+
+    assert not coordinator.is_active
+
+
+async def test_user_turned_off_red_light_stays_off_on_restore(
+    hass: HomeAssistant,
+    mock_config_entry: MockConfigEntry,
+    mock_light_states,
+) -> None:
+    mock_config_entry.add_to_hass(hass)
+    await hass.config_entries.async_setup(mock_config_entry.entry_id)
+    await hass.async_block_till_done()
+    coordinator = hass.data[DOMAIN][mock_config_entry.entry_id]
+
+    await coordinator.async_activate()
+    await hass.async_block_till_done()
+
+    assert "light.bedroom" in coordinator._lights_to_restore
+    assert "light.living_room" in coordinator._lights_to_restore
+
+    hass.states.async_set("light.bedroom", STATE_OFF)
+    await hass.async_block_till_done()
+
+    assert "light.bedroom" not in coordinator._lights_to_restore
+    assert "light.living_room" in coordinator._lights_to_restore
+
+    await coordinator.async_restore()
     await hass.async_block_till_done()
 
     assert not coordinator.is_active

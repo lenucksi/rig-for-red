@@ -1,5 +1,5 @@
-import pytest
 from homeassistant.core import HomeAssistant
+
 from custom_components.rig_for_red.const import DOMAIN
 
 from . import MockConfigEntry
