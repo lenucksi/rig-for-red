@@ -5,6 +5,8 @@ on:
     branches: [main, dev]
 permissions:
   contents: read
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -15,3 +17,4 @@ jobs:
       - uses: cocogitto/cocogitto-action@v4
         with:
           command: check
+          args: --from-latest-tag

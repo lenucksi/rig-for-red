@@ -3,6 +3,8 @@ on:
   pull_request:
   push:
     branches: [main, dev]
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   prek:
     runs-on: ubuntu-latest

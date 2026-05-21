@@ -7,6 +7,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
@@ -55,7 +58,7 @@ jobs:
         with:
           python-version: "3.14"
       - name: Set up UV
-        uses: astral-sh/setup-uv@6b9c6063abd6010835654f3e9f0c5ae8ffdd1aef # v8
+        uses: astral-sh/setup-uv@v5
       - name: Create venv and install HA deps
         shell: bash
         run: |
