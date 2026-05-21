@@ -13,6 +13,6 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: googleapis/release-please-action@7987652be64e4aa0c9bf1e0a4757c6f9503db655 # v4
+      - uses: googleapis/release-please-action@8b8fd2cc23b2e18957157a9d923d75aa0c6f6ad5 # v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
