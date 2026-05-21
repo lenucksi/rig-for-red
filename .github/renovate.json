@@ -58,10 +58,6 @@
       "automerge": false
     }
   ],
-  "vulnerabilityAlerts": {
-    "enabled": true,
-    "labels": ["security"]
-  },
   "lockFileMaintenance": {
     "enabled": false
   }
