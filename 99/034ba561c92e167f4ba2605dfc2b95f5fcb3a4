@@ -1,0 +1,73 @@
+custom_components/rig_for_red/translations/da.json
+  s_db6378d869536a::t_5f4fee8d83aa6a 24
+  s_db6378d869536a::t_9567d0fa088ee8 6
+custom_components/rig_for_red/strings.json
+  s_4bfe7877ad808f::t_3c11698b64897f 24
+  s_4bfe7877ad808f::t_27321afb934a17 6
+custom_components/rig_for_red/translations/pl.json
+  s_db6378d869536a::t_1f6167039d33fe 6
+  s_db6378d869536a::t_be3f92e73e7579 24
+custom_components/rig_for_red/translations/zh-TW.json
+  s_db6378d869536a::t_70ee95e9b0190f 6
+  s_db6378d869536a::t_335555eb10ebee 24
+custom_components/rig_for_red/translations/ta.json
+  s_db6378d869536a::t_a56a861519bf5a 24
+  s_db6378d869536a::t_3dc7c0c858706c 6
+custom_components/rig_for_red/translations/nl.json
+  s_db6378d869536a::t_ed02d3f99db39d 24
+  s_db6378d869536a::t_5ff240a14d0c1a 6
+custom_components/rig_for_red/translations/es.json
+  s_db6378d869536a::t_6f8a8e6a943b72 24
+  s_db6378d869536a::t_8b8c4a4b1ffbf2 6
+custom_components/rig_for_red/translations/it.json
+  s_db6378d869536a::t_1fb6eb25cb2982 24
+  s_db6378d869536a::t_9c969ad359b810 6
+custom_components/rig_for_red/translations/hi.json
+  s_db6378d869536a::t_733b9a45061ebc 24
+  s_db6378d869536a::t_1bccc5bbe310a4 6
+custom_components/rig_for_red/translations/sv.json
+  s_db6378d869536a::t_a35204aa7c2ebd 6
+  s_db6378d869536a::t_b3963a15b14433 24
+custom_components/rig_for_red/translations/fr.json
+  s_db6378d869536a::t_a889b48db24ccf 6
+  s_db6378d869536a::t_87aa387e91a766 24
+custom_components/rig_for_red/translations/de.json
+  s_db6378d869536a::t_322809ee2c06f5 6
+  s_db6378d869536a::t_7a4b58e7fb946d 24
+custom_components/rig_for_red/translations/pt.json
+  s_db6378d869536a::t_17c197f6a46ba2 6
+  s_db6378d869536a::t_59d1639f3d5281 24
+custom_components/rig_for_red/translations/nb.json
+  s_db6378d869536a::t_7c736c31914bfe 24
+  s_db6378d869536a::t_3a0dcb7eb874cd 6
+custom_components/rig_for_red/translations/fi.json
+  s_db6378d869536a::t_d48a573f55e79b 24
+  s_db6378d869536a::t_c490179ff1b9f7 6
+custom_components/rig_for_red/translations/en.json
+  s_4bfe7877ad808f::t_fc7f1418cf0ae8 6
+  s_4bfe7877ad808f::t_6634246032af5f 24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "99034ba561c92e167f4ba2605dfc2b95f5fcb3a4",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    },
+    "s_db6378d869536a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b436ecc7ffeH7Jqi8hyac3UFl",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
