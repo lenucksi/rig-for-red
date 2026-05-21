@@ -65,6 +65,7 @@ jobs:
           uv venv --python 3.14
           uv pip install -r core/requirements_all.txt
           uv pip install -r core/requirements_test.txt
+          uv pip install pytest-homeassistant-custom-component pytest-cov freezegun
           uv pip install -e core/
       - name: Create symlinks
         shell: bash
