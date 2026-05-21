@@ -71,6 +71,8 @@ jobs:
         shell: bash
         run: |
           ln -fs "$PWD/custom_components/rig_for_red" core/homeassistant/components/rig_for_red
+          mkdir -p core/custom_components
+          ln -fs "$PWD/custom_components/rig_for_red" core/custom_components/rig_for_red
           mkdir -p core/tests/components
           ln -fs "$PWD/tests/components/rig_for_red" core/tests/components/rig_for_red
           if [ -f tests/conftest.py ]; then
@@ -81,7 +83,7 @@ jobs:
         run: |
           source .venv/bin/activate
           cd core
-          python3 -X dev -m pytest \
+          PYTHONPATH="$PWD/..:$PYTHONPATH" python3 -X dev -m pytest \
             -vvv \
             --timeout=30 \
             --durations=10 \
