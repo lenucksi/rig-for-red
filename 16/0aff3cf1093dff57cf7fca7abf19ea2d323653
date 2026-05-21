@@ -1,0 +1,19 @@
+.github/workflows/pytest.yaml
+  s_4bfe7877ad808f::t_04dd6468f39027 43-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "160aff3cf1093dff57cf7fca7abf19ea2d323653",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
