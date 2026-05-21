@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Rig for Red",
-        "description": "Määritä sukellusveneyötila valoillesi.",
+        "description": "Määritä sukellusveneyötila valoillesi.\n\n**Adaptive Lighting:** Jos käytät Adaptive Lighting -integraatiota, Rig for Red täytyy väliaikaisesti poistaa se käytöstä, kun sukellusveneyötila on aktiivinen — muuten molemmat taistelisivat valojesi kirkkaudesta/väristä. Valitse Adaptive Lighting -kytkinyksiköt niille huoneille/alueille, jotka ovat päällekkäin yllä valittujen valojen kanssa. Voit jättää tämän tyhjäksi, jos et käytä Adaptive Lightingia.",
         "data": {
           "lights": "Valot (vähintään yksi vaaditaan)",
           "schedule_days": "Viikonpäivät",
@@ -21,7 +21,7 @@
           "dim_duration_minutes": "Kuinka kauan himmennyssiirtymän valkoisesta punaiseen tulisi kestää.",
           "restore_at_sunrise": "Jos käytössä, valot palautetaan valkoisiksi auringonnousun aikaan kiinteän ajan sijaan.",
           "restore_time": "Jos ei palauteta auringonnousun aikaan, aseta kiinteä aika valkoisen valaistuksen palauttamiselle.",
-          "adaptive_lighting_switches": "Valinnaiset Adaptive Lighting -kytkimet, jotka poistetaan tilapäisesti käytöstä punaisen tilan aikana.",
+          "adaptive_lighting_switches": "Valinnainen: Adaptive Lighting -kytkinyksiköt, jotka ovat päällekkäin valittujen valojesi kanssa. Rig for Red sammuttaa nämä, kun punainen tila on aktiivinen, jotta Adaptive Lighting ei ohita himmennystä. Jätä tyhjäksi, jos et käytä Adaptive Lightingia.",
           "min_brightness_pct": "Vähimmäiskirkkaustaso himmennyssiirtymän lopussa."
         }
       }

@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Rig for Red",
-        "description": "Configurez le mode nuit sous-marin pour vos lumières.",
+        "description": "Configurez le mode nuit sous-marin pour vos lumières.\n\n**Adaptive Lighting:** Si vous utilisez l'intégration Adaptive Lighting, Rig for Red doit la désactiver temporairement pendant que le mode nuit sous-marin est actif — sinon les deux se disputeraient la luminosité/couleur de vos lumières. Sélectionnez les entités d'interrupteur Adaptive Lighting pour les pièces/zones qui chevauchent les lumières choisies ci-dessus. Vous pouvez laisser vide si vous n'utilisez pas Adaptive Lighting.",
         "data": {
           "lights": "Lumières (au moins une requise)",
           "schedule_days": "Jours de la semaine",
@@ -21,7 +21,7 @@
           "dim_duration_minutes": "Durée de la transition de gradation du blanc au rouge.",
           "restore_at_sunrise": "Si activé, les lumières reviendront au blanc au lever du soleil au lieu d'une heure fixe.",
           "restore_time": "Si vous ne restaurez pas au lever du soleil, définissez une heure fixe pour restaurer l'éclairage blanc.",
-          "adaptive_lighting_switches": "Interrupteurs Adaptive Lighting facultatifs à désactiver temporairement pendant le mode rouge.",
+          "adaptive_lighting_switches": "Optionnel : entités d'interrupteur Adaptive Lighting qui chevauchent vos lumières sélectionnées. Rig for Red les désactivera pendant que le mode rouge est actif afin qu'Adaptive Lighting n'annule pas la gradation. Laissez vide si vous n'utilisez pas Adaptive Lighting.",
           "min_brightness_pct": "Le niveau de luminosité minimum à la fin de la transition de gradation."
         }
       }

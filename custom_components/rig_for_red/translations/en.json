@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Rig for Red",
-        "description": "Configure the Submarine Night Mode for your lights.",
+        "description": "Configure the Submarine Night Mode for your lights.\n\n**Adaptive Lighting:** If you use the Adaptive Lighting integration, Rig for Red needs to temporarily disable it while submarine night mode is active — otherwise both would fight over your lights' brightness/color. Select the Adaptive Lighting switch entities for the rooms/zones that overlap with the lights chosen above. You can leave this empty if you don't use Adaptive Lighting.",
         "data": {
           "lights": "Lights (at least one required)",
           "schedule_days": "Weekdays",
@@ -21,7 +21,7 @@
           "dim_duration_minutes": "How long the dimming transition from white to red should take.",
           "restore_at_sunrise": "If enabled, lights will restore to white at sunrise instead of a fixed time.",
           "restore_time": "If not restoring at sunrise, set a fixed time to restore white lighting.",
-          "adaptive_lighting_switches": "Optional Adaptive Lighting switches to temporarily disable during red mode.",
+          "adaptive_lighting_switches": "Optional: Adaptive Lighting switch entities that overlap with your selected lights. Rig for Red will turn these off while red mode is active so Adaptive Lighting doesn't override the dimming. Leave empty if you don't use Adaptive Lighting.",
           "min_brightness_pct": "The minimum brightness level at the end of the dimming transition."
         }
       }

@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Rig for Red",
-        "description": "Konfigurieren Sie den U-Boot-Nachtmodus für Ihre Lampen.",
+        "description": "Konfigurieren Sie den U-Boot-Nachtmodus für Ihre Lampen.\n\n**Adaptive Lighting:** Wenn Sie die Adaptive Lighting-Integration verwenden, muss Rig for Red sie vorübergehend deaktivieren, während der U-Boot-Nachtmodus aktiv ist — andernfalls würden beide um die Helligkeit/Farbe Ihrer Lampen konkurrieren. Wählen Sie die Adaptive Lighting-Schalter-Entitäten für die Räume/Zonen aus, die mit den oben ausgewählten Lampen überlappen. Sie können dies leer lassen, wenn Sie Adaptive Lighting nicht verwenden.",
         "data": {
           "lights": "Lampen (mindestens eine erforderlich)",
           "schedule_days": "Wochentage",
@@ -21,7 +21,7 @@
           "dim_duration_minutes": "Wie lange der Übergang von weiß zu rot dauern soll.",
           "restore_at_sunrise": "Wenn aktiviert, werden die Lampen bei Sonnenaufgang wieder auf weiß geschaltet.",
           "restore_time": "Wenn nicht bei Sonnenaufgang wiederhergestellt wird, legen Sie eine feste Zeit fest.",
-          "adaptive_lighting_switches": "Optionale Adaptive Lighting Schalter, die während des Rotmodus vorübergehend deaktiviert werden.",
+          "adaptive_lighting_switches": "Optional: Adaptive Lighting-Schalter-Entitäten, die mit Ihren ausgewählten Lampen überlappen. Rig for Red schaltet diese aus, während der Rotmodus aktiv ist, damit Adaptive Lighting die Dimmung nicht überschreibt. Leer lassen, wenn Sie Adaptive Lighting nicht verwenden.",
           "min_brightness_pct": "Die minimale Helligkeitsstufe am Ende des Dimmvorgangs."
         }
       }

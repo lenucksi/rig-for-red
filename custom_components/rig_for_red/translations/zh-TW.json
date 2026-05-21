@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "紅光模式",
-        "description": "為您的燈光配置潛艇夜間模式。",
+        "description": "為您的燈光配置潛艇夜間模式。\n\n**Adaptive Lighting：** 如果您使用 Adaptive Lighting 整合，Rig for Red 需要在潛艇夜間模式啟用時暫時將其停用 — 否則兩者會互相爭奪您燈光的亮度/色彩。請為與上方所選燈光重疊的房間/區域選擇 Adaptive Lighting 開關實體。如果您不使用 Adaptive Lighting，可以留空。",
         "data": {
           "lights": "燈光（至少需要一個）",
           "schedule_days": "工作日",
@@ -21,7 +21,7 @@
           "dim_duration_minutes": "從白色過渡到紅色的調光過程應持續多長時間。",
           "restore_at_sunrise": "如果啟用，燈光將在日出時還原為白色，而非固定時間。",
           "restore_time": "如果不在日出時還原，請設定還原白色燈光的固定時間。",
-          "adaptive_lighting_switches": "可選的 Adaptive Lighting 開關，可在紅色模式下暫時停用。",
+          "adaptive_lighting_switches": "可選：與您所選燈光重疊的 Adaptive Lighting 開關實體。紅光模式啟用時會關閉這些開關，以免 Adaptive Lighting 覆蓋調光效果。如果您不使用 Adaptive Lighting，請留空。",
           "min_brightness_pct": "調光過渡結束時的最低亮度級別。"
         }
       }

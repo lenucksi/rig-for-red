@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Rig for Red",
-        "description": "Konfigurer undervands-nattilstanden for dine lys.",
+        "description": "Konfigurer undervands-nattilstanden for dine lys.\n\n**Adaptive Lighting:** Hvis du bruger Adaptive Lighting-integrationen, skal Rig for Red midlertidigt deaktivere den, mens undervands-nattilstanden er aktiv — ellers ville begge kæmpe om dine lys' lysstyrke/farve. Vælg Adaptive Lighting-kontaktenhederne for de rum/zoner, der overlapper med de lys, du valgte ovenfor. Du kan lade dette være tomt, hvis du ikke bruger Adaptive Lighting.",
         "data": {
           "lights": "Lys (mindst én påkrævet)",
           "schedule_days": "Ugedage",
@@ -21,7 +21,7 @@
           "dim_duration_minutes": "Hvor lang tid dæmpningsovergangen fra hvid til rød skal tage.",
           "restore_at_sunrise": "Hvis aktiveret, vil lys blive gendannet til hvid ved solopgang i stedet for et fast tidspunkt.",
           "restore_time": "Hvis der ikke gendannes ved solopgang, indstil et fast tidspunkt til at gendanne hvid belysning.",
-          "adaptive_lighting_switches": "Valgfrie Adaptive Lighting kontakter til midlertidigt at deaktivere under rød tilstand.",
+          "adaptive_lighting_switches": "Valgfrit: Adaptive Lighting-kontaktenheder, der overlapper med dine valgte lys. Rig for Red slår disse fra, mens rød tilstand er aktiv, så Adaptive Lighting ikke tilsidesætter dæmpningen. Lad være tom, hvis du ikke bruger Adaptive Lighting.",
           "min_brightness_pct": "Det minimale lysstyrkeniveau ved slutningen af dæmpningsovergangen."
         }
       }

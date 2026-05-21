@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Rig for Red",
-        "description": "Configureer de onderwater-nachtmodus voor uw lampen.",
+        "description": "Configureer de onderwater-nachtmodus voor uw lampen.\n\n**Adaptive Lighting:** Als u de Adaptive Lighting-integratie gebruikt, moet Rig for Red deze tijdelijk uitschakelen terwijl de onderwater-nachtmodus actief is — anders zouden beide strijden over de helderheid/kleur van uw lampen. Selecteer de Adaptive Lighting-schakelaarentiteiten voor de kamers/zones die overlappen met de hierboven gekozen lampen. U kunt dit leeg laten als u geen Adaptive Lighting gebruikt.",
         "data": {
           "lights": "Lampen (minstens één vereist)",
           "schedule_days": "Weekdagen",
@@ -21,7 +21,7 @@
           "dim_duration_minutes": "Hoe lang de dimovergang van wit naar rood moet duren.",
           "restore_at_sunrise": "Indien ingeschakeld, worden lampen bij zonsopgang hersteld naar wit in plaats van een vaste tijd.",
           "restore_time": "Als u niet herstelt bij zonsopgang, stel dan een vaste tijd in om witte verlichting te herstellen.",
-          "adaptive_lighting_switches": "Optionele Adaptive Lighting schakelaars om tijdelijk uit te schakelen tijdens de rode modus.",
+          "adaptive_lighting_switches": "Optioneel: Adaptive Lighting-schakelaarentiteiten die overlappen met uw geselecteerde lampen. Rig for Red schakelt deze uit terwijl de rode modus actief is, zodat Adaptive Lighting de dimming niet overschrijft. Leeg laten als u geen Adaptive Lighting gebruikt.",
           "min_brightness_pct": "Het minimale helderheidsniveau aan het einde van de dimovergang."
         }
       }

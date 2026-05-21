@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Rig for Red",
-        "description": "Configure o modo noturno submarino para suas luzes.",
+        "description": "Configure o modo noturno submarino para suas luzes.\n\n**Adaptive Lighting:** Se você usa a integração Adaptive Lighting, o Rig for Red precisa desativá-la temporariamente enquanto o modo noturno submarino estiver ativo — caso contrário, ambos entrariam em conflito pelo brilho/cor das suas luzes. Selecione as entidades de interruptor Adaptive Lighting para os cômodos/zonas que se sobrepõem às luzes escolhidas acima. Pode deixar vazio se não usar Adaptive Lighting.",
         "data": {
           "lights": "Luzes (pelo menos uma obrigatória)",
           "schedule_days": "Dias da semana",
@@ -21,7 +21,7 @@
           "dim_duration_minutes": "Quanto tempo a transição de escurecimento do branco para o vermelho deve levar.",
           "restore_at_sunrise": "Se ativado, as luzes serão restauradas para o branco ao nascer do sol em vez de um horário fixo.",
           "restore_time": "Se não estiver restaurando ao nascer do sol, defina um horário fixo para restaurar a iluminação branca.",
-          "adaptive_lighting_switches": "Interruptores Adaptive Lighting opcionais para desativar temporariamente durante o modo vermelho.",
+          "adaptive_lighting_switches": "Opcional: entidades de interruptor Adaptive Lighting que se sobrepõem às suas luzes selecionadas. O Rig for Red desligará estas enquanto o modo vermelho estiver ativo para que o Adaptive Lighting não substitua o escurecimento. Deixe vazio se não usar Adaptive Lighting.",
           "min_brightness_pct": "O nível mínimo de brilho no final da transição de escurecimento."
         }
       }

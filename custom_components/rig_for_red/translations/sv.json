@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Rig for Red",
-        "description": "Konfigurera ubåtsnattläget för dina lampor.",
+        "description": "Konfigurera ubåtsnattläget för dina lampor.\n\n**Adaptive Lighting:** Om du använder Adaptive Lighting-integrationen måste Rig for Red tillfälligt inaktivera den medan ubåtsnattläget är aktivt — annars skulle båda kämpa om dina lampors ljusstyrka/färg. Välj Adaptive Lighting-omkopplarenheterna för de rum/zoner som överlappar med lamporna du valde ovan. Du kan lämna detta tomt om du inte använder Adaptive Lighting.",
         "data": {
           "lights": "Lampor (minst en krävs)",
           "schedule_days": "Vardagar",
@@ -21,7 +21,7 @@
           "dim_duration_minutes": "Hur lång tid dimningsövergången från vitt till rött ska ta.",
           "restore_at_sunrise": "Om aktiverat återställs lampor till vitt vid soluppgång istället för en fast tid.",
           "restore_time": "Om du inte återställer vid soluppgång, ange en fast tid för att återställa vit belysning.",
-          "adaptive_lighting_switches": "Valfria Adaptive Lighting-omkopplare att tillfälligt inaktivera under rött läge.",
+          "adaptive_lighting_switches": "Valfritt: Adaptive Lighting-omkopplarenheter som överlappar med dina valda lampor. Rig for Red stänger av dessa medan rött läge är aktivt så att Adaptive Lighting inte åsidosätter dimningen. Lämna tomt om du inte använder Adaptive Lighting.",
           "min_brightness_pct": "Den lägsta ljusstyrkan vid slutet av dimningsövergången."
         }
       }

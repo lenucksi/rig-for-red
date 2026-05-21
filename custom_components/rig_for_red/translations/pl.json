@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Rig for Red",
-        "description": "Skonfiguruj tryb nocny okrętu podwodnego dla swoich świateł.",
+        "description": "Skonfiguruj tryb nocny okrętu podwodnego dla swoich świateł.\n\n**Adaptive Lighting:** Jeśli używasz integracji Adaptive Lighting, Rig for Red musi tymczasowo ją wyłączyć, gdy tryb nocny okrętu podwodnego jest aktywny — w przeciwnym razie oba walczyłyby o jasność/kolor twoich świateł. Wybierz encje przełączników Adaptive Lighting dla pomieszczeń/stref, które nakładają się na wybrane powyżej światła. Możesz pozostawić to puste, jeśli nie używasz Adaptive Lighting.",
         "data": {
           "lights": "Światła (co najmniej jedno wymagane)",
           "schedule_days": "Dni tygodnia",
@@ -21,7 +21,7 @@
           "dim_duration_minutes": "Jak długo powinna trwać zmiana ściemniania z białego na czerwony.",
           "restore_at_sunrise": "Jeśli włączone, światła zostaną przywrócone do białego o wschodzie słońca zamiast o stałej godzinie.",
           "restore_time": "Jeśli nie przywracasz o wschodzie słońca, ustaw stały czas przywracania białego oświetlenia.",
-          "adaptive_lighting_switches": "Opcjonalne przełączniki Adaptive Lighting do tymczasowego wyłączenia podczas trybu czerwonego.",
+          "adaptive_lighting_switches": "Opcjonalnie: encje przełączników Adaptive Lighting, które nakładają się na wybrane światła. Rig for Red wyłączy je, gdy tryb czerwony jest aktywny, aby Adaptive Lighting nie nadpisywał ściemniania. Pozostaw puste, jeśli nie używasz Adaptive Lighting.",
           "min_brightness_pct": "Minimalny poziom jasności na końcu przejścia ściemniania."
         }
       }
