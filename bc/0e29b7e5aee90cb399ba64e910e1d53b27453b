@@ -1,0 +1,31 @@
+.github/workflows/validate.yml
+  s_4bfe7877ad808f::t_bcaf3f9694ee1e 9-10
+.github/workflows/release-please.yml
+  s_4bfe7877ad808f::t_bcaf3f9694ee1e 8-10
+.github/workflows/hassfest.yml
+  s_4bfe7877ad808f::t_bcaf3f9694ee1e 11-12
+.github/workflows/prek.yml
+  s_4bfe7877ad808f::t_bcaf3f9694ee1e 6-7
+.github/workflows/pytest.yaml
+  s_4bfe7877ad808f::t_bcaf3f9694ee1e 10-12,61
+.github/workflows/conventional-commits.yml
+  s_4bfe7877ad808f::t_bcaf3f9694ee1e 8-9,20
+"backlog/tasks/task-41 - CI-Workflow-Fixes-setup-uv-SHA-cocogitto-check-Node.js-20.md"
+  s_4bfe7877ad808f::t_ef7aa7fabb39f5 1-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "bc0e29b7e5aee90cb399ba64e910e1d53b27453b",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
