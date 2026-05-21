@@ -1,0 +1,142 @@
+custom_components/rig_for_red/config_flow.py
+  s_4bfe7877ad808f::t_6f9868c240d3ce 65-67
+  s_4bfe7877ad808f::t_cd2f84fa42add6 88-89
+  s_4bfe7877ad808f::t_fc7fe0c9d2dca8 90
+  s_4bfe7877ad808f::t_9dafc1020fcd4f 41
+custom_components/rig_for_red/translations/fi.json
+  s_fa5434e57bcf76::t_2a370130f92e82 1-55
+custom_components/rig_for_red/translations/fr.json
+  s_fa5434e57bcf76::t_b78ca7bc21ce52 1-55
+tests/conftest.py
+  s_4bfe7877ad808f::t_1397aec894ea59 28-29,31-32,34-39
+  s_4bfe7877ad808f::t_ad0ee7bc010a16 46
+  s_4bfe7877ad808f::t_9e5ab4e17ca58b 49-53
+  s_4bfe7877ad808f::t_4a3c3337e8da3f 41-42
+  s_4bfe7877ad808f::t_972bd32b4a0901 88-96
+  s_4bfe7877ad808f::t_b8e14e0161e86a 1-2
+  s_4bfe7877ad808f::t_e002b9457927a1 6,25-27,30,33,40,43-45
+tests/components/rig_for_red/__init__.py
+  s_4bfe7877ad808f::t_50a563506ceac3 20-21
+  s_4bfe7877ad808f::t_f660fd756218e6 25
+  s_4bfe7877ad808f::t_167f008bb28794 1-6,9,12,19,22-24
+  s_4bfe7877ad808f::t_cb20800befea78 7-8,10-11,13-18
+"backlog/tasks/task-32 - CI-CD-Pipeline-mit-Multi-Release-Matrix-Testing.md"
+  s_4bfe7877ad808f::t_a5431345cf7d43 5-6,46-50
+  s_4bfe7877ad808f::t_dd0f7dbe2d3e39 1-3,7,9-34,36,42-44
+  s_4bfe7877ad808f::t_5c0317dd04eca0 4,8
+  s_4bfe7877ad808f::t_445b6d67819883 35,37-41,45
+  s_4bfe7877ad808f::t_a771467ba29abe 51-56
+"backlog/docs/guides/testing-and-ci/doc-6 - Testing-CI-Guide.md"
+  s_4bfe7877ad808f::t_957fc7c6371e51 1-5,7,9
+  s_4bfe7877ad808f::t_9f11b91a464f1d 6,8,10-468
+tests/components/rig_for_red/conftest.py
+  s_4bfe7877ad808f::t_c7398063d22904 26-30
+  s_4bfe7877ad808f::t_3d3c74ce5c9386 1-25,31-100
+setup.cfg
+  s_4bfe7877ad808f::t_9931d36a4635b8 5
+  s_4bfe7877ad808f::t_0e0771a8b7845e 3-4,6
+  s_4bfe7877ad808f::t_775ae64b4692ca 1
+custom_components/rig_for_red/translations/it.json
+  s_fa5434e57bcf76::t_8a8f7a060b8be9 1-55
+"backlog/docs/guides/doc-4 - HA-Integration-Standards-Best-Practices.md"
+  s_4bfe7877ad808f::t_4f69c2b33295f4 6,8,10-60
+  s_4bfe7877ad808f::t_f7ab28a94dc8de 1-5,7,9
+custom_components/rig_for_red/translations/nb.json
+  s_fa5434e57bcf76::t_8b5b22bbad7326 1-55
+tests/components/rig_for_red/test_init.py
+  s_4bfe7877ad808f::t_16c6480d22678b 5
+  s_4bfe7877ad808f::t_1075206ac2afdd 4
+  s_4bfe7877ad808f::t_daf9a3b870780f 20,40-54
+"backlog/docs/guides/doc-5 - Integration-Quality-Scale-Rig-for-Red-Platinum-Roadmap.md"
+  s_4bfe7877ad808f::t_5ba7e5b7436980 6,8,10-80
+  s_4bfe7877ad808f::t_a47398052a7903 1-5,7,9
+"backlog/tasks/task-34 - Cleanup-Logo-Test-Struktur-Dockerfile-Optimierung.md"
+  s_4bfe7877ad808f::t_bef64977e98217 24-27,29
+  s_4bfe7877ad808f::t_48e1670258bb45 1-3,7,9-23,28
+  s_4bfe7877ad808f::t_5c0317dd04eca0 4,8,35-40
+  s_4bfe7877ad808f::t_01a8a360e2e198 5-6,30-34
+custom_components/rig_for_red/translations/pl.json
+  s_fa5434e57bcf76::t_e002aa49c01b55 1-55
+.github/workflows/pytest.yaml
+  s_4bfe7877ad808f::t_20ea50a5a5f954 1,8-12,15-18,20,22-38,40-43,45-48,50-68,70-77,79-89
+Dockerfile.test
+  s_4bfe7877ad808f::t_61780aa242916d 7
+  s_4bfe7877ad808f::t_c44b2a115d3d5b 15,19,22
+  s_4bfe7877ad808f::t_a983ead42393d7 16,20-21,24
+  s_4bfe7877ad808f::t_5678d2c37edd09 11-13
+  s_4bfe7877ad808f::t_95ba766c1a3f88 2
+  s_4bfe7877ad808f::t_7817d35cfe3b67 3,8,14
+  s_4bfe7877ad808f::t_d23b20273d4afb 1,4-6,9-10,17-18,23
+custom_components/rig_for_red/translations/pt.json
+  s_fa5434e57bcf76::t_711e950c526293 1-55
+custom_components/rig_for_red/translations/da.json
+  s_fa5434e57bcf76::t_21a369d2ecf64e 1-55
+custom_components/rig_for_red/translations/sv.json
+  s_fa5434e57bcf76::t_8243cfd3addbdb 6,8-25,30-52
+custom_components/rig_for_red/translations/hi.json
+  s_fa5434e57bcf76::t_f2eb9d9f252a91 1-55
+tests/components/rig_for_red/test_config_flow.py
+  s_4bfe7877ad808f::t_daf9a3b870780f 41-44,99-116
+.github/workflows/update-test-matrix.yaml
+  s_4bfe7877ad808f::t_2bb7b998eafc7d 1-58
+"backlog/tasks/task-33 - Testing-CI-Development-Guide.md"
+  s_4bfe7877ad808f::t_47624efde7d917 5-6,34-45
+  s_4bfe7877ad808f::t_5c0317dd04eca0 4,8
+  s_4bfe7877ad808f::t_fcd824017999ca 1-3,7,9-33
+custom_components/rig_for_red/translations/es.json
+  s_fa5434e57bcf76::t_9ee1368fa8019e 1-55
+custom_components/rig_for_red/translations/zh-TW.json
+  s_fa5434e57bcf76::t_2df67bc300edde 1-55
+custom_components/rig_for_red/translations/ta.json
+  s_fa5434e57bcf76::t_b75753a9cc6efa 1-55
+custom_components/rig_for_red/strings.json
+  s_4bfe7877ad808f::t_471720f590288e 16-25,34-52
+tests/components/rig_for_red/test_coordinator.py
+  s_4bfe7877ad808f::t_f7555f3801d2ec 1
+  s_4bfe7877ad808f::t_af2fe1b5e4360f 94-96
+  s_4bfe7877ad808f::t_931528d54d5995 37-39
+  s_4bfe7877ad808f::t_380f86e0a59cd6 361-365
+  s_4bfe7877ad808f::t_dd5d9329e58edc 286,290,292-294,296
+  s_4bfe7877ad808f::t_cbab446b2c2976 75-77
+  s_4bfe7877ad808f::t_79e32acc286ab4 252
+  s_4bfe7877ad808f::t_05463229bc539f 197-199
+  s_4bfe7877ad808f::t_03ab3c658ece5c 9
+  s_4bfe7877ad808f::t_daf9a3b870780f 10,32,43,46-49,51,54,203,206,209-224,230-244,246,253-268,270,301,304-311,319-340,344-360,366-368
+  s_4bfe7877ad808f::t_af067a8f71c533 248-250
+  s_4bfe7877ad808f::t_e0aa230697dfac 269,271-273,278-285,287-289,291,295,297-300,302-303
+  s_4bfe7877ad808f::t_d4a483cc8e01a7 341-343
+scripts/update-test-matrix.py
+  s_4bfe7877ad808f::t_51896ac2f3625a 1-122
+.github/workflows/release-drafter.yml
+  s_4bfe7877ad808f::t_532094bffb7abf 5-6
+custom_components/rig_for_red/translations/nl.json
+  s_fa5434e57bcf76::t_2e8382e479436f 1-55
+custom_components/rig_for_red/translations/de.json
+  s_fa5434e57bcf76::t_16f97b3a4e9813 1-55
+tests/components/rig_for_red/test_switch.py
+  s_4bfe7877ad808f::t_daf9a3b870780f 1,8-12,15,17,23,25,33,40,52,63,71-78,83,90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "db815626d10ebfaf268a574e40caf6519433461d",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    },
+    "s_fa5434e57bcf76": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b552bc4fffezFJmoF7eqfvtJt",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
