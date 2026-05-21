@@ -14,12 +14,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           fetch-depth: 0
-      - name: Check conventional commits
-        shell: bash
-        run: |
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
-          if [ -n "$LATEST_TAG" ]; then
-            cog check "${LATEST_TAG}..HEAD"
-          else
-            cog check
-          fi
+      - uses: cocogitto/cocogitto-action@v4
+        with:
+          command: check
+          args: --from-latest-tag
