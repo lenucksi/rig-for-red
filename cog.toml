@@ -1,0 +1,15 @@
+ignore_merge_commits = true
+
+[commit_types]
+feat = {}
+fix = { order = 0 }
+BREAKING_CHANGE = { order = 1 }
+docs = {}
+refactor = {}
+perf = {}
+test = {}
+build = {}
+ci = { omit_from_changelog = true }
+chore = { omit_from_changelog = true }
+revert = {}
+style = {}
