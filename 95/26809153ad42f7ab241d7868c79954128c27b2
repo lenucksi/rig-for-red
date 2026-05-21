@@ -1,0 +1,21 @@
+.github/workflows/release-please.yml
+  s_4bfe7877ad808f::t_95f2ca2afddf4f 16
+.release-please-manifest.json
+  s_4bfe7877ad808f::t_99fb9d7ab04877 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "9526809153ad42f7ab241d7868c79954128c27b2",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
