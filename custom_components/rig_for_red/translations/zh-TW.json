@@ -27,6 +27,16 @@
       },
       "reconfigure": {
         "title": "重新設定 Rig for Red",
+        "data": {
+          "lights": "燈光（至少需要一個）",
+          "schedule_days": "工作日",
+          "schedule_time": "啟用時間",
+          "dim_duration_minutes": "調光持續時間（分鐘）",
+          "restore_at_sunrise": "日出時還原",
+          "restore_time": "固定還原時間",
+          "adaptive_lighting_switches": "Adaptive Lighting 開關（可選）",
+          "min_brightness_pct": "最低亮度（%）"
+        },
         "data_description": {
           "lights": "選擇在潛艇夜間模式期間應切換為紅光的燈光。",
           "schedule_days": "選擇夜間模式排程應啟用的工作日。",

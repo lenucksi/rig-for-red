@@ -27,6 +27,16 @@
       },
       "reconfigure": {
         "title": "Reconfigurer Rig for Red",
+        "data": {
+          "lights": "Lumières (au moins une requise)",
+          "schedule_days": "Jours de la semaine",
+          "schedule_time": "Heure d'activation",
+          "dim_duration_minutes": "Durée de gradation (minutes)",
+          "restore_at_sunrise": "Restaurer au lever du soleil",
+          "restore_time": "Heure de restauration fixe",
+          "adaptive_lighting_switches": "Interrupteurs Adaptive Lighting (optionnel)",
+          "min_brightness_pct": "Luminosité minimale (%)"
+        },
         "data_description": {
           "lights": "Choisissez les lumières qui doivent passer au rouge pendant le mode nuit sous-marin.",
           "schedule_days": "Sélectionnez les jours de la semaine où le mode nuit doit s'activer.",

@@ -27,6 +27,16 @@
       },
       "reconfigure": {
         "title": "Rig for Red opnieuw configureren",
+        "data": {
+          "lights": "Lampen (minstens één vereist)",
+          "schedule_days": "Weekdagen",
+          "schedule_time": "Activeringstijd",
+          "dim_duration_minutes": "Dimduur (minuten)",
+          "restore_at_sunrise": "Herstellen bij zonsopgang",
+          "restore_time": "Vaste hersteltijd",
+          "adaptive_lighting_switches": "Adaptive Lighting schakelaars (optioneel)",
+          "min_brightness_pct": "Minimale helderheid (%)"
+        },
         "data_description": {
           "lights": "Kies de lampen die rood moeten worden tijdens de onderwater-nachtmodus.",
           "schedule_days": "Selecteer de weekdagen waarop de nachtmodus moet worden geactiveerd.",

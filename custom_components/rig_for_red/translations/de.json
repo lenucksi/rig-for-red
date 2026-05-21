@@ -27,6 +27,16 @@
       },
       "reconfigure": {
         "title": "Reconfigure Rig for Red",
+        "data": {
+          "lights": "Lampen (mindestens eine erforderlich)",
+          "schedule_days": "Wochentage",
+          "schedule_time": "Aktivierungszeit",
+          "dim_duration_minutes": "Dimmdauer (Minuten)",
+          "restore_at_sunrise": "Bei Sonnenaufgang wiederherstellen",
+          "restore_time": "Feste Wiederherstellungszeit",
+          "adaptive_lighting_switches": "Adaptive Lighting Schalter (optional)",
+          "min_brightness_pct": "Minimale Helligkeit (%)"
+        },
         "data_description": {
           "lights": "Wählen Sie die Lampen aus, die während des U-Boot-Nachtmodus rot leuchten sollen.",
           "schedule_days": "Wählen Sie die Wochentage aus, an denen der Nachtmodus aktiviert werden soll.",

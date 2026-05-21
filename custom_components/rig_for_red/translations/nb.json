@@ -27,6 +27,16 @@
       },
       "reconfigure": {
         "title": "Rekonfigurer Rig for Red",
+        "data": {
+          "lights": "Lys (minst én påkrevd)",
+          "schedule_days": "Ukedager",
+          "schedule_time": "Aktiveringstid",
+          "dim_duration_minutes": "Dempingsvarighet (minutter)",
+          "restore_at_sunrise": "Gjenopprett ved soloppgang",
+          "restore_time": "Fast gjenopprettingstid",
+          "adaptive_lighting_switches": "Adaptive Lighting-brytere (valgfritt)",
+          "min_brightness_pct": "Minimum lysstyrke (%)"
+        },
         "data_description": {
           "lights": "Velg lysene som skal bytte til rødt under undervanns-nattmodusen.",
           "schedule_days": "Velg ukedagene som nattmodusplanen skal aktiveres på.",

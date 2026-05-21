@@ -27,6 +27,16 @@
       },
       "reconfigure": {
         "title": "Uudelleenkonfiguroi Rig for Red",
+        "data": {
+          "lights": "Valot (vähintään yksi vaaditaan)",
+          "schedule_days": "Viikonpäivät",
+          "schedule_time": "Aktivoitumisaika",
+          "dim_duration_minutes": "Himmennyskesto (minuutteja)",
+          "restore_at_sunrise": "Palauta auringonnousun aikaan",
+          "restore_time": "Kiinteä palautusaika",
+          "adaptive_lighting_switches": "Adaptive Lighting-kytkimet (valinnainen)",
+          "min_brightness_pct": "Vähimmäiskirkkaus (%)"
+        },
         "data_description": {
           "lights": "Valitse valot, joiden pitäisi vaihtua punaiseksi sukellusveneyötilan aikana.",
           "schedule_days": "Valitse viikonpäivät, joina yötila-aikataulu aktivoidaan.",

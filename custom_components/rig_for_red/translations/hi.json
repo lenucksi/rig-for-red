@@ -27,6 +27,16 @@
       },
       "reconfigure": {
         "title": "Rig for Red पुनर्संरचित करें",
+        "data": {
+          "lights": "लाइटें (कम से कम एक आवश्यक)",
+          "schedule_days": "सप्ताह के दिन",
+          "schedule_time": "सक्रियण समय",
+          "dim_duration_minutes": "मंद करने की अवधि (मिनट)",
+          "restore_at_sunrise": "सूर्योदय पर पुनर्स्थापित करें",
+          "restore_time": "निश्चित पुनर्स्थापना समय",
+          "adaptive_lighting_switches": "Adaptive Lighting स्विच (वैकल्पिक)",
+          "min_brightness_pct": "न्यूनतम चमक (%)"
+        },
         "data_description": {
           "lights": "उन लाइटों को चुनें जो सबमरीन नाइट मोड के दौरान लाल हो जाएँ।",
           "schedule_days": "उन सप्ताह के दिनों का चयन करें जिन पर नाइट मोड शेड्यूल सक्रिय होना चाहिए।",

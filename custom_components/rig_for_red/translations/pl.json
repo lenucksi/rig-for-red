@@ -27,6 +27,16 @@
       },
       "reconfigure": {
         "title": "Rekonfiguruj Rig for Red",
+        "data": {
+          "lights": "Światła (co najmniej jedno wymagane)",
+          "schedule_days": "Dni tygodnia",
+          "schedule_time": "Czas aktywacji",
+          "dim_duration_minutes": "Czas ściemniania (minuty)",
+          "restore_at_sunrise": "Przywróć o wschodzie słońca",
+          "restore_time": "Stały czas przywracania",
+          "adaptive_lighting_switches": "Przełączniki Adaptive Lighting (opcjonalne)",
+          "min_brightness_pct": "Minimalna jasność (%)"
+        },
         "data_description": {
           "lights": "Wybierz światła, które powinny przełączyć się na czerwony podczas nocnego trybu okrętu podwodnego.",
           "schedule_days": "Wybierz dni tygodnia, w których harmonogram trybu nocnego ma być aktywowany.",

@@ -27,6 +27,16 @@
       },
       "reconfigure": {
         "title": "Reconfigure Rig for Red",
+        "data": {
+          "lights": "Lights (at least one required)",
+          "schedule_days": "Weekdays",
+          "schedule_time": "Activation time",
+          "dim_duration_minutes": "Dim duration (minutes)",
+          "restore_at_sunrise": "Restore at sunrise",
+          "restore_time": "Fixed restore time",
+          "adaptive_lighting_switches": "Adaptive Lighting switches (optional)",
+          "min_brightness_pct": "Minimum brightness (%)"
+        },
         "data_description": {
           "lights": "Choose the lights that should switch to red during submarine night mode.",
           "schedule_days": "Select the weekdays on which the night mode schedule should activate.",

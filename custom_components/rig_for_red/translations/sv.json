@@ -27,6 +27,16 @@
       },
       "reconfigure": {
         "title": "Omkonfigurera Rig for Red",
+        "data": {
+          "lights": "Lampor (minst en krävs)",
+          "schedule_days": "Vardagar",
+          "schedule_time": "Aktiveringstid",
+          "dim_duration_minutes": "Dimningslängd (minuter)",
+          "restore_at_sunrise": "Återställ vid soluppgång",
+          "restore_time": "Fast återställningstid",
+          "adaptive_lighting_switches": "Adaptive Lighting-omkopplare (valfritt)",
+          "min_brightness_pct": "Minsta ljusstyrka (%)"
+        },
         "data_description": {
           "lights": "Välj de lampor som ska växla till rött under ubåtsnattläget.",
           "schedule_days": "Välj de vardagar då nattlägesschemat ska aktiveras.",
