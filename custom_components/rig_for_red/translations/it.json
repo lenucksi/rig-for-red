@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Rig for Red",
+        "description": "Configura la modalità notturna sottomarina per le tue luci.",
+        "data": {
+          "lights": "Luci (almeno una richiesta)",
+          "schedule_days": "Giorni della settimana",
+          "schedule_time": "Ora di attivazione",
+          "dim_duration_minutes": "Durata della dimmerazione (minuti)",
+          "restore_at_sunrise": "Ripristina all'alba",
+          "restore_time": "Orario di ripristino fisso",
+          "adaptive_lighting_switches": "Interruttori Adaptive Lighting (opzionale)",
+          "min_brightness_pct": "Luminosità minima (%)"
+        },
+        "data_description": {
+          "lights": "Scegli le luci che devono passare al rosso durante la modalità notturna sottomarina.",
+          "schedule_days": "Seleziona i giorni della settimana in cui attivare la modalità notturna.",
+          "schedule_time": "L'ora in cui le luci devono iniziare a dimmerare verso il rosso.",
+          "dim_duration_minutes": "Quanto deve durare la transizione di dimmerazione dal bianco al rosso.",
+          "restore_at_sunrise": "Se abilitato, le luci torneranno al bianco all'alba invece che a un'ora fissa.",
+          "restore_time": "Se non si ripristina all'alba, imposta un'ora fissa per ripristinare l'illuminazione bianca.",
+          "adaptive_lighting_switches": "Interruttori Adaptive Lighting opzionali da disabilitare temporaneamente durante la modalità rossa.",
+          "min_brightness_pct": "Il livello di luminosità minimo alla fine della transizione di dimmerazione."
+        }
+      }
+    },
+    "error": {
+      "lights_required": "Seleziona almeno una luce.",
+      "restore_time_required": "Fornisci un orario di ripristino quando non si ripristina all'alba.",
+      "entity_not_found": "Una o più luci non sono state trovate."
+    }
+  },
+  "selector": {
+    "weekdays": {
+      "options": {
+        "mon": "Lunedì",
+        "tue": "Martedì",
+        "wed": "Mercoledì",
+        "thu": "Giovedì",
+        "fri": "Venerdì",
+        "sat": "Sabato",
+        "sun": "Domenica"
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "rig_for_red": {
+        "name": "Rig for Red"
+      }
+    }
+  }
+}

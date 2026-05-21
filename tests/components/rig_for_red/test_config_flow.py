@@ -38,7 +38,10 @@ async def test_form_displayed(hass):
     assert result["step_id"] == "user"
     schema = result["data_schema"]
     assert schema is not None
-    field_keys = {k.key for k in schema.schema}
+    if isinstance(schema.schema, dict):
+        field_keys = set(schema.schema.keys())
+    else:
+        field_keys = {k.key for k in schema.schema}
     assert CONF_LIGHTS in field_keys
     assert CONF_SCHEDULE_DAYS in field_keys
     assert CONF_SCHEDULE_TIME in field_keys
@@ -91,6 +94,24 @@ async def test_missing_lights_error(hass):
     )
     assert result["type"] == FlowResultType.FORM
     assert result["errors"].get(CONF_LIGHTS) == "lights_required"
+
+
+async def test_entity_not_found(hass):
+    data = {
+        CONF_LIGHTS: ["light.nonexistent"],
+        CONF_SCHEDULE_DAYS: ["mon"],
+        CONF_SCHEDULE_TIME: "23:00",
+        CONF_DIM_DURATION_MINUTES: DEFAULT_DIM_DURATION_MINUTES,
+        CONF_RESTORE_AT_SUNRISE: True,
+        CONF_RESTORE_TIME: None,
+        CONF_ADAPTIVE_LIGHTING_SWITCHES: [],
+        CONF_MIN_BRIGHTNESS_PCT: DEFAULT_MIN_BRIGHTNESS_PCT,
+    }
+    result = await hass.config_entries.flow.async_init(
+        DOMAIN, context={"source": config_entries.SOURCE_USER}, data=data
+    )
+    assert result["type"] == FlowResultType.FORM
+    assert result["errors"].get(CONF_LIGHTS) == "entity_not_found"
 
 
 async def test_restore_time_required(hass, mock_light_states):

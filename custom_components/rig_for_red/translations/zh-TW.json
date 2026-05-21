@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "紅光模式",
+        "description": "為您的燈光配置潛艇夜間模式。",
+        "data": {
+          "lights": "燈光（至少需要一個）",
+          "schedule_days": "工作日",
+          "schedule_time": "啟用時間",
+          "dim_duration_minutes": "調光持續時間（分鐘）",
+          "restore_at_sunrise": "日出時還原",
+          "restore_time": "固定還原時間",
+          "adaptive_lighting_switches": "Adaptive Lighting 開關（可選）",
+          "min_brightness_pct": "最低亮度（%）"
+        },
+        "data_description": {
+          "lights": "選擇在潛艇夜間模式期間應切換為紅光的燈光。",
+          "schedule_days": "選擇夜間模式排程應啟用的工作日。",
+          "schedule_time": "燈光開始調暗為紅色的時間。",
+          "dim_duration_minutes": "從白色過渡到紅色的調光過程應持續多長時間。",
+          "restore_at_sunrise": "如果啟用，燈光將在日出時還原為白色，而非固定時間。",
+          "restore_time": "如果不在日出時還原，請設定還原白色燈光的固定時間。",
+          "adaptive_lighting_switches": "可選的 Adaptive Lighting 開關，可在紅色模式下暫時停用。",
+          "min_brightness_pct": "調光過渡結束時的最低亮度級別。"
+        }
+      }
+    },
+    "error": {
+      "lights_required": "請至少選擇一個燈光。",
+      "restore_time_required": "請在非日出還原時提供還原時間。",
+      "entity_not_found": "找不到一個或多個燈光。"
+    }
+  },
+  "selector": {
+    "weekdays": {
+      "options": {
+        "mon": "星期一",
+        "tue": "星期二",
+        "wed": "星期三",
+        "thu": "星期四",
+        "fri": "星期五",
+        "sat": "星期六",
+        "sun": "星期日"
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "rig_for_red": {
+        "name": "紅光模式"
+      }
+    }
+  }
+}

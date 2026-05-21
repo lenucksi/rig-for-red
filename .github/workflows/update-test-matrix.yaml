@@ -1,0 +1,58 @@
+name: Update Test Matrix
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-matrix:
+    name: Update HA Core versions in test matrix
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Set up Python
+        uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5
+        with:
+          python-version: "3.14"
+
+      - name: Update test matrix
+        run: python scripts/update-test-matrix.py
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet .github/workflows/pytest.yaml; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Detected changes:"
+            git diff .github/workflows/pytest.yaml
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@5e914681df9dc83aa4e4905692ca88b1040c17f8 # v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "ci: update HA Core test matrix versions"
+          title: "ci: Update Home Assistant Core test matrix"
+          body: |
+            This PR automatically updates the pytest workflow to test against the latest Home Assistant Core versions.
+
+            ## Changes
+            - Updated HA Core versions in the test matrix to include latest patch releases
+
+            ---
+            🤖 Generated automatically by the update-test-matrix workflow
+          branch: update-test-matrix
+          delete-branch: true
+          labels: |
+            automation
+            ci

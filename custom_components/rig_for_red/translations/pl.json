@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Rig for Red",
+        "description": "Skonfiguruj tryb nocny okrętu podwodnego dla swoich świateł.",
+        "data": {
+          "lights": "Światła (co najmniej jedno wymagane)",
+          "schedule_days": "Dni tygodnia",
+          "schedule_time": "Czas aktywacji",
+          "dim_duration_minutes": "Czas ściemniania (minuty)",
+          "restore_at_sunrise": "Przywróć o wschodzie słońca",
+          "restore_time": "Stały czas przywracania",
+          "adaptive_lighting_switches": "Przełączniki Adaptive Lighting (opcjonalne)",
+          "min_brightness_pct": "Minimalna jasność (%)"
+        },
+        "data_description": {
+          "lights": "Wybierz światła, które powinny przełączyć się na czerwony podczas nocnego trybu okrętu podwodnego.",
+          "schedule_days": "Wybierz dni tygodnia, w których harmonogram trybu nocnego ma być aktywowany.",
+          "schedule_time": "Godzina, o której światła powinny zacząć ściemniać się do czerwonego.",
+          "dim_duration_minutes": "Jak długo powinna trwać zmiana ściemniania z białego na czerwony.",
+          "restore_at_sunrise": "Jeśli włączone, światła zostaną przywrócone do białego o wschodzie słońca zamiast o stałej godzinie.",
+          "restore_time": "Jeśli nie przywracasz o wschodzie słońca, ustaw stały czas przywracania białego oświetlenia.",
+          "adaptive_lighting_switches": "Opcjonalne przełączniki Adaptive Lighting do tymczasowego wyłączenia podczas trybu czerwonego.",
+          "min_brightness_pct": "Minimalny poziom jasności na końcu przejścia ściemniania."
+        }
+      }
+    },
+    "error": {
+      "lights_required": "Wybierz co najmniej jedno światło.",
+      "restore_time_required": "Podaj czas przywracania, gdy nie przywracasz o wschodzie słońca.",
+      "entity_not_found": "Nie znaleziono jednego lub więcej świateł."
+    }
+  },
+  "selector": {
+    "weekdays": {
+      "options": {
+        "mon": "Poniedziałek",
+        "tue": "Wtorek",
+        "wed": "Środa",
+        "thu": "Czwartek",
+        "fri": "Piątek",
+        "sat": "Sobota",
+        "sun": "Niedziela"
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "rig_for_red": {
+        "name": "Rig for Red"
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Rig for Red",
+        "description": "Konfigurer undervands-nattilstanden for dine lys.",
+        "data": {
+          "lights": "Lys (mindst én påkrævet)",
+          "schedule_days": "Ugedage",
+          "schedule_time": "Aktiveringstid",
+          "dim_duration_minutes": "Dæmpningsvarighed (minutter)",
+          "restore_at_sunrise": "Gendan ved solopgang",
+          "restore_time": "Fast gendannelsestid",
+          "adaptive_lighting_switches": "Adaptive Lighting kontakter (valgfri)",
+          "min_brightness_pct": "Minimum lysstyrke (%)"
+        },
+        "data_description": {
+          "lights": "Vælg de lys, der skal skifte til rød under undervands-nattilstanden.",
+          "schedule_days": "Vælg de ugedage, hvor nattilstandsplanen skal aktiveres.",
+          "schedule_time": "Tidspunktet, hvor lysene skal begynde at dæmpe til rød.",
+          "dim_duration_minutes": "Hvor lang tid dæmpningsovergangen fra hvid til rød skal tage.",
+          "restore_at_sunrise": "Hvis aktiveret, vil lys blive gendannet til hvid ved solopgang i stedet for et fast tidspunkt.",
+          "restore_time": "Hvis der ikke gendannes ved solopgang, indstil et fast tidspunkt til at gendanne hvid belysning.",
+          "adaptive_lighting_switches": "Valgfrie Adaptive Lighting kontakter til midlertidigt at deaktivere under rød tilstand.",
+          "min_brightness_pct": "Det minimale lysstyrkeniveau ved slutningen af dæmpningsovergangen."
+        }
+      }
+    },
+    "error": {
+      "lights_required": "Vælg venligst mindst ét lys.",
+      "restore_time_required": "Angiv venligst et gendannelsestidspunkt, når der ikke gendannes ved solopgang.",
+      "entity_not_found": "Et eller flere lys blev ikke fundet."
+    }
+  },
+  "selector": {
+    "weekdays": {
+      "options": {
+        "mon": "Mandag",
+        "tue": "Tirsdag",
+        "wed": "Onsdag",
+        "thu": "Torsdag",
+        "fri": "Fredag",
+        "sat": "Lørdag",
+        "sun": "Søndag"
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "rig_for_red": {
+        "name": "Rig for Red"
+      }
+    }
+  }
+}

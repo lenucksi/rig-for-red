@@ -1,0 +1,24 @@
+ARG HA_VERSION=2026.2.3
+FROM python:3.13-slim
+
+ARG HA_VERSION
+ENV HA_VERSION=${HA_VERSION}
+
+RUN apt-get update && apt-get install -y git build-essential && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir \
+    homeassistant==${HA_VERSION} \
+    pytest-homeassistant-custom-component \
+    pytest-cov \
+    freezegun
+
+COPY custom_components/rig_for_red/ /app/custom_components/rig_for_red/
+COPY tests/components/rig_for_red/ /app/tests/components/rig_for_red/
+COPY tests/conftest.py /app/tests/conftest.py
+COPY setup.cfg /app/
+
+WORKDIR /app
+ENV PYTHONPATH="/app"
+
+ENTRYPOINT ["python3", "-m", "pytest", "-v", "--tb=short", "-p", "no:cacheprovider"]
+CMD ["tests/components/rig_for_red/"]

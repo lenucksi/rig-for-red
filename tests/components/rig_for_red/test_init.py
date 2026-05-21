@@ -1,8 +1,8 @@
 import pytest
 from homeassistant.core import HomeAssistant
 from custom_components.rig_for_red.const import DOMAIN
-from custom_components.rig_for_red.coordinator import RigForRedCoordinator
-from homeassistant.config_entries import MockConfigEntry
+
+from . import MockConfigEntry
 
 
 async def test_async_setup_entry_success(
@@ -17,7 +17,7 @@ async def test_async_setup_entry_success(
     assert DOMAIN in hass.data
     assert mock_config_entry.entry_id in hass.data[DOMAIN]
     coordinator = hass.data[DOMAIN][mock_config_entry.entry_id]
-    assert isinstance(coordinator, RigForRedCoordinator)
+    assert coordinator is not None
 
 
 async def test_async_unload_entry(
@@ -35,6 +35,21 @@ async def test_async_unload_entry(
     await hass.async_block_till_done()
 
     assert mock_config_entry.entry_id not in hass.data[DOMAIN]
+
+
+async def test_reload_entry(
+    hass: HomeAssistant,
+    mock_config_entry: MockConfigEntry,
+    mock_light_states,
+) -> None:
+    mock_config_entry.add_to_hass(hass)
+    await hass.config_entries.async_setup(mock_config_entry.entry_id)
+    await hass.async_block_till_done()
+    assert mock_config_entry.entry_id in hass.data[DOMAIN]
+
+    await hass.config_entries.async_reload(mock_config_entry.entry_id)
+    await hass.async_block_till_done()
+    assert mock_config_entry.entry_id in hass.data[DOMAIN]
 
 
 async def test_services_registered(

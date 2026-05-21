@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Rig for Red",
+        "description": "Konfigurera ubåtsnattläget för dina lampor.",
+        "data": {
+          "lights": "Lampor (minst en krävs)",
+          "schedule_days": "Vardagar",
+          "schedule_time": "Aktiveringstid",
+          "dim_duration_minutes": "Dimningslängd (minuter)",
+          "restore_at_sunrise": "Återställ vid soluppgång",
+          "restore_time": "Fast återställningstid",
+          "adaptive_lighting_switches": "Adaptive Lighting-omkopplare (valfritt)",
+          "min_brightness_pct": "Minsta ljusstyrka (%)"
+        },
+        "data_description": {
+          "lights": "Välj de lampor som ska växla till rött under ubåtsnattläget.",
+          "schedule_days": "Välj de vardagar då nattlägesschemat ska aktiveras.",
+          "schedule_time": "Tiden då lamporna ska börja dimmas till rött.",
+          "dim_duration_minutes": "Hur lång tid dimningsövergången från vitt till rött ska ta.",
+          "restore_at_sunrise": "Om aktiverat återställs lampor till vitt vid soluppgång istället för en fast tid.",
+          "restore_time": "Om du inte återställer vid soluppgång, ange en fast tid för att återställa vit belysning.",
+          "adaptive_lighting_switches": "Valfria Adaptive Lighting-omkopplare att tillfälligt inaktivera under rött läge.",
+          "min_brightness_pct": "Den lägsta ljusstyrkan vid slutet av dimningsövergången."
+        }
+      }
+    },
+    "error": {
+      "lights_required": "Vänligen välj minst en lampa.",
+      "restore_time_required": "Ange en återställningstid när du inte återställer vid soluppgång.",
+      "entity_not_found": "En eller flera lampor hittades inte."
+    }
+  },
+  "selector": {
+    "weekdays": {
+      "options": {
+        "mon": "Måndag",
+        "tue": "Tisdag",
+        "wed": "Onsdag",
+        "thu": "Torsdag",
+        "fri": "Fredag",
+        "sat": "Lördag",
+        "sun": "Söndag"
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "rig_for_red": {
+        "name": "Rig for Red"
+      }
+    }
+  }
+}

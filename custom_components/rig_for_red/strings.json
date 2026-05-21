@@ -13,6 +13,16 @@
           "restore_time": "Fixed restore time",
           "adaptive_lighting_switches": "Adaptive Lighting switches (optional)",
           "min_brightness_pct": "Minimum brightness (%)"
+        },
+        "data_description": {
+          "lights": "Choose the lights that should switch to red during submarine night mode.",
+          "schedule_days": "Select the weekdays on which the night mode schedule should activate.",
+          "schedule_time": "The time at which the lights should start dimming to red.",
+          "dim_duration_minutes": "How long the dimming transition from white to red should take.",
+          "restore_at_sunrise": "If enabled, lights will restore to white at sunrise instead of a fixed time.",
+          "restore_time": "If not restoring at sunrise, set a fixed time to restore white lighting.",
+          "adaptive_lighting_switches": "Optional Adaptive Lighting switches to temporarily disable during red mode.",
+          "min_brightness_pct": "The minimum brightness level at the end of the dimming transition."
         }
       }
     },
@@ -20,6 +30,26 @@
       "lights_required": "Please select at least one light.",
       "restore_time_required": "Please provide a restore time when not restoring at sunrise.",
       "entity_not_found": "One or more lights were not found."
+    }
+  },
+  "selector": {
+    "weekdays": {
+      "options": {
+        "mon": "Monday",
+        "tue": "Tuesday",
+        "wed": "Wednesday",
+        "thu": "Thursday",
+        "fri": "Friday",
+        "sat": "Saturday",
+        "sun": "Sunday"
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "rig_for_red": {
+        "name": "Rig for Red"
+      }
     }
   }
 }

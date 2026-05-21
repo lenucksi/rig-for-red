@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Rig for Red",
+        "description": "Configure o modo noturno submarino para suas luzes.",
+        "data": {
+          "lights": "Luzes (pelo menos uma obrigatória)",
+          "schedule_days": "Dias da semana",
+          "schedule_time": "Hora de ativação",
+          "dim_duration_minutes": "Duração do escurecimento (minutos)",
+          "restore_at_sunrise": "Restaurar ao nascer do sol",
+          "restore_time": "Hora de restauração fixa",
+          "adaptive_lighting_switches": "Interruptores Adaptive Lighting (opcional)",
+          "min_brightness_pct": "Brilho mínimo (%)"
+        },
+        "data_description": {
+          "lights": "Escolha as luzes que devem ficar vermelhas durante o modo noturno submarino.",
+          "schedule_days": "Selecione os dias da semana em que o modo noturno deve ser ativado.",
+          "schedule_time": "A hora em que as luzes devem começar a escurecer para o vermelho.",
+          "dim_duration_minutes": "Quanto tempo a transição de escurecimento do branco para o vermelho deve levar.",
+          "restore_at_sunrise": "Se ativado, as luzes serão restauradas para o branco ao nascer do sol em vez de um horário fixo.",
+          "restore_time": "Se não estiver restaurando ao nascer do sol, defina um horário fixo para restaurar a iluminação branca.",
+          "adaptive_lighting_switches": "Interruptores Adaptive Lighting opcionais para desativar temporariamente durante o modo vermelho.",
+          "min_brightness_pct": "O nível mínimo de brilho no final da transição de escurecimento."
+        }
+      }
+    },
+    "error": {
+      "lights_required": "Por favor, selecione pelo menos uma luz.",
+      "restore_time_required": "Por favor, forneça um horário de restauração quando não estiver restaurando ao nascer do sol.",
+      "entity_not_found": "Uma ou mais luzes não foram encontradas."
+    }
+  },
+  "selector": {
+    "weekdays": {
+      "options": {
+        "mon": "Segunda-feira",
+        "tue": "Terça-feira",
+        "wed": "Quarta-feira",
+        "thu": "Quinta-feira",
+        "fri": "Sexta-feira",
+        "sat": "Sábado",
+        "sun": "Domingo"
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "rig_for_red": {
+        "name": "Rig for Red"
+      }
+    }
+  }
+}

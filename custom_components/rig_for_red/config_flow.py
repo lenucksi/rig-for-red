@@ -38,7 +38,7 @@ class RigForRedConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
             if not errors.get(CONF_LIGHTS):
                 for entity_id in user_input[CONF_LIGHTS]:
-                    if entity_id not in self.hass.states:
+                    if self.hass.states.get(entity_id) is None:
                         errors[CONF_LIGHTS] = "entity_not_found"
                         break
 
@@ -62,7 +62,9 @@ class RigForRedConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 ),
                 vol.Required(CONF_SCHEDULE_DAYS): selector.SelectSelector(
                     selector.SelectSelectorConfig(
-                        options=WEEKDAYS, multiple=True
+                        options=WEEKDAYS,
+                        multiple=True,
+                        translation_key="weekdays",
                     )
                 ),
                 vol.Required(CONF_SCHEDULE_TIME): selector.TimeSelector(),
@@ -83,7 +85,9 @@ class RigForRedConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     CONF_ADAPTIVE_LIGHTING_SWITCHES
                 ): selector.EntitySelector(
                     selector.EntitySelectorConfig(
-                        domain="switch", multiple=True
+                        domain="switch",
+                        multiple=True,
+                        integration="adaptive_lighting",
                     )
                 ),
                 vol.Required(

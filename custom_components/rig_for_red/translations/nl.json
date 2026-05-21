@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Rig for Red",
+        "description": "Configureer de onderwater-nachtmodus voor uw lampen.",
+        "data": {
+          "lights": "Lampen (minstens één vereist)",
+          "schedule_days": "Weekdagen",
+          "schedule_time": "Activeringstijd",
+          "dim_duration_minutes": "Dimduur (minuten)",
+          "restore_at_sunrise": "Herstellen bij zonsopgang",
+          "restore_time": "Vaste hersteltijd",
+          "adaptive_lighting_switches": "Adaptive Lighting schakelaars (optioneel)",
+          "min_brightness_pct": "Minimale helderheid (%)"
+        },
+        "data_description": {
+          "lights": "Kies de lampen die rood moeten worden tijdens de onderwater-nachtmodus.",
+          "schedule_days": "Selecteer de weekdagen waarop de nachtmodus moet worden geactiveerd.",
+          "schedule_time": "De tijd waarop de lampen naar rood moeten beginnen te dimmen.",
+          "dim_duration_minutes": "Hoe lang de dimovergang van wit naar rood moet duren.",
+          "restore_at_sunrise": "Indien ingeschakeld, worden lampen bij zonsopgang hersteld naar wit in plaats van een vaste tijd.",
+          "restore_time": "Als u niet herstelt bij zonsopgang, stel dan een vaste tijd in om witte verlichting te herstellen.",
+          "adaptive_lighting_switches": "Optionele Adaptive Lighting schakelaars om tijdelijk uit te schakelen tijdens de rode modus.",
+          "min_brightness_pct": "Het minimale helderheidsniveau aan het einde van de dimovergang."
+        }
+      }
+    },
+    "error": {
+      "lights_required": "Selecteer ten minste één lamp.",
+      "restore_time_required": "Geef een hersteltijd op wanneer u niet herstelt bij zonsopgang.",
+      "entity_not_found": "Een of meer lampen zijn niet gevonden."
+    }
+  },
+  "selector": {
+    "weekdays": {
+      "options": {
+        "mon": "Maandag",
+        "tue": "Dinsdag",
+        "wed": "Woensdag",
+        "thu": "Donderdag",
+        "fri": "Vrijdag",
+        "sat": "Zaterdag",
+        "sun": "Zondag"
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "rig_for_red": {
+        "name": "Rig for Red"
+      }
+    }
+  }
+}

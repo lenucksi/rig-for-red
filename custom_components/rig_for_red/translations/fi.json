@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Rig for Red",
+        "description": "Määritä sukellusveneyötila valoillesi.",
+        "data": {
+          "lights": "Valot (vähintään yksi vaaditaan)",
+          "schedule_days": "Viikonpäivät",
+          "schedule_time": "Aktivoitumisaika",
+          "dim_duration_minutes": "Himmennyskesto (minuutteja)",
+          "restore_at_sunrise": "Palauta auringonnousun aikaan",
+          "restore_time": "Kiinteä palautusaika",
+          "adaptive_lighting_switches": "Adaptive Lighting-kytkimet (valinnainen)",
+          "min_brightness_pct": "Vähimmäiskirkkaus (%)"
+        },
+        "data_description": {
+          "lights": "Valitse valot, joiden pitäisi vaihtua punaiseksi sukellusveneyötilan aikana.",
+          "schedule_days": "Valitse viikonpäivät, joina yötila-aikataulu aktivoidaan.",
+          "schedule_time": "Kellonaika, jolloin valojen tulisi alkaa himmentyä punaiseksi.",
+          "dim_duration_minutes": "Kuinka kauan himmennyssiirtymän valkoisesta punaiseen tulisi kestää.",
+          "restore_at_sunrise": "Jos käytössä, valot palautetaan valkoisiksi auringonnousun aikaan kiinteän ajan sijaan.",
+          "restore_time": "Jos ei palauteta auringonnousun aikaan, aseta kiinteä aika valkoisen valaistuksen palauttamiselle.",
+          "adaptive_lighting_switches": "Valinnaiset Adaptive Lighting -kytkimet, jotka poistetaan tilapäisesti käytöstä punaisen tilan aikana.",
+          "min_brightness_pct": "Vähimmäiskirkkaustaso himmennyssiirtymän lopussa."
+        }
+      }
+    },
+    "error": {
+      "lights_required": "Valitse vähintään yksi valo.",
+      "restore_time_required": "Anna palautusaika, kun et palauta auringonnousun aikaan.",
+      "entity_not_found": "Yhtä tai useampaa valoa ei löytynyt."
+    }
+  },
+  "selector": {
+    "weekdays": {
+      "options": {
+        "mon": "Maanantai",
+        "tue": "Tiistai",
+        "wed": "Keskiviikko",
+        "thu": "Torstai",
+        "fri": "Perjantai",
+        "sat": "Lauantai",
+        "sun": "Sunnuntai"
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "rig_for_red": {
+        "name": "Rig for Red"
+      }
+    }
+  }
+}
