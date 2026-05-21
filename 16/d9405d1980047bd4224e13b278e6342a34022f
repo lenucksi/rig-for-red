@@ -1,0 +1,130 @@
+tests/components/rig_for_red/test_coordinator.py
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 364-466
+  s_4bfe7877ad808f::t_be0b84c99c6090 3
+  s_4bfe7877ad808f::t_3d85ee287ccf54 362
+  s_4bfe7877ad808f::t_6e6ea0a9e7e200 2
+  s_4bfe7877ad808f::t_47d84c2ab861f4 16
+tests/components/rig_for_red/__init__.py
+  s_4bfe7877ad808f::t_2fad6865170b7d 25
+custom_components/rig_for_red/translations/nl.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-37
+custom_components/rig_for_red/translations/zh-TW.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-36
+"backlog/tasks/task-36 - Config-Flow-Reconfigure-Step-hinzufügen.md"
+  s_4bfe7877ad808f::t_46fac005790ee4 5-6
+  s_4bfe7877ad808f::t_6b1fe811ca518c 4
+  s_4bfe7877ad808f::t_37ce7a3aeb9cf1 42-47
+  s_d6dca5232ef6a3::t_a47a89be4b076d 48-52,57
+  s_4bfe7877ad808f::t_40f864ab7cd1ed 58-63
+  s_4bfe7877ad808f::t_71d521fe7de458 53-54
+  s_4bfe7877ad808f::t_e70d1550a25ae9 1-3,7-41
+custom_components/rig_for_red/__init__.py
+  s_4bfe7877ad808f::t_be6dfaf42d7fcb 11,18
+  s_4bfe7877ad808f::t_2fad6865170b7d 3
+  s_4bfe7877ad808f::t_92a255838bce41 13,20
+"backlog/tasks/task-38 - Ausgeschaltete-Lampen-bei-Aktivierung-nicht-einschalten.md"
+  s_4bfe7877ad808f::t_431222a5dd9339 1-3,7,9-39
+  s_4bfe7877ad808f::t_46fac005790ee4 5-6
+  s_4bfe7877ad808f::t_6b1fe811ca518c 4
+  s_4bfe7877ad808f::t_c1918eb8032c7c 40-45
+  s_4bfe7877ad808f::t_40f864ab7cd1ed 67-72
+  s_4bfe7877ad808f::t_33373181357e9c 8,64-65
+  s_7afe42ff8e6c11::t_7bc7000b103742 46-54,56-59,66
+  s_4bfe7877ad808f::t_96b90d96398fe5 55
+  s_7afe42ff8e6c11::t_09ff4f461cd90f 60-61
+  s_4bfe7877ad808f::t_7225b8f861833d 62-63
+custom_components/rig_for_red/translations/es.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-37
+tests/components/rig_for_red/conftest.py
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 3,96
+  s_4bfe7877ad808f::t_47d84c2ab861f4 28,76-91,97-104
+custom_components/rig_for_red/translations/hi.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-35
+custom_components/rig_for_red/translations/it.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-37
+tests/components/rig_for_red/test_config_flow.py
+  s_4bfe7877ad808f::t_e4c0edc66b2bbc 43,154
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 142-153,155-177,180-203,206-226,229-249
+  s_4bfe7877ad808f::t_96b90d96398fe5 4,6,8-9,12-13,16,36-37,56-58,77-79,96-98,116-118,136-138,178-179,204-205,227-228,250-251
+tests/components/rig_for_red/test_translations.py
+  s_4bfe7877ad808f::t_dceda1d34211d3 46
+  s_4bfe7877ad808f::t_92a255838bce41 52-55,68-71,84-87
+custom_components/rig_for_red/translations/de.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-37
+custom_components/rig_for_red/translations/fr.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-37
+tests/components/rig_for_red/test_init.py
+  s_4bfe7877ad808f::t_2fad6865170b7d 2
+custom_components/rig_for_red/translations/sv.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-36
+custom_components/rig_for_red/translations/pl.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-37
+custom_components/rig_for_red/translations/fi.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-37
+custom_components/rig_for_red/switch.py
+  s_4bfe7877ad808f::t_8ed8f9e3dc611a 11
+  s_4bfe7877ad808f::t_429e861cb0c762 42
+"backlog/tasks/task-37 - Renovate-Konfiguration-reparieren-vulnerabilityAlerts-entfernen.md"
+  s_4bfe7877ad808f::t_40f864ab7cd1ed 49-50,54-59
+  s_4bfe7877ad808f::t_46fac005790ee4 5-6
+  s_4bfe7877ad808f::t_78539e94d7d2b4 1-3,7-37
+  s_4bfe7877ad808f::t_6b1fe811ca518c 4
+  s_4bfe7877ad808f::t_aa8eef53506b3b 38-48,53
+"backlog/tasks/task-35 - CI-CD-Migration-von-Release-Drafter-zu-Release-Please.md"
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 8,39-45,53-58
+custom_components/rig_for_red/translations/pt.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-37
+custom_components/rig_for_red/coordinator.py
+  s_4bfe7877ad808f::t_92a255838bce41 324-325
+  s_4bfe7877ad808f::t_a5821c637968e0 131
+  s_4bfe7877ad808f::t_b3bd610df4b5e3 69-71,73
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 5,10-14,74-77,115-118,166-178,180,190,194-195,198-199,203-205,218-222,230-242,287-290,306-318,329
+  s_4bfe7877ad808f::t_47d84c2ab861f4 200-202,209-211,247-250,263-264,273-275,291-301
+  s_4bfe7877ad808f::t_471604315f0ab4 319-323,326-328,330-331
+custom_components/rig_for_red/config_flow.py
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 1,6,8-9,12-13,17,57,64,75,83,89,99,101,109-117,119-139,146-147,154-158,165-166,173-178
+  s_4bfe7877ad808f::t_7635e25df9b45c 22
+  s_4bfe7877ad808f::t_96b90d96398fe5 32,45,47-48,55-56,72-74,96-98,118,140-145,148-153,159-164,167-172
+custom_components/rig_for_red/translations/en.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-33
+custom_components/rig_for_red/strings.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-36
+custom_components/rig_for_red/translations/nb.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-36
+custom_components/rig_for_red/translations/ta.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-33
+custom_components/rig_for_red/translations/da.json
+  s_4bfe7877ad808f::t_e31aeb356fb6ee 27-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "16d9405d1980047bd4224e13b278e6342a34022f",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    },
+    "s_7afe42ff8e6c11": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b3a4e1ecffeTYJTkBbW97oaHJ",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    },
+    "s_d6dca5232ef6a3": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b3a9cc45ffezc5J73qd4ztanR",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
