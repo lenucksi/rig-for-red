@@ -40,55 +40,7 @@ jobs:
       - name: Run tests
         run: docker run --rm rig-for-red-test --timeout=30
 
-  test-dev:
-    name: HA dev (Core checkout)
-    runs-on: ubuntu-24.04
-    timeout-minutes: 60
-    steps:
-      - name: Check out code
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-      - name: Check out Home Assistant core
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-        with:
-          repository: home-assistant/core
-          path: core
-          ref: dev
-      - name: Set up Python
-        uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5
-        with:
-          python-version: "3.13"
-      - name: Set up UV
-        uses: astral-sh/setup-uv@v5
-      - name: Create venv and install HA deps
-        shell: bash
-        run: |
-          uv venv --python 3.13
-          uv pip install -r core/requirements.txt
-          uv pip install -r core/requirements_test.txt
-          uv pip install "paho-mqtt>=2" aiohasupervisor pytest-homeassistant-custom-component pytest-cov freezegun
-          uv pip install -e core/
-      - name: Create symlinks
-        shell: bash
-        run: |
-          ln -fs "$PWD/custom_components/rig_for_red" core/homeassistant/components/rig_for_red
-          mkdir -p core/custom_components
-          ln -fs "$PWD/custom_components/rig_for_red" core/custom_components/rig_for_red
-          mkdir -p core/tests/components
-          ln -fs "$PWD/tests/components/rig_for_red" core/tests/components/rig_for_red
-          if [ -f tests/conftest.py ]; then
-            ln -fs "$PWD/tests/conftest.py" core/tests/conftest.py
-          fi
-      - name: Run tests
-        shell: bash
-        run: |
-          source .venv/bin/activate
-          cd core
-          PYTHONPATH="$PWD/..:$PYTHONPATH" python3 -X dev -m pytest \
-            -vvv \
-            --timeout=30 \
-            --durations=10 \
-            -p no:sugar \
-            --override-ini=asyncio_mode=auto \
-            --cov=custom_components.rig_for_red \
-            --cov-report=term-missing \
-            tests/components/rig_for_red
+  # test-dev (Core checkout) DISABLED:
+  # HA dev branch requires Python >=3.14, but pytest-asyncio has async generator
+  # fixture compatibility issues with Python 3.14. Docker jobs cover stable testing.
+  # Re-enable when pytest-asyncio supports Python 3.14.
