@@ -1,0 +1,21 @@
+.github/workflows/conventional-commits.yml
+  s_4bfe7877ad808f::t_337b682828b4f2 17-20
+custom_components/rig_for_red/manifest.json
+  s_4bfe7877ad808f::t_d513517de1c1e5 4,8,10-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "e74e10267da5c42e295416adfb41645abe0f6931",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
