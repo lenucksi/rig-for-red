@@ -1,0 +1,25 @@
+cog.toml
+  s_4bfe7877ad808f::t_557382eab1e136 1-15
+prek.toml
+  s_4bfe7877ad808f::t_0e6a62e048c67d 1-42
+.github/workflows/prek.yml
+  s_4bfe7877ad808f::t_2b20192319078b 1-11
+.github/workflows/conventional-commits.yml
+  s_4bfe7877ad808f::t_018293d5a3ff6e 1,6-7,9,13-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.11",
+  "base_commit_sha": "97e4c4e7d79c325168ceb4ae1ff9dcc141669832",
+  "prompts": {},
+  "sessions": {
+    "s_4bfe7877ad808f": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1b8ec1bd3ffezDEVqa4ZgaAqFm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
