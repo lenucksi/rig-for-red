@@ -1,12 +1,12 @@
 {
   "domain": "rig_for_red",
   "name": "Rig for Red",
-  "version": "0.2.1",
+  "codeowners": ["@lenucksi"],
   "config_flow": true,
-  "requirements": [],
   "dependencies": [],
   "documentation": "https://github.com/lenucksi/rig-for-red",
+  "iot_class": "local_push",
   "issue_tracker": "https://github.com/lenucksi/rig-for-red/issues",
-  "codeowners": ["@lenucksi"],
-  "iot_class": "local_push"
+  "requirements": [],
+  "version": "0.2.1"
 }

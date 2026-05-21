@@ -14,9 +14,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           fetch-depth: 0
-      - name: Conventional commit check
-        shell: bash
-        run: |
-          curl -sL "https://github.com/cocogitto/cocogitto/releases/download/v7.0.0/cocogitto-7.0.0-x86_64-unknown-linux-musl.tar.gz" | tar xz --strip-components=1 -C /usr/local/bin
-          chmod +x /usr/local/bin/cog
-          cog check --from-latest-tag
+      - uses: cocogitto/cocogitto-action@v4.1.0
+        with:
+          command: check
+          args: --from-latest-tag
