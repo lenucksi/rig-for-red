@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.4](https://github.com/lenucksi/rig-for-red/compare/v0.2.3...v0.2.4) (2026-05-24)
+
+
+### Bug Fixes
+
+* remove redundante async_reload_entry + add_update_listener (verursacht Endlos-Rekursion bei Reconfigure) ([644e78c](https://github.com/lenucksi/rig-for-red/commit/644e78c1c89e626a1d6dec682e240f5e2c651f1b))
+* renovate config — helpers:pinGitHubActionsDigests + separateMinor ([320f0b1](https://github.com/lenucksi/rig-for-red/commit/320f0b13705562ec251a1c2f5d614105498e8d50))
+
 ## [0.2.3](https://github.com/lenucksi/rig-for-red/compare/v0.2.2...v0.2.3) (2026-05-24)
 
 
