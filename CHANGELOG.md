@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/lenucksi/rig-for-red/compare/v0.2.2...v0.2.3) (2026-05-24)
+
+
+### Bug Fixes
+
+* set_manual_control Domain + AL-Race-Condition beim Aktivieren und Restoren ([365e9a4](https://github.com/lenucksi/rig-for-red/commit/365e9a40762cd387070f47baaba29e13d96c0b30))
+
 ## [0.2.2](https://github.com/lenucksi/rig-for-red/compare/v0.2.1...v0.2.2) (2026-05-21)
 
 
