@@ -29,7 +29,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     hass.services.async_register(DOMAIN, "trigger_rig", await async_trigger_rig(coordinator))
     hass.services.async_register(DOMAIN, "restore_lights", await async_restore_lights(coordinator))
-    entry.async_on_unload(entry.add_update_listener(async_reload_entry))
     return True
 
 
@@ -41,8 +40,3 @@ async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     hass.services.async_remove(DOMAIN, "restore_lights")
     hass.data[DOMAIN].pop(entry.entry_id)
     return True
-
-
-async def async_reload_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:
-    await async_unload_entry(hass, entry)
-    await async_setup_entry(hass, entry)
