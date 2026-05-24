@@ -146,6 +146,19 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
         for switch in self._al_switches:
             try:
                 await self.hass.services.async_call(
+                    "adaptive_lighting",
+                    "set_manual_control",
+                    {
+                        "entity_id": switch,
+                        "lights": self._lights,
+                        "manual_control": True,
+                    },
+                    blocking=True,
+                )
+            except Exception:
+                _LOGGER.exception("Failed to set manual control for AL switch %s", switch)
+            try:
+                await self.hass.services.async_call(
                     "switch",
                     "turn_off",
                     {"entity_id": switch},
@@ -153,15 +166,8 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
                 )
             except Exception:
                 _LOGGER.exception("Failed to turn off AL switch %s", switch)
-            try:
-                await self.hass.services.async_call(
-                    "switch",
-                    "set_manual_control",
-                    {"entity_id": switch, "manual_control": True},
-                    blocking=True,
-                )
-            except Exception:
-                _LOGGER.exception("Failed to set manual control for AL switch %s", switch)
+
+        await asyncio.sleep(0.5)
 
         on_lights = []
         off_lights = []
@@ -244,18 +250,13 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
         for switch in self._al_switches:
             try:
                 await self.hass.services.async_call(
-                    "switch",
-                    "turn_on",
-                    {"entity_id": switch},
-                    blocking=True,
-                )
-            except Exception:
-                _LOGGER.exception("Failed to turn on AL switch %s", switch)
-            try:
-                await self.hass.services.async_call(
-                    "switch",
+                    "adaptive_lighting",
                     "set_manual_control",
-                    {"entity_id": switch, "manual_control": False},
+                    {
+                        "entity_id": switch,
+                        "lights": self._lights,
+                        "manual_control": False,
+                    },
                     blocking=True,
                 )
             except Exception:
@@ -263,6 +264,15 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
                     "Failed to set manual control for AL switch %s",
                     switch,
                 )
+            try:
+                await self.hass.services.async_call(
+                    "switch",
+                    "turn_on",
+                    {"entity_id": switch},
+                    blocking=True,
+                )
+            except Exception:
+                _LOGGER.exception("Failed to turn on AL switch %s", switch)
 
         if self._restore_at_sunrise:
             if self._unsub_sunrise is not None:
@@ -308,6 +318,20 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
         state = self.hass.states.get(entity_id)
         return state is not None and state.state == "on"
 
+    async def _is_restore_imminent(self) -> bool:
+        now = dt_util.utcnow()
+        if self._restore_at_sunrise:
+            next_sunrise = await self._get_next_sunrise()
+            if 0 <= (next_sunrise - now).total_seconds() <= 600:
+                return True
+        if self._restore_time is not None:
+            restore_dt = dt_util.as_utc(datetime.combine(now.date(), self._restore_time))
+            if restore_dt < now:
+                restore_dt += timedelta(days=1)
+            if 0 <= (restore_dt - now).total_seconds() <= 600:
+                return True
+        return False
+
     async def _on_tracked_light_change(self, event) -> None:
         entity_id = event.data["entity_id"]
         new_state = event.data.get("new_state")
@@ -320,6 +344,8 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
             self._lights_waiting_for_red.remove(entity_id)
             if entity_id not in self._lights_to_restore:
                 self._lights_to_restore.append(entity_id)
+            if await self._is_restore_imminent():
+                return
             await self.hass.services.async_call(
                 "light",
                 "turn_on",

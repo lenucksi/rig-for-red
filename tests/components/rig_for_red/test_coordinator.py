@@ -1,6 +1,6 @@
 import asyncio
 import contextlib
-from datetime import datetime
+from datetime import UTC, datetime, timedelta
 
 from homeassistant.const import STATE_OFF, STATE_ON
 from homeassistant.core import HomeAssistant
@@ -466,4 +466,77 @@ async def test_user_turned_off_red_light_stays_off_on_restore(
     await coordinator.async_restore()
     await hass.async_block_till_done()
 
+    assert not coordinator.is_active
+
+
+async def test_off_light_no_red_when_sunrise_imminent(
+    hass: HomeAssistant,
+    mock_config_entry: MockConfigEntry,
+    mock_light_states,
+) -> None:
+    sunrise_time = datetime.now(UTC) + timedelta(minutes=5)
+    hass.states.async_set(
+        "sun.sun",
+        "above_horizon",
+        {"next_rising": sunrise_time.isoformat()},
+    )
+    hass.states.async_set("light.living_room", STATE_OFF)
+
+    mock_config_entry.add_to_hass(hass)
+    await hass.config_entries.async_setup(mock_config_entry.entry_id)
+    await hass.async_block_till_done()
+    coordinator = hass.data[DOMAIN][mock_config_entry.entry_id]
+
+    await coordinator.async_activate()
+    await hass.async_block_till_done()
+
+    assert coordinator.is_active
+    assert "light.living_room" in coordinator._lights_waiting_for_red
+    assert "light.living_room" not in coordinator._lights_to_restore
+
+    hass.states.async_set("light.living_room", STATE_ON, {"brightness": 200})
+    await hass.async_block_till_done()
+
+    assert "light.living_room" not in coordinator._lights_waiting_for_red
+    assert "light.living_room" in coordinator._lights_to_restore
+
+    await coordinator.async_restore()
+    await hass.async_block_till_done()
+    assert not coordinator.is_active
+
+
+async def test_off_light_no_red_when_restore_time_imminent(
+    hass: HomeAssistant,
+    mock_config_entry_data,
+    mock_light_states,
+) -> None:
+    now = datetime.now(UTC)
+    near_future = (now + timedelta(minutes=5)).time()
+    data = dict(mock_config_entry_data)
+    data[CONF_RESTORE_AT_SUNRISE] = False
+    data[CONF_RESTORE_TIME] = near_future.strftime("%H:%M")
+
+    entry = MockConfigEntry(domain=DOMAIN, data=data, entry_id="test_imminent_time")
+    entry.add_to_hass(hass)
+    await hass.config_entries.async_setup(entry.entry_id)
+    await hass.async_block_till_done()
+    coordinator = hass.data[DOMAIN][entry.entry_id]
+
+    hass.states.async_set("light.living_room", STATE_OFF)
+    await hass.async_block_till_done()
+
+    await coordinator.async_activate()
+    await hass.async_block_till_done()
+
+    assert coordinator.is_active
+    assert "light.living_room" in coordinator._lights_waiting_for_red
+
+    hass.states.async_set("light.living_room", STATE_ON, {"brightness": 200})
+    await hass.async_block_till_done()
+
+    assert "light.living_room" not in coordinator._lights_waiting_for_red
+    assert "light.living_room" in coordinator._lights_to_restore
+
+    await coordinator.async_restore()
+    await hass.async_block_till_done()
     assert not coordinator.is_active
