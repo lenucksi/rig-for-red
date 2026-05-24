@@ -1,0 +1,25 @@
+custom_components/rig_for_red/coordinator.py
+  s_07a9378bf7c6d3::t_961ef776862c67 328
+"backlog/tasks/task-43 - Fix-Race-Conditions-mit-Adaptive-Lighting-set_manual_control-Domain-roter-Blitz-am-Morgen.md"
+  s_07a9378bf7c6d3::t_9c5d06fd0c728a 59-72
+  s_07a9378bf7c6d3::t_c45832a8ba8475 1-5,7-8,10-34,44
+  s_07a9378bf7c6d3::t_006c4a76d90057 9,35-43,45
+  s_07a9378bf7c6d3::t_c59b7e152700e2 46-58
+  s_07a9378bf7c6d3::t_230922a6fd1ef3 6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.0",
+  "base_commit_sha": "365e9a40762cd387070f47baaba29e13d96c0b30",
+  "prompts": {},
+  "sessions": {
+    "s_07a9378bf7c6d3": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1a6790458ffeK1sRQFOl3JTDXm",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
