@@ -1,8 +1,12 @@
+import logging
+
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 
-from .const import DOMAIN
+from .const import DOMAIN, VERSION
 from .coordinator import RigForRedCoordinator
+
+_LOGGER = logging.getLogger(__name__)
 
 PLATFORMS: list[str] = ["switch"]
 
@@ -22,6 +26,7 @@ async def async_restore_lights(coordinator):
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
+    _LOGGER.info("Setting up Rig-for-Red integration (version %s)", VERSION)
     coordinator = RigForRedCoordinator(hass, entry)
     await coordinator.async_setup()
     hass.data.setdefault(DOMAIN, {})[entry.entry_id] = coordinator

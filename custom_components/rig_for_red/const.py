@@ -1,4 +1,5 @@
 DOMAIN = "rig_for_red"
+VERSION = "0.1.0"
 
 CONF_LIGHTS = "lights"
 CONF_SCHEDULE_DAYS = "schedule_days"
