@@ -1,0 +1,20 @@
+custom_components/rig_for_red/coordinator.py
+  s_08159ef527ef10::t_011446ae252a2d 379-380,385-391,394,398-413,415,418,430-435
+  s_08159ef527ef10::t_57f8885671e790 150-155,160,164,172,174-176,178-179,181,184-185,196-198,200-201,208-218,226-236,241-247,249,260-261,268,272-278,281,292,300,303-336,338-339,346,354-355,367-370
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "4dece8945a0a80153154ddebba7a5e25dffa9986",
+  "prompts": {},
+  "sessions": {
+    "s_08159ef527ef10": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_197a4e9a1ffeaNDMl17K8zt3hL",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
