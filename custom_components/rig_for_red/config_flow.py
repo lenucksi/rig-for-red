@@ -4,6 +4,7 @@ from homeassistant.helpers import selector
 
 from .const import (
     CONF_ADAPTIVE_LIGHTING_SWITCHES,
+    CONF_AL_SLEEP_MODE,
     CONF_DIM_DURATION_MINUTES,
     CONF_ENABLE_DEBUG_LOGGING,
     CONF_LIGHTS,
@@ -12,6 +13,7 @@ from .const import (
     CONF_RESTORE_TIME,
     CONF_SCHEDULE_DAYS,
     CONF_SCHEDULE_TIME,
+    DEFAULT_AL_SLEEP_MODE,
     DEFAULT_DIM_DURATION_MINUTES,
     DEFAULT_ENABLE_DEBUG_LOGGING,
     DEFAULT_MIN_BRIGHTNESS_PCT,
@@ -103,6 +105,10 @@ class RigForRedConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):  # type: ig
                 vol.Optional(
                     CONF_ENABLE_DEBUG_LOGGING,
                     default=DEFAULT_ENABLE_DEBUG_LOGGING,
+                ): selector.BooleanSelector(),
+                vol.Optional(
+                    CONF_AL_SLEEP_MODE,
+                    default=DEFAULT_AL_SLEEP_MODE,
                 ): selector.BooleanSelector(),
             },
         )

@@ -58,8 +58,53 @@ After installation: Home Assistant → Settings → Devices & Services → "Add 
 | `restore_time` | `time` | No | — | Fixed restore time (only if `restore_at_sunrise: false`) |
 | `adaptive_lighting_switches` | `entity_id[]` | No | — | Adaptive Lighting switch entities to pause |
 | `min_brightness_pct` | `number` | Yes | `5` | Minimum brightness in percent (1–10 %) |
+| `enable_debug_logging` | `boolean` | No | `false` | Enable detailed debug logging for troubleshooting |
+| `al_sleep_mode` | `boolean` | No | `false` | Use Adaptive Lighting sleep mode instead of manual red |
 
 > **Note on `restore_time`:** If `restore_at_sunrise` is set to `false`, `restore_time` must be provided.
+
+### Adaptive Lighting Configuration Recommendations
+
+When using Rig for Red with Adaptive Lighting (`adaptive_lighting_switches` configured), the following AL settings are recommended to avoid race conditions:
+
+#### `detect_non_ha_changes: true`
+Enable detection of non-HA changes (e.g., physical switch presses). This prevents AL from overriding a manual light change.
+
+#### `autoreset_control_seconds: 0`
+Disable automatic reset of manual control. When Rig for Red sets `manual_control` on an AL switch, this timer would otherwise clear it after N seconds, causing AL to re-adapt and override the red light. Setting to `0` disables the timer entirely (requires AL to be paused via the Rig switch, or use AL sleep mode via `al_sleep_mode: true`).
+
+> **Note:** `autoreset_control_seconds` corresponds to the `Automatic reset of manual control` slider in the AL config flow UI.
+
+#### AL Logger Debug Configuration
+To debug AL interactions, add this to your `configuration.yaml`:
+
+```yaml
+logger:
+  logs:
+    custom_components.adaptive_lighting: debug
+    custom_components.rig_for_red: debug
+```
+
+## Sensor Entity
+
+Rig for Red exposes a sensor entity (`sensor.rig_for_red_state`) that tracks the current night mode state:
+
+| State | Description |
+|-------|-------------|
+| `inactive` | Night mode is not active |
+| `active_red` | Lights are currently red (or transitioning to red) |
+| `dimming` | Lights are in the staged dimming phase |
+| `restoring` | Lights are being restored to white |
+| `restored` | Lights have been restored to white |
+
+**Attributes:**
+
+- `active_since` — timestamp when night mode was activated
+- `lights_active` — list of light entities currently in red
+- `lights_tracked_off` — list of light entities that were off at activation (tracked for delayed red)
+- `next_restore` — scheduled restore time (sunrise or fixed time)
+- `dim_step` — current dimming step (0 = not dimming)
+- `al_switches` — list of AL switch entities being managed
 
 ## Example: Zigbee Button for Manual Control
 

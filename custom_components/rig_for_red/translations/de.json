@@ -13,7 +13,8 @@
           "restore_time": "Feste Wiederherstellungszeit",
           "adaptive_lighting_switches": "Adaptive Lighting Schalter (optional)",
           "min_brightness_pct": "Minimale Helligkeit (%)",
-          "enable_debug_logging": "Debug-Logging aktivieren"
+          "enable_debug_logging": "Debug-Logging aktivieren",
+          "al_sleep_mode": "AL-Schlafmodus verwenden"
         },
         "data_description": {
           "lights": "Wählen Sie die Lampen aus, die während des U-Boot-Nachtmodus rot leuchten sollen.",
@@ -24,7 +25,8 @@
           "restore_time": "Wenn nicht bei Sonnenaufgang wiederhergestellt wird, legen Sie eine feste Zeit fest.",
           "adaptive_lighting_switches": "Optional: Adaptive Lighting-Schalter-Entitäten, die mit Ihren ausgewählten Lampen überlappen. Rig for Red schaltet diese aus, während der Rotmodus aktiv ist, damit Adaptive Lighting die Dimmung nicht überschreibt. Leer lassen, wenn Sie Adaptive Lighting nicht verwenden.",
           "min_brightness_pct": "Die minimale Helligkeitsstufe am Ende des Dimmvorgangs.",
-          "enable_debug_logging": "Aktiviert detailliertes Debug-Logging zur Fehlerdiagnose."
+          "enable_debug_logging": "Aktiviert detailliertes Debug-Logging zur Fehlerdiagnose.",
+          "al_sleep_mode": "Nutzt den integrierten Schlafmodus von Adaptive Lighting anstatt manuell rot zu setzen. Die Schlafmodus-RGB-Farbe wird auf Ihren konfigurierten Wert gesetzt."
         }
       },
       "reconfigure": {
@@ -38,7 +40,8 @@
           "restore_time": "Feste Wiederherstellungszeit",
           "adaptive_lighting_switches": "Adaptive Lighting Schalter (optional)",
           "min_brightness_pct": "Minimale Helligkeit (%)",
-          "enable_debug_logging": "Debug-Logging aktivieren"
+          "enable_debug_logging": "Debug-Logging aktivieren",
+          "al_sleep_mode": "AL-Schlafmodus verwenden"
         },
         "data_description": {
           "lights": "Wählen Sie die Lampen aus, die während des U-Boot-Nachtmodus rot leuchten sollen.",
@@ -49,7 +52,8 @@
           "restore_time": "Wenn nicht bei Sonnenaufgang wiederhergestellt wird, legen Sie eine feste Zeit fest.",
           "adaptive_lighting_switches": "Optional: Adaptive Lighting-Schalter-Entitäten, die mit Ihren ausgewählten Lampen überlappen. Rig for Red schaltet diese aus, während der Rotmodus aktiv ist, damit Adaptive Lighting die Dimmung nicht überschreibt. Leer lassen, wenn Sie Adaptive Lighting nicht verwenden.",
           "min_brightness_pct": "Die minimale Helligkeitsstufe am Ende des Dimmvorgangs.",
-          "enable_debug_logging": "Aktiviert detailliertes Debug-Logging zur Fehlerdiagnose."
+          "enable_debug_logging": "Aktiviert detailliertes Debug-Logging zur Fehlerdiagnose.",
+          "al_sleep_mode": "Nutzt den integrierten Schlafmodus von Adaptive Lighting anstatt manuell rot zu setzen. Die Schlafmodus-RGB-Farbe wird auf Ihren konfigurierten Wert gesetzt."
         }
       }
     },

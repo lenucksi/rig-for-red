@@ -18,6 +18,7 @@ from homeassistant.util import dt as dt_util
 
 from .const import (
     CONF_ADAPTIVE_LIGHTING_SWITCHES,
+    CONF_AL_SLEEP_MODE,
     CONF_DIM_DURATION_MINUTES,
     CONF_ENABLE_DEBUG_LOGGING,
     CONF_LIGHTS,
@@ -26,6 +27,7 @@ from .const import (
     CONF_RESTORE_TIME,
     CONF_SCHEDULE_DAYS,
     CONF_SCHEDULE_TIME,
+    DEFAULT_AL_SLEEP_MODE,
     DEFAULT_DIM_DURATION_MINUTES,
     DEFAULT_ENABLE_DEBUG_LOGGING,
     DEFAULT_MIN_BRIGHTNESS_PCT,
@@ -85,6 +87,7 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
         min_brightness_default = DEFAULT_MIN_BRIGHTNESS_PCT
         self._min_brightness_pct: int = data.get(CONF_MIN_BRIGHTNESS_PCT, min_brightness_default)
         self._enable_debug_logging: bool = data.get(CONF_ENABLE_DEBUG_LOGGING, DEFAULT_ENABLE_DEBUG_LOGGING)
+        self._use_al_sleep_mode: bool = data.get(CONF_AL_SLEEP_MODE, DEFAULT_AL_SLEEP_MODE)
 
         self._unsub_schedule: Callable[[], None] | None = None
         self._unsub_restore: Callable[[], None] | None = None
@@ -230,7 +233,12 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
     async def _disable_al_switches(self) -> None:
         if not self._al_switches:
             return
-        _LOGGER.info("Disabling %d Adaptive Lighting switch(es): %s", len(self._al_switches), self._al_switches)
+        _LOGGER.info(
+            "Disabling %d Adaptive Lighting switch(es): %s (sleep_mode=%s)",
+            len(self._al_switches),
+            self._al_switches,
+            self._use_al_sleep_mode,
+        )
         for switch in self._al_switches:
             try:
                 _LOGGER.debug("set_manual_control(switch=%s, manual_control=True)", switch)
@@ -248,18 +256,46 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
                 _LOGGER.debug("set_manual_control(%s) took %.2fs", switch, _time.monotonic() - t_before)
             except Exception:  # noqa: BLE001
                 _LOGGER.warning("Failed to set manual control for AL switch %s", switch)
-            try:
-                _LOGGER.debug("Turning off AL switch %s", switch)
-                t_before = _time.monotonic()
-                await self.hass.services.async_call(
-                    "switch",
-                    "turn_off",
-                    {"entity_id": switch},
-                    blocking=True,
-                )
-                _LOGGER.debug("switch.turn_off(%s) took %.2fs", switch, _time.monotonic() - t_before)
-            except Exception:  # noqa: BLE001
-                _LOGGER.warning("Failed to turn off AL switch %s", switch)
+            if self._use_al_sleep_mode:
+                try:
+                    _LOGGER.debug("Setting sleep_rgb_color for AL switch %s", switch)
+                    await self.hass.services.async_call(
+                        "adaptive_lighting",
+                        "change_switch_settings",
+                        {
+                            "entity_id": switch,
+                            "sleep_rgb_color": RED_RGB,
+                        },
+                        blocking=True,
+                    )
+                    _LOGGER.debug("change_switch_settings(%s, sleep_rgb_color=%s)", switch, RED_RGB)
+                except Exception:  # noqa: BLE001
+                    _LOGGER.warning("Failed to set sleep_rgb_color for AL switch %s", switch)
+                try:
+                    _LOGGER.debug("Enabling sleep mode for AL switch %s", switch)
+                    t_before = _time.monotonic()
+                    await self.hass.services.async_call(
+                        "switch",
+                        "turn_on",
+                        {"entity_id": switch, "sleep_mode": True},
+                        blocking=True,
+                    )
+                    _LOGGER.debug("switch.turn_on(%s, sleep_mode) took %.2fs", switch, _time.monotonic() - t_before)
+                except Exception:  # noqa: BLE001
+                    _LOGGER.warning("Failed to enable sleep mode for AL switch %s", switch)
+            else:
+                try:
+                    _LOGGER.debug("Turning off AL switch %s", switch)
+                    t_before = _time.monotonic()
+                    await self.hass.services.async_call(
+                        "switch",
+                        "turn_off",
+                        {"entity_id": switch},
+                        blocking=True,
+                    )
+                    _LOGGER.debug("switch.turn_off(%s) took %.2fs", switch, _time.monotonic() - t_before)
+                except Exception:  # noqa: BLE001
+                    _LOGGER.warning("Failed to turn off AL switch %s", switch)
 
     async def async_activate(self) -> None:
         _LOGGER.info("Activation started at %s", dt_util.utcnow())
@@ -299,6 +335,16 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
 
         if not on_lights:
             _LOGGER.info("No lights are on, entering standby mode - will apply red on next turn_on")
+            return
+
+        if self._use_al_sleep_mode and self._al_switches:
+            _LOGGER.info("AL sleep mode active, skipping manual red and dimming")
+            self._lights_to_restore = list(on_lights)
+            self._lights_waiting_for_red = list(off_lights)
+            self._is_active = True
+            self._is_dimming = False
+            self._active_since = dt_util.utcnow()
+            self.async_update_listeners()
             return
 
         start_brightness = 255
@@ -356,7 +402,12 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
     async def _re_enable_al_switches(self) -> None:
         if not self._al_switches:
             return
-        _LOGGER.info("Re-enabling %d Adaptive Lighting switch(es): %s", len(self._al_switches), self._al_switches)
+        _LOGGER.info(
+            "Re-enabling %d Adaptive Lighting switch(es): %s (sleep_mode=%s)",
+            len(self._al_switches),
+            self._al_switches,
+            self._use_al_sleep_mode,
+        )
         for switch in self._al_switches:
             try:
                 _LOGGER.debug("set_manual_control(switch=%s, manual_control=False)", switch)
@@ -374,6 +425,20 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
                 _LOGGER.debug("set_manual_control(%s) took %.2fs", switch, _time.monotonic() - t_before)
             except Exception:  # noqa: BLE001
                 _LOGGER.warning("Failed to set manual control for AL switch %s", switch)
+            if self._use_al_sleep_mode:
+                try:
+                    _LOGGER.debug("Resetting sleep_rgb_color for AL switch %s", switch)
+                    await self.hass.services.async_call(
+                        "adaptive_lighting",
+                        "change_switch_settings",
+                        {
+                            "entity_id": switch,
+                            "sleep_rgb_color": [255, 56, 0],
+                        },
+                        blocking=True,
+                    )
+                except Exception:  # noqa: BLE001
+                    _LOGGER.warning("Failed to reset sleep_rgb_color for AL switch %s", switch)
             try:
                 _LOGGER.debug("Turning on AL switch %s", switch)
                 t_before = _time.monotonic()
@@ -404,7 +469,9 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
         self._is_active = False
         self._is_restoring = True
 
-        if self._lights_to_restore:
+        if self._use_al_sleep_mode and self._al_switches:
+            _LOGGER.info("AL sleep mode was active, skipping manual restore (AL will re-enable)")
+        elif self._lights_to_restore:
             _LOGGER.info("Restoring %d lights to white (2700K, 100%%)", len(self._lights_to_restore))
             t_before = _time.monotonic()
             await self.hass.services.async_call(

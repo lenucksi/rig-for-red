@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.3.0 (unreleased)
+
+### Features
+
+- **Sensor entity** (`sensor.rig_for_red_state`): exposes current night mode state (`inactive`, `active_red`, `dimming`, `restoring`, `restored`) with attributes for active lights, restore schedule, dim step, and AL switches
+- **AL Sleep Mode** (`al_sleep_mode` config option): replaces manual red with Adaptive Lighting's built-in sleep mode to avoid race conditions with `autoreset_control_seconds`. Sets `sleep_rgb_color` temporarily and re-enables AL on restore
+- **Debug logging toggle** (`enable_debug_logging` config option): dynamically set coordinator logger to DEBUG level for troubleshooting
+- **Logging improvements**: structured logging throughout coordinator lifecycle, timing instrumentation for all AL and light service calls, WARNING-level logging for AL failures
+
+### Bug Fixes
+
+- `set_manual_control(blocking=True)` ensures AL is fully paused before Rig for Red applies red
+- Import conflict resolved: `import time as _time` avoids collision with `datetime.time`
+- `coordinator.py`: restored missing `_dim_lights`, `_light_is_on`, `_is_restore_imminent`, `_on_tracked_light_change` methods after corrupted symbol body replacement
+- Type annotation fix: `_light_state_unsubs: list[Callable]` resolves mypy issue
+
 ## [0.2.4](https://github.com/lenucksi/rig-for-red/compare/v0.2.3...v0.2.4) (2026-05-24)
 
 
