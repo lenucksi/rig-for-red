@@ -58,5 +58,24 @@
       "restore_time_required": "Please provide a restore time when not restoring at sunrise.",
       "entity_not_found": "One or more lights were not found."
     }
+  },
+  "entity": {
+    "switch": {
+      "rig_for_red": {
+        "name": "Rig for Red"
+      }
+    },
+    "sensor": {
+      "state": {
+        "name": "State",
+        "state": {
+          "inactive": "Inactive",
+          "active_red": "Active (red)",
+          "dimming": "Dimming",
+          "restoring": "Restoring",
+          "restored": "Restored"
+        }
+      }
+    }
   }
 }

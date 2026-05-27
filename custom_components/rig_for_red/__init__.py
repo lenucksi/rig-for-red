@@ -8,7 +8,7 @@ from .coordinator import RigForRedCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 
-PLATFORMS: list[str] = ["switch"]
+PLATFORMS: list[str] = ["sensor", "switch"]
 
 
 async def async_trigger_rig(coordinator):

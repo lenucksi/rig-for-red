@@ -77,6 +77,18 @@
       "rig_for_red": {
         "name": "Rig for Red"
       }
+    },
+    "sensor": {
+      "state": {
+        "name": "State",
+        "state": {
+          "inactive": "Inactive",
+          "active_red": "Active (red)",
+          "dimming": "Dimming",
+          "restoring": "Restoring",
+          "restored": "Restored"
+        }
+      }
     }
   }
 }

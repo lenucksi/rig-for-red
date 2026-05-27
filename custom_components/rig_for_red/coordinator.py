@@ -90,11 +90,54 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
         self._unsub_restore: Callable[[], None] | None = None
         self._unsub_sunrise: Callable[[], None] | None = None
         self._is_active = False
+        self._is_restoring = False
+        self._active_since: datetime | None = None
+        self._current_dim_step: int | None = None
         self._dim_task: asyncio.Task | None = None
 
         self._lights_to_restore: list[str] = []
         self._lights_waiting_for_red: list[str] = []
         self._light_state_unsubs: list[Callable] = []
+
+    @property
+    def restoring(self) -> bool:
+        return self._is_restoring
+
+    @property
+    def is_dimming(self) -> bool:
+        return self._dim_task is not None and not self._dim_task.done()
+
+    @property
+    def active_since(self) -> datetime | None:
+        return self._active_since
+
+    @property
+    def lights_active(self) -> list[str]:
+        return list(self._lights_to_restore)
+
+    @property
+    def lights_tracked_off(self) -> list[str]:
+        return list(self._lights_waiting_for_red)
+
+    @property
+    def next_restore(self) -> datetime | None:
+        if self._restore_at_sunrise:
+            return None
+        if self._restore_time is not None:
+            now = dt_util.utcnow()
+            restore_dt = dt_util.as_utc(datetime.combine(now.date(), self._restore_time))
+            if restore_dt < now:
+                restore_dt += timedelta(days=1)
+            return restore_dt
+        return None
+
+    @property
+    def dim_step(self) -> int | None:
+        return self._current_dim_step
+
+    @property
+    def al_switches(self) -> list[str]:
+        return list(self._al_switches)
 
     @property
     def is_active(self) -> bool:
@@ -306,6 +349,7 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
             )
 
         self._is_active = True
+        self._active_since = dt_util.utcnow()
         _LOGGER.info("Rig-for-Red activation complete")
         self.async_set_updated_data({"is_active": True})
 
@@ -358,6 +402,7 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
             self._dim_task = None
 
         self._is_active = False
+        self._is_restoring = True
 
         if self._lights_to_restore:
             _LOGGER.info("Restoring %d lights to white (2700K, 100%%)", len(self._lights_to_restore))
@@ -399,6 +444,7 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
             interval,
         )
         for i in range(1, DIM_STEPS + 1):
+            self._current_dim_step = i
             if not self._is_active:
                 _LOGGER.debug("Dim task cancelled (inactive) at step %d/%d", i, DIM_STEPS)
                 return
@@ -509,4 +555,6 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
             )
 
         _LOGGER.info("Rig-for-Red restore complete")
+        self._is_restoring = False
+        self._active_since = None
         self.async_set_updated_data({"is_active": False})
