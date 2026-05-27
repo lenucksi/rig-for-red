@@ -5,6 +5,7 @@ from homeassistant.helpers import selector
 from .const import (
     CONF_ADAPTIVE_LIGHTING_SWITCHES,
     CONF_DIM_DURATION_MINUTES,
+    CONF_ENABLE_DEBUG_LOGGING,
     CONF_LIGHTS,
     CONF_MIN_BRIGHTNESS_PCT,
     CONF_RESTORE_AT_SUNRISE,
@@ -12,6 +13,7 @@ from .const import (
     CONF_SCHEDULE_DAYS,
     CONF_SCHEDULE_TIME,
     DEFAULT_DIM_DURATION_MINUTES,
+    DEFAULT_ENABLE_DEBUG_LOGGING,
     DEFAULT_MIN_BRIGHTNESS_PCT,
     DEFAULT_RESTORE_AT_SUNRISE,
     DOMAIN,
@@ -98,6 +100,10 @@ class RigForRedConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):  # type: ig
                         mode="slider",
                     ),
                 ),
+                vol.Optional(
+                    CONF_ENABLE_DEBUG_LOGGING,
+                    default=DEFAULT_ENABLE_DEBUG_LOGGING,
+                ): selector.BooleanSelector(),
             },
         )
 
@@ -172,6 +178,12 @@ class RigForRedConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):  # type: ig
         ] = selector.NumberSelector(
             selector.NumberSelectorConfig(min=1, max=10, mode="slider"),
         )
+        schema[
+            vol.Optional(
+                CONF_ENABLE_DEBUG_LOGGING,
+                default=data.get(CONF_ENABLE_DEBUG_LOGGING, DEFAULT_ENABLE_DEBUG_LOGGING),
+            )
+        ] = selector.BooleanSelector()
         data_schema = vol.Schema(schema)
 
         return self.async_show_form(

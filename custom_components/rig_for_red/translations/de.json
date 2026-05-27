@@ -12,7 +12,8 @@
           "restore_at_sunrise": "Bei Sonnenaufgang wiederherstellen",
           "restore_time": "Feste Wiederherstellungszeit",
           "adaptive_lighting_switches": "Adaptive Lighting Schalter (optional)",
-          "min_brightness_pct": "Minimale Helligkeit (%)"
+          "min_brightness_pct": "Minimale Helligkeit (%)",
+          "enable_debug_logging": "Debug-Logging aktivieren"
         },
         "data_description": {
           "lights": "Wählen Sie die Lampen aus, die während des U-Boot-Nachtmodus rot leuchten sollen.",
@@ -22,7 +23,8 @@
           "restore_at_sunrise": "Wenn aktiviert, werden die Lampen bei Sonnenaufgang wieder auf weiß geschaltet.",
           "restore_time": "Wenn nicht bei Sonnenaufgang wiederhergestellt wird, legen Sie eine feste Zeit fest.",
           "adaptive_lighting_switches": "Optional: Adaptive Lighting-Schalter-Entitäten, die mit Ihren ausgewählten Lampen überlappen. Rig for Red schaltet diese aus, während der Rotmodus aktiv ist, damit Adaptive Lighting die Dimmung nicht überschreibt. Leer lassen, wenn Sie Adaptive Lighting nicht verwenden.",
-          "min_brightness_pct": "Die minimale Helligkeitsstufe am Ende des Dimmvorgangs."
+          "min_brightness_pct": "Die minimale Helligkeitsstufe am Ende des Dimmvorgangs.",
+          "enable_debug_logging": "Aktiviert detailliertes Debug-Logging zur Fehlerdiagnose."
         }
       },
       "reconfigure": {
@@ -35,7 +37,8 @@
           "restore_at_sunrise": "Bei Sonnenaufgang wiederherstellen",
           "restore_time": "Feste Wiederherstellungszeit",
           "adaptive_lighting_switches": "Adaptive Lighting Schalter (optional)",
-          "min_brightness_pct": "Minimale Helligkeit (%)"
+          "min_brightness_pct": "Minimale Helligkeit (%)",
+          "enable_debug_logging": "Debug-Logging aktivieren"
         },
         "data_description": {
           "lights": "Wählen Sie die Lampen aus, die während des U-Boot-Nachtmodus rot leuchten sollen.",
@@ -45,7 +48,8 @@
           "restore_at_sunrise": "Wenn aktiviert, werden die Lampen bei Sonnenaufgang wieder auf weiß geschaltet.",
           "restore_time": "Wenn nicht bei Sonnenaufgang wiederhergestellt wird, legen Sie eine feste Zeit fest.",
           "adaptive_lighting_switches": "Optional: Adaptive Lighting-Schalter-Entitäten, die mit Ihren ausgewählten Lampen überlappen. Rig for Red schaltet diese aus, während der Rotmodus aktiv ist, damit Adaptive Lighting die Dimmung nicht überschreibt. Leer lassen, wenn Sie Adaptive Lighting nicht verwenden.",
-          "min_brightness_pct": "Die minimale Helligkeitsstufe am Ende des Dimmvorgangs."
+          "min_brightness_pct": "Die minimale Helligkeitsstufe am Ende des Dimmvorgangs.",
+          "enable_debug_logging": "Aktiviert detailliertes Debug-Logging zur Fehlerdiagnose."
         }
       }
     },

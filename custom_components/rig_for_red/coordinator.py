@@ -19,6 +19,7 @@ from homeassistant.util import dt as dt_util
 from .const import (
     CONF_ADAPTIVE_LIGHTING_SWITCHES,
     CONF_DIM_DURATION_MINUTES,
+    CONF_ENABLE_DEBUG_LOGGING,
     CONF_LIGHTS,
     CONF_MIN_BRIGHTNESS_PCT,
     CONF_RESTORE_AT_SUNRISE,
@@ -26,6 +27,7 @@ from .const import (
     CONF_SCHEDULE_DAYS,
     CONF_SCHEDULE_TIME,
     DEFAULT_DIM_DURATION_MINUTES,
+    DEFAULT_ENABLE_DEBUG_LOGGING,
     DEFAULT_MIN_BRIGHTNESS_PCT,
     DEFAULT_RESTORE_AT_SUNRISE,
     DIM_STEPS,
@@ -57,7 +59,8 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
 
         _LOGGER.debug(
             "RigForRedCoordinator.__init__: entry_id=%s, lights=%s, schedule_days=%s, schedule_time=%s, "
-            "dim_duration=%s, restore_at_sunrise=%s, restore_time=%s, al_switches=%s, min_brightness_pct=%s",
+            "dim_duration=%s, restore_at_sunrise=%s, restore_time=%s, al_switches=%s, "
+            "min_brightness_pct=%s, enable_debug_logging=%s",
             entry.entry_id,
             data.get(CONF_LIGHTS),
             data.get(CONF_SCHEDULE_DAYS),
@@ -67,6 +70,7 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
             data.get(CONF_RESTORE_TIME),
             data.get(CONF_ADAPTIVE_LIGHTING_SWITCHES),
             data.get(CONF_MIN_BRIGHTNESS_PCT, DEFAULT_MIN_BRIGHTNESS_PCT),
+            data.get(CONF_ENABLE_DEBUG_LOGGING, DEFAULT_ENABLE_DEBUG_LOGGING),
         )
 
         self._lights: list[str] = data.get(CONF_LIGHTS, [])
@@ -80,6 +84,7 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
         self._al_switches: list[str] = data.get(CONF_ADAPTIVE_LIGHTING_SWITCHES, [])
         min_brightness_default = DEFAULT_MIN_BRIGHTNESS_PCT
         self._min_brightness_pct: int = data.get(CONF_MIN_BRIGHTNESS_PCT, min_brightness_default)
+        self._enable_debug_logging: bool = data.get(CONF_ENABLE_DEBUG_LOGGING, DEFAULT_ENABLE_DEBUG_LOGGING)
 
         self._unsub_schedule: Callable[[], None] | None = None
         self._unsub_restore: Callable[[], None] | None = None
@@ -96,6 +101,10 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
         return self._is_active
 
     async def async_setup(self) -> None:
+        if self._enable_debug_logging:
+            _LOGGER.setLevel(logging.DEBUG)
+            _LOGGER.debug("Debug logging enabled via config option")
+
         if self._schedule_time is not None:
             self._unsub_schedule = async_track_time_change(
                 self.hass,
