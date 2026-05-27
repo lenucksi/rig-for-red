@@ -1,0 +1,58 @@
+custom_components/rig_for_red/sensor.py
+  s_08159ef527ef10::t_fc80f8187dc2bb 1-72
+"backlog/archive/tasks/task-high.5 - test-priority-check.md"
+  ai_agent 1-22
+"backlog/archive/tasks/task-low.1 - Phase-6-README-CHANGELOG-Update.md"
+  s_08159ef527ef10::t_7fa6be98a15ae7 1-35
+"backlog/archive/tasks/task-high.4 - Phase-4-AL-Sleep-Mode-statt-manuellem-Rot.md"
+  s_08159ef527ef10::t_7fa6be98a15ae7 1-42
+"backlog/archive/tasks/task-high.3 - Phase-5-blockingTrue-für-set_manual_control-Service-Calls.md"
+  ai_agent 1-37
+"backlog/tasks/task-50 - Phase-6-README-CHANGELOG-Update.md"
+  s_08159ef527ef10::t_9d05e0a47d2749 1-33
+"backlog/archive/tasks/task-medium.6 - Phase-2-enable_debug_logging-Config-Option.md"
+  s_08159ef527ef10::t_7fa6be98a15ae7 1-39
+"backlog/tasks/task-47 - Phase-2-enable_debug_logging-Config-Option.md"
+  s_08159ef527ef10::t_5d5040017a39c2 1-3,7,9-11,14-25,30
+  s_08159ef527ef10::t_efd599b5f858d6 12-13
+  s_08159ef527ef10::t_9c61cea085b73d 5-6
+  s_08159ef527ef10::t_5ac8f22f0da493 4,8,26-29,31-45
+"backlog/tasks/task-46 - Phase-5-blockingTrue-für-set_manual_control-Service-Calls.md"
+  s_08159ef527ef10::t_d7f179d8884761 1-3,7,9-24
+  s_08159ef527ef10::t_3c5af45bd15ada 4,8,29-35
+  s_08159ef527ef10::t_c7bb8cd5f48a33 25-28
+  s_08159ef527ef10::t_748ec62b090c51 5-6
+"backlog/tasks/task-49 - Phase-4-AL-Sleep-Mode-statt-manuellem-Rot.md"
+  s_08159ef527ef10::t_ddb268d284efd8 7-13
+"backlog/archive/tasks/task-44 - test-task-for-id-check.md"
+  ai_agent 1-21
+"backlog/archive/tasks/task-medium.7 - Phase-3-Diagnose-Sensor-Entity.md"
+  s_08159ef527ef10::t_7fa6be98a15ae7 1-42
+"backlog/tasks/task-48 - Phase-3-Diagnose-Sensor-Entity.md"
+  s_08159ef527ef10::t_c8dd7958f89314 12-13
+  s_08159ef527ef10::t_5ac8f22f0da493 4-6,8
+  s_08159ef527ef10::t_948083e9dc5239 1-3,7,9-11,14-33
+"backlog/tasks/task-45 - Phase-1-Logging-Infrastructure-Zigbee-Latency-Timing.md"
+  s_08159ef527ef10::t_748ec62b090c51 5-6
+  s_08159ef527ef10::t_83a9dbfb1659a8 4,8,32,34-35
+  s_08159ef527ef10::t_d9b3f6facf8e05 25-31,33,36-60
+  s_08159ef527ef10::t_7ff690012c0432 1-3,7,9-24
+"backlog/archive/tasks/task-medium.5 - Phase-1-Logging-Infrastructure-Zigbee-Latency-Timing.md"
+  ai_agent 1-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "f5400a372cb336af2a1e1105fb904066aade0e32",
+  "prompts": {},
+  "sessions": {
+    "s_08159ef527ef10": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_197a4e9a1ffeaNDMl17K8zt3hL",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
