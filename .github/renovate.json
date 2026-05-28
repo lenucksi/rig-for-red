@@ -58,5 +58,6 @@
       "automerge": false
     }
   ],
-  "lockFileMaintenance": { "enabled": false }
+  "lockFileMaintenance": { "enabled": false },
+  "configMigration": true
 }
