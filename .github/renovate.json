@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "helpers:pinGitHubActionsDigests"],
+  "extends": ["config:recommended"],
   "rebaseWhen": "behind-base-branch",
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "🤖 Renovate Dependency Dashboard",
@@ -9,7 +9,7 @@
   "commitMessageTopic": "{{depName}}",
   "prConcurrentLimit": 5,
   "prHourlyLimit": 3,
-  "schedule": ["before 5am"],
+  "schedule": ["before 5am every day"],
   "timezone": "UTC",
   "minimumReleaseAge": "3 days",
   "branchConcurrentLimit": 10,
