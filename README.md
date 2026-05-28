@@ -60,6 +60,8 @@ After installation: Home Assistant → Settings → Devices & Services → "Add 
 | `min_brightness_pct` | `number` | Yes | `5` | Minimum brightness in percent (1–10 %) |
 | `enable_debug_logging` | `boolean` | No | `false` | Enable detailed debug logging for troubleshooting |
 | `al_sleep_mode` | `boolean` | No | `false` | Use Adaptive Lighting sleep mode instead of manual red |
+| `rgb_preset` | `select` | Yes | `red` | RGB color preset: `red`, `blue`, or `custom` |
+| `rgb_custom` | `color_rgb` | No | — | Custom RGB color (only used when `rgb_preset: custom`) |
 
 > **Note on `restore_time`:** If `restore_at_sunrise` is set to `false`, `restore_time` must be provided.
 
@@ -71,7 +73,9 @@ When using Rig for Red with Adaptive Lighting (`adaptive_lighting_switches` conf
 Enable detection of non-HA changes (e.g., physical switch presses). This prevents AL from overriding a manual light change.
 
 #### `autoreset_control_seconds: 0`
-Disable automatic reset of manual control. When Rig for Red sets `manual_control` on an AL switch, this timer would otherwise clear it after N seconds, causing AL to re-adapt and override the red light. Setting to `0` disables the timer entirely (requires AL to be paused via the Rig switch, or use AL sleep mode via `al_sleep_mode: true`).
+Disable automatic reset of manual control. When Rig for Red sets `manual_control` on an AL switch, this timer would otherwise clear it after N seconds, causing AL to re-adapt and override the red light. Setting to `0` disables the timer entirely (requires AL to be paused via the Rig switch, or use AL sleep mode via `al_sleep_mode: true` (the AL sleep mode will use your configured preset/custom RGB color).
+
+> **Note on `rgb_custom`:** The `ColorRGBSelector` returns a hex-like RGB value. Stored as a list `[R, G, B]` in the config entry.
 
 > **Note:** `autoreset_control_seconds` corresponds to the `Automatic reset of manual control` slider in the AL config flow UI.
 

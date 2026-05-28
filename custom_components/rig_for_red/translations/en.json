@@ -14,7 +14,9 @@
           "adaptive_lighting_switches": "Adaptive Lighting switches (optional)",
           "min_brightness_pct": "Minimum brightness (%)",
           "enable_debug_logging": "Enable debug logging",
-          "al_sleep_mode": "Use AL sleep mode"
+          "al_sleep_mode": "Use AL sleep mode",
+          "rgb_preset": "RGB preset",
+          "rgb_custom": "Custom RGB color"
         },
         "data_description": {
           "lights": "Choose the lights that should switch to red during submarine night mode.",
@@ -26,7 +28,9 @@
           "adaptive_lighting_switches": "Optional: Adaptive Lighting switch entities that overlap with your selected lights. Rig for Red will turn these off while red mode is active so Adaptive Lighting doesn't override the dimming. Leave empty if you don't use Adaptive Lighting.",
           "min_brightness_pct": "The minimum brightness level at the end of the dimming transition.",
           "enable_debug_logging": "Enable detailed debug logging to diagnose issues with Rig for Red.",
-          "al_sleep_mode": "Use Adaptive Lighting's built-in sleep mode instead of manually forcing red. The sleep mode RGB color will be set to your configured value."
+          "al_sleep_mode": "Use Adaptive Lighting's built-in sleep mode instead of manually forcing red. The sleep mode RGB color will be set to your configured value.",
+          "rgb_preset": "Choose the RGB color preset: red, blue, or custom.",
+          "rgb_custom": "Custom RGB color (only used when preset is set to custom)."
         }
       },
       "reconfigure": {
@@ -41,7 +45,9 @@
           "adaptive_lighting_switches": "Adaptive Lighting switches (optional)",
           "min_brightness_pct": "Minimum brightness (%)",
           "enable_debug_logging": "Enable debug logging",
-          "al_sleep_mode": "Use AL sleep mode"
+          "al_sleep_mode": "Use AL sleep mode",
+          "rgb_preset": "RGB preset",
+          "rgb_custom": "Custom RGB color"
         },
         "data_description": {
           "lights": "Choose the lights that should switch to red during submarine night mode.",
@@ -53,7 +59,9 @@
           "adaptive_lighting_switches": "Optional: Adaptive Lighting switch entities that overlap with your selected lights. Rig for Red will turn these off while red mode is active so Adaptive Lighting doesn't override the dimming. Leave empty if you don't use Adaptive Lighting.",
           "min_brightness_pct": "The minimum brightness level at the end of the dimming transition.",
           "enable_debug_logging": "Enable detailed debug logging to diagnose issues with Rig for Red.",
-          "al_sleep_mode": "Use Adaptive Lighting's built-in sleep mode instead of manually forcing red. The sleep mode RGB color will be set to your configured value."
+          "al_sleep_mode": "Use Adaptive Lighting's built-in sleep mode instead of manually forcing red. The sleep mode RGB color will be set to your configured value.",
+          "rgb_preset": "Choose the RGB color preset: red, blue, or custom.",
+          "rgb_custom": "Custom RGB color (only used when preset is set to custom)."
         }
       }
     },

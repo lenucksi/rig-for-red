@@ -17,6 +17,7 @@ from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 from homeassistant.util import dt as dt_util
 
 from .const import (
+    BLUE_RGB,
     CONF_ADAPTIVE_LIGHTING_SWITCHES,
     CONF_AL_SLEEP_MODE,
     CONF_DIM_DURATION_MINUTES,
@@ -25,6 +26,8 @@ from .const import (
     CONF_MIN_BRIGHTNESS_PCT,
     CONF_RESTORE_AT_SUNRISE,
     CONF_RESTORE_TIME,
+    CONF_RGB_CUSTOM,
+    CONF_RGB_PRESET,
     CONF_SCHEDULE_DAYS,
     CONF_SCHEDULE_TIME,
     DEFAULT_AL_SLEEP_MODE,
@@ -32,6 +35,8 @@ from .const import (
     DEFAULT_ENABLE_DEBUG_LOGGING,
     DEFAULT_MIN_BRIGHTNESS_PCT,
     DEFAULT_RESTORE_AT_SUNRISE,
+    DEFAULT_RGB_CUSTOM,
+    DEFAULT_RGB_PRESET,
     DIM_STEPS,
     DOMAIN,
     RED_RGB,
@@ -88,6 +93,8 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
         self._min_brightness_pct: int = data.get(CONF_MIN_BRIGHTNESS_PCT, min_brightness_default)
         self._enable_debug_logging: bool = data.get(CONF_ENABLE_DEBUG_LOGGING, DEFAULT_ENABLE_DEBUG_LOGGING)
         self._use_al_sleep_mode: bool = data.get(CONF_AL_SLEEP_MODE, DEFAULT_AL_SLEEP_MODE)
+        self._rgb_preset: str = data.get(CONF_RGB_PRESET, DEFAULT_RGB_PRESET)
+        self._rgb_custom: list[int] = data.get(CONF_RGB_CUSTOM, DEFAULT_RGB_CUSTOM)
 
         self._unsub_schedule: Callable[[], None] | None = None
         self._unsub_restore: Callable[[], None] | None = None
@@ -121,6 +128,14 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
     @property
     def lights_tracked_off(self) -> list[str]:
         return list(self._lights_waiting_for_red)
+
+    @property
+    def _rgb(self) -> list[int]:
+        if self._rgb_preset == "custom":
+            return self._rgb_custom
+        if self._rgb_preset == "blue":
+            return BLUE_RGB
+        return RED_RGB
 
     @property
     def next_restore(self) -> datetime | None:
@@ -264,11 +279,11 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
                         "change_switch_settings",
                         {
                             "entity_id": switch,
-                            "sleep_rgb_color": RED_RGB,
+                            "sleep_rgb_color": self._rgb,
                         },
                         blocking=True,
                     )
-                    _LOGGER.debug("change_switch_settings(%s, sleep_rgb_color=%s)", switch, RED_RGB)
+                    _LOGGER.debug("change_switch_settings(%s, sleep_rgb_color=%s)", switch, self._rgb)
                 except Exception:  # noqa: BLE001
                     _LOGGER.warning("Failed to set sleep_rgb_color for AL switch %s", switch)
                 try:
@@ -360,7 +375,7 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
         await self.hass.services.async_call(
             "light",
             "turn_on",
-            {"entity_id": on_lights, "rgb_color": RED_RGB, "brightness": start_brightness},
+            {"entity_id": on_lights, "rgb_color": self._rgb, "brightness": start_brightness},
             blocking=True,
         )
         _LOGGER.debug("light.turn_on(red) for %d lights took %.2fs", len(on_lights), _time.monotonic() - t_before)
@@ -543,7 +558,7 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
                 "turn_on",
                 {
                     "entity_id": currently_on,
-                    "rgb_color": RED_RGB,
+                    "rgb_color": self._rgb,
                     "brightness": max(1, brightness),
                     "transition": interval,
                 },
@@ -605,7 +620,7 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
             await self.hass.services.async_call(
                 "light",
                 "turn_on",
-                {"entity_id": entity_id, "rgb_color": RED_RGB},
+                {"entity_id": entity_id, "rgb_color": self._rgb},
                 blocking=False,
             )
             _LOGGER.debug("light.turn_on(%s, red) took %.2fs", entity_id, _time.monotonic() - t_before)

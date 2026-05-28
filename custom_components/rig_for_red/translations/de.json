@@ -14,7 +14,9 @@
           "adaptive_lighting_switches": "Adaptive Lighting Schalter (optional)",
           "min_brightness_pct": "Minimale Helligkeit (%)",
           "enable_debug_logging": "Debug-Logging aktivieren",
-          "al_sleep_mode": "AL-Schlafmodus verwenden"
+          "al_sleep_mode": "AL-Schlafmodus verwenden",
+          "rgb_preset": "RGB-Voreinstellung",
+          "rgb_custom": "Benutzerdefinierte RGB-Farbe"
         },
         "data_description": {
           "lights": "Wählen Sie die Lampen aus, die während des U-Boot-Nachtmodus rot leuchten sollen.",
@@ -26,7 +28,9 @@
           "adaptive_lighting_switches": "Optional: Adaptive Lighting-Schalter-Entitäten, die mit Ihren ausgewählten Lampen überlappen. Rig for Red schaltet diese aus, während der Rotmodus aktiv ist, damit Adaptive Lighting die Dimmung nicht überschreibt. Leer lassen, wenn Sie Adaptive Lighting nicht verwenden.",
           "min_brightness_pct": "Die minimale Helligkeitsstufe am Ende des Dimmvorgangs.",
           "enable_debug_logging": "Aktiviert detailliertes Debug-Logging zur Fehlerdiagnose.",
-          "al_sleep_mode": "Nutzt den integrierten Schlafmodus von Adaptive Lighting anstatt manuell rot zu setzen. Die Schlafmodus-RGB-Farbe wird auf Ihren konfigurierten Wert gesetzt."
+          "al_sleep_mode": "Nutzt den integrierten Schlafmodus von Adaptive Lighting anstatt manuell rot zu setzen. Die Schlafmodus-RGB-Farbe wird auf Ihren konfigurierten Wert gesetzt.",
+          "rgb_preset": "Wählen Sie die RGB-Farbvoreinstellung: Rot, Blau oder Benutzerdefiniert.",
+          "rgb_custom": "Benutzerdefinierte RGB-Farbe (nur verwendet wenn Voreinstellung auf Benutzerdefiniert gesetzt ist)."
         }
       },
       "reconfigure": {
@@ -41,7 +45,9 @@
           "adaptive_lighting_switches": "Adaptive Lighting Schalter (optional)",
           "min_brightness_pct": "Minimale Helligkeit (%)",
           "enable_debug_logging": "Debug-Logging aktivieren",
-          "al_sleep_mode": "AL-Schlafmodus verwenden"
+          "al_sleep_mode": "AL-Schlafmodus verwenden",
+          "rgb_preset": "RGB-Voreinstellung",
+          "rgb_custom": "Benutzerdefinierte RGB-Farbe"
         },
         "data_description": {
           "lights": "Wählen Sie die Lampen aus, die während des U-Boot-Nachtmodus rot leuchten sollen.",
@@ -53,7 +59,9 @@
           "adaptive_lighting_switches": "Optional: Adaptive Lighting-Schalter-Entitäten, die mit Ihren ausgewählten Lampen überlappen. Rig for Red schaltet diese aus, während der Rotmodus aktiv ist, damit Adaptive Lighting die Dimmung nicht überschreibt. Leer lassen, wenn Sie Adaptive Lighting nicht verwenden.",
           "min_brightness_pct": "Die minimale Helligkeitsstufe am Ende des Dimmvorgangs.",
           "enable_debug_logging": "Aktiviert detailliertes Debug-Logging zur Fehlerdiagnose.",
-          "al_sleep_mode": "Nutzt den integrierten Schlafmodus von Adaptive Lighting anstatt manuell rot zu setzen. Die Schlafmodus-RGB-Farbe wird auf Ihren konfigurierten Wert gesetzt."
+          "al_sleep_mode": "Nutzt den integrierten Schlafmodus von Adaptive Lighting anstatt manuell rot zu setzen. Die Schlafmodus-RGB-Farbe wird auf Ihren konfigurierten Wert gesetzt.",
+          "rgb_preset": "Wählen Sie die RGB-Farbvoreinstellung: Rot, Blau oder Benutzerdefiniert.",
+          "rgb_custom": "Benutzerdefinierte RGB-Farbe (nur verwendet wenn Voreinstellung auf Benutzerdefiniert gesetzt ist)."
         }
       }
     },
@@ -73,6 +81,13 @@
         "fri": "Freitag",
         "sat": "Samstag",
         "sun": "Sonntag"
+      }
+    },
+    "rgb_preset": {
+      "options": {
+        "red": "Rot",
+        "blue": "Blau",
+        "custom": "Benutzerdefiniert"
       }
     }
   },

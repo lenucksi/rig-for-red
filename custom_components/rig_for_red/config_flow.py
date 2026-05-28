@@ -11,6 +11,8 @@ from .const import (
     CONF_MIN_BRIGHTNESS_PCT,
     CONF_RESTORE_AT_SUNRISE,
     CONF_RESTORE_TIME,
+    CONF_RGB_CUSTOM,
+    CONF_RGB_PRESET,
     CONF_SCHEDULE_DAYS,
     CONF_SCHEDULE_TIME,
     DEFAULT_AL_SLEEP_MODE,
@@ -18,6 +20,7 @@ from .const import (
     DEFAULT_ENABLE_DEBUG_LOGGING,
     DEFAULT_MIN_BRIGHTNESS_PCT,
     DEFAULT_RESTORE_AT_SUNRISE,
+    DEFAULT_RGB_PRESET,
     DOMAIN,
     WEEKDAYS,
 )
@@ -110,6 +113,18 @@ class RigForRedConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):  # type: ig
                     CONF_AL_SLEEP_MODE,
                     default=DEFAULT_AL_SLEEP_MODE,
                 ): selector.BooleanSelector(),
+                vol.Required(
+                    CONF_RGB_PRESET,
+                    default=DEFAULT_RGB_PRESET,
+                ): selector.SelectSelector(
+                    selector.SelectSelectorConfig(
+                        options=["red", "blue", "custom"],
+                        translation_key="rgb_preset",
+                    ),
+                ),
+                vol.Optional(
+                    CONF_RGB_CUSTOM,
+                ): selector.ColorRGBSelector(),
             },
         )
 
@@ -190,6 +205,22 @@ class RigForRedConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):  # type: ig
                 default=data.get(CONF_ENABLE_DEBUG_LOGGING, DEFAULT_ENABLE_DEBUG_LOGGING),
             )
         ] = selector.BooleanSelector()
+        schema[
+            vol.Required(
+                CONF_RGB_PRESET,
+                default=data.get(CONF_RGB_PRESET, DEFAULT_RGB_PRESET),
+            )
+        ] = selector.SelectSelector(
+            selector.SelectSelectorConfig(
+                options=["red", "blue", "custom"],
+                translation_key="rgb_preset",
+            ),
+        )
+        rgb_custom = data.get(CONF_RGB_CUSTOM)
+        if rgb_custom is not None:
+            schema[vol.Optional(CONF_RGB_CUSTOM, default=rgb_custom)] = selector.ColorRGBSelector()
+        else:
+            schema[vol.Optional(CONF_RGB_CUSTOM)] = selector.ColorRGBSelector()
         data_schema = vol.Schema(schema)
 
         return self.async_show_form(
