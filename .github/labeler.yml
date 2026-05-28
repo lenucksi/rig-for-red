@@ -1,27 +1,23 @@
 python:
   - changed-files:
-      - any-glob-to-any-file: "**/*.py"
+      - any-glob-to-any-file: ["**/*.py"]
 
 yaml:
   - changed-files:
-      - any-glob-to-any-file:
-          - "**/*.yml"
-          - "**/*.yaml"
+      - any-glob-to-any-file: ["**/*.yml", "**/*.yaml"]
 
 json:
   - changed-files:
-      - any-glob-to-any-file: "**/*.json"
+      - any-glob-to-any-file: ["**/*.json"]
 
 documentation:
   - changed-files:
-      - any-glob-to-any-file:
-          - "docs/**/*"
-          - "README.md"
+      - any-glob-to-any-file: ["docs/**/*", "README.md"]
 
 ci:
   - changed-files:
-      - any-glob-to-any-file: ".github/**/*"
+      - any-glob-to-any-file: [".github/**/*"]
 
 tests:
   - changed-files:
-      - any-glob-to-any-file: "tests/**/*"
+      - any-glob-to-any-file: ["tests/**/*"]
