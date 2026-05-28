@@ -7,7 +7,7 @@ from custom_components.rig_for_red.const import DOMAIN
 
 @pytest.fixture
 def switch_entity_id(setup_integration) -> str:
-    return f"switch.rig_for_red_{setup_integration.entry_id}"
+    return "switch.rig_for_red"
 
 
 async def test_switch_exists(

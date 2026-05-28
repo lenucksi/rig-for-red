@@ -1,0 +1,64 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "helpers:pinGitHubActionsDigests"
+  ],
+  "rebaseWhen": "behind-base-branch",
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "🤖 Renovate Dependency Dashboard",
+  "labels": ["dependencies"],
+  "commitMessagePrefix": "chore(deps):",
+  "commitMessageTopic": "{{depName}}",
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 3,
+  "schedule": ["before 5am every day"],
+  "timezone": "UTC",
+  "minimumReleaseAge": "3 days",
+  "branchConcurrentLimit": 10,
+  "separateMajorMinor": true,
+  "automerge": false,
+  "automergeType": "pr",
+  "packageRules": [
+    {
+      "description": "Auto-merge GitHub Actions minor/patch updates",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "addLabels": ["github_actions"],
+      "rangeStrategy": "pin"
+    },
+    {
+      "description": "Auto-merge pre-commit hook minor/patch updates",
+      "matchManagers": ["pre-commit"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "addLabels": ["pre-commit"]
+    },
+    {
+      "description": "Group dev dependencies updates",
+      "matchManagers": ["pip_requirements"],
+      "groupName": "dev dependencies",
+      "groupSlug": "dev-dependencies",
+      "matchFileNames": ["requirements_test.txt"],
+      "addLabels": ["python", "dev-deps"]
+    },
+    {
+      "description": "No automerge for major Python updates",
+      "matchManagers": ["pip_requirements"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "addLabels": ["python", "major"]
+    },
+    {
+      "description": "Separate PR for each pre-commit hook on major",
+      "matchManagers": ["pre-commit"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    }
+  ],
+  "lockFileMaintenance": {
+    "enabled": false
+  },
+  "configMigration": true
+}
