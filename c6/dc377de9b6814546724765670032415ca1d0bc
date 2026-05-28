@@ -1,0 +1,20 @@
+"backlog/tasks/task-51 - RGB-Preset-und-Custom-Color-Rig-for-Blue.md"
+  s_08159ef527ef10::t_7de755c7e17c84 1-3,7,9-34
+  s_08159ef527ef10::t_45c508b0a68df3 4-6,8,35-49
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "c6dc377de9b6814546724765670032415ca1d0bc",
+  "prompts": {},
+  "sessions": {
+    "s_08159ef527ef10": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_197a4e9a1ffeaNDMl17K8zt3hL",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
