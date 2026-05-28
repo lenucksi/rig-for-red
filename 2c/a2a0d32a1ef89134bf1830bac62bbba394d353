@@ -1,0 +1,19 @@
+.github/labeler.yml
+  s_08159ef527ef10::t_11f9137dc7dfe7 2-4,6-10,12-14,16-20,22-24,26-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "2ca2a0d32a1ef89134bf1830bac62bbba394d353",
+  "prompts": {},
+  "sessions": {
+    "s_08159ef527ef10": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_197a4e9a1ffeaNDMl17K8zt3hL",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
