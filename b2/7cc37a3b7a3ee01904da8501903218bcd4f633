@@ -1,0 +1,11 @@
+custom_components/rig_for_red/manifest.json
+  ai_agent 13
+.release-please-manifest.json
+  ai_agent 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "b27cc37a3b7a3ee01904da8501903218bcd4f633",
+  "prompts": {}
+}
