@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.3.1](https://github.com/lenucksi/rig-for-red/compare/v0.3.0...v0.3.1) (2026-05-28)
+
+
+### Bug Fixes
+
+* fix renovate config ([6e6868a](https://github.com/lenucksi/rig-for-red/commit/6e6868a157c8f6eb98498e4e2febab125bd5bab8))
+* fix renovate config ([6455b02](https://github.com/lenucksi/rig-for-red/commit/6455b02e3f8391085efefff9d227e3a7033023ff))
+* fix renovate config ([9f63f32](https://github.com/lenucksi/rig-for-red/commit/9f63f32e7c5814c12385b17c3ae0418ff3a8e33c))
+* update actions/labeler version ([0a6deff](https://github.com/lenucksi/rig-for-red/commit/0a6deff8eee021577c3721cf129c55a53ad9cefd))
+
 ## v0.3.0 (unreleased)
 
 ### Features
