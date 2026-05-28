@@ -9,7 +9,7 @@
   "commitMessageTopic": "{{depName}}",
   "prConcurrentLimit": 5,
   "prHourlyLimit": 3,
-  "schedule": ["before 5am every day"],
+  "schedule": ["before 5am"],
   "timezone": "UTC",
   "minimumReleaseAge": "3 days",
   "branchConcurrentLimit": 10,
