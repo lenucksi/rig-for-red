@@ -1,9 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    "helpers:pinGitHubActionsDigests"
-  ],
+  "extends": ["config:recommended", "helpers:pinGitHubActionsDigests"],
   "rebaseWhen": "behind-base-branch",
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "🤖 Renovate Dependency Dashboard",
@@ -12,11 +9,10 @@
   "commitMessageTopic": "{{depName}}",
   "prConcurrentLimit": 5,
   "prHourlyLimit": 3,
-  "schedule": ["before 5am every day"],
+  "schedule": ["before 5am"],
   "timezone": "UTC",
   "minimumReleaseAge": "3 days",
   "branchConcurrentLimit": 10,
-  "separateMinor": false,
   "separateMajorMinor": true,
   "automerge": false,
   "automergeType": "pr",
@@ -26,7 +22,11 @@
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
-      "addLabels": ["github_actions"],
+      "addLabels": ["github_actions"]
+    },
+    {
+      "description": "Pin GitHub Actions digests",
+      "matchManagers": ["github-actions"],
       "rangeStrategy": "pin"
     },
     {
@@ -58,7 +58,5 @@
       "automerge": false
     }
   ],
-  "lockFileMaintenance": {
-    "enabled": false
-  }
+  "lockFileMaintenance": { "enabled": false }
 }
