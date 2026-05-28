@@ -1,0 +1,35 @@
+custom_components/rig_for_red/sensor.py
+  ai_agent 71
+.github/workflows/hassfest.yml
+  s_08159ef527ef10::t_59baf375dbd399 17-18
+.github/renovate.json.old
+  ai_agent 1-64
+tests/components/rig_for_red/test_switch.py
+  ai_agent 10
+.github/workflows/conventional-commits.yml
+  s_08159ef527ef10::t_5985ec0f973d9e 18
+.github/workflows/prek.yml
+  s_08159ef527ef10::t_eca3e0b41e8d91 13
+.github/workflows/labeler.yml
+  s_08159ef527ef10::t_0e4f570bc098ae 15
+.github/workflows/validate.yml
+  s_08159ef527ef10::t_4936cc5c902626 16,18
+.github/workflows/release-please.yml
+  s_08159ef527ef10::t_11269b23b943bd 22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "fcce478f8df500cc0bf627ebe883dc088bddaebb",
+  "prompts": {},
+  "sessions": {
+    "s_08159ef527ef10": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_197a4e9a1ffeaNDMl17K8zt3hL",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
