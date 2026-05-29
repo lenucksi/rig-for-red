@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.0](https://github.com/lenucksi/rig-for-red/compare/v0.3.2...v0.4.0) (2026-05-29)
+
+
+### Features
+
+* rgb-p preset and custom-color (rig-for-blue) ([c6dc377](https://github.com/lenucksi/rig-for-red/commit/c6dc377de9b6814546724765670032415ca1d0bc))
+
+
+### Bug Fixes
+
+* logos need transparency ([e2b71d0](https://github.com/lenucksi/rig-for-red/commit/e2b71d00650cfea9645ad3e78cfecb6e1aa42d81))
+
 ## [0.3.1](https://github.com/lenucksi/rig-for-red/compare/v0.3.0...v0.3.1) (2026-05-28)
 
 
