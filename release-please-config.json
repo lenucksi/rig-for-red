@@ -1,10 +1,19 @@
 {
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "last-release-sha": "d1d816f54c4e8bc7e162a0a6f0936a2b89d80098",
   "packages": {
     ".": {
       "release-type": "simple",
       "extra-files": [
-        "custom_components/rig_for_red/manifest.json"
+        {
+          "type": "json",
+          "path": "custom_components/rig_for_red/manifest.json",
+          "jsonpath": "$.version"
+        },
+        {
+          "type": "generic",
+          "path": "custom_components/rig_for_red/const.py"
+        }
       ]
     }
   }

@@ -1,5 +1,5 @@
 DOMAIN = "rig_for_red"
-VERSION = "0.1.0"
+VERSION = "0.3.3"  # x-release-please-version
 
 CONF_LIGHTS = "lights"
 CONF_SCHEDULE_DAYS = "schedule_days"
