@@ -1,0 +1,23 @@
+custom_components/rig_for_red/const.py
+  ai_agent 2
+release-please-config.json
+  s_39251065f99589::t_2297622019cf30 3,8-16
+.release-please-manifest.json
+  s_39251065f99589::t_b3cc14e8340d91 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "727e164ee0166b5ec21342c23bdf1d4f292e0c13",
+  "prompts": {},
+  "sessions": {
+    "s_39251065f99589": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1861eb968ffe4EWAN6DGLAkL2P",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
