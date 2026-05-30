@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.4](https://github.com/lenucksi/rig-for-red/compare/v0.3.3...v0.3.4) (2026-05-30)
+
+
+### Bug Fixes
+
+* logos need transparency ([e2b71d0](https://github.com/lenucksi/rig-for-red/commit/e2b71d00650cfea9645ad3e78cfecb6e1aa42d81))
+
 ## [0.3.1](https://github.com/lenucksi/rig-for-red/compare/v0.3.0...v0.3.1) (2026-05-28)
 
 
