@@ -1,0 +1,19 @@
+hacs.json
+  s_39251065f99589::t_63147fe1b5e7d5 3-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "103e699d8658d3427317b07f3ea4b061b183fc33",
+  "prompts": {},
+  "sessions": {
+    "s_39251065f99589": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1861eb968ffe4EWAN6DGLAkL2P",
+        "model": "deepseek-v4-flash-free"
+      },
+      "human_author": "Lenucksi <lenucksi@users.noreply.github.com>"
+    }
+  }
+}
