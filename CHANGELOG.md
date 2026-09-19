@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.5](https://github.com/lenucksi/rig-for-red/compare/v0.3.4...v0.3.5) (2026-09-19)
+
+
+### Bug Fixes
+
+* **coordinator:** publish restore completion state ([7d4b866](https://github.com/lenucksi/rig-for-red/commit/7d4b86602fedb6b6549babf1723569a0a453fa82))
+
 ## [0.3.4](https://github.com/lenucksi/rig-for-red/compare/v0.3.3...v0.3.4) (2026-05-30)
 
 
