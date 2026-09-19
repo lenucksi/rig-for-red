@@ -515,6 +515,11 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
             self._unsub_sunrise()
             self._unsub_sunrise = None
 
+        _LOGGER.info("Rig-for-Red restore complete")
+        self._is_restoring = False
+        self._active_since = None
+        self.async_set_updated_data({"is_active": False})
+
     async def _dim_lights(self, start_brightness: int) -> None:
         target = max(1, int(self._min_brightness_pct / 100 * 255))
         interval = (self._dim_duration * 60) / DIM_STEPS
@@ -636,7 +641,3 @@ class RigForRedCoordinator(DataUpdateCoordinator[None]):
                 next_sunrise,
             )
 
-        _LOGGER.info("Rig-for-Red restore complete")
-        self._is_restoring = False
-        self._active_since = None
-        self.async_set_updated_data({"is_active": False})
